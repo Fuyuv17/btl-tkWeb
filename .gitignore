@@ -1,0 +1,10 @@
+# Bỏ qua thư viện và file build
+node_modules/
+dist/
+dist-ssr/
+
+# Bỏ qua file môi trường và rác hệ thống
+.env
+.env.local
+.vscode/
+.DS_Store
