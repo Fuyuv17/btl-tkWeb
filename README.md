@@ -59,8 +59,9 @@ src
 |      |-fonts\     # chứa fonts
 |
 |- styles\          # chứa các file css
-|
-|
+|      |     |-<HoVaTen_MSV>
+|      |             # tạo folder chứa ảnh là tên của mình kèm msv
+|      |
 |- js\              # chứa các file scripts
 |
 |
