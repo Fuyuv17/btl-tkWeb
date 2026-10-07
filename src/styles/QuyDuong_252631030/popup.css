@@ -1,0 +1,337 @@
+/* ==========================================================================
+   POPUP PRODUCT (BOTTOM-TO-TOP SLIDE-UP MODAL / BOTTOM SHEET)
+   Author: Quy Duong (MSV: 252631030)
+   ========================================================================== */
+
+/* Nền mờ bao phủ toàn màn hình */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: flex-end; /* Cố định vị trí ở đáy màn hình */
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+/* Trạng thái Overlay khi mở popup */
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Khung nội dung Pop-up */
+.popup-container {
+  width: 100%;
+  max-width: 550px;
+  background: #ffffff;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+  padding: 16px 24px 28px;
+  box-sizing: border-box;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  /* Hiệu ứng trượt từ dưới lên */
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Khi active: trượt lên vị trí bình thường */
+.popup-overlay.active .popup-container {
+  transform: translateY(0);
+}
+
+/* Thanh kéo trang trí kiểu Bottom Sheet */
+.popup-drag-handle {
+  width: 44px;
+  height: 5px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin: 0 auto 12px;
+}
+
+/* Nút đóng (X) */
+.popup-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+.popup-close-btn:hover {
+  background: #e31837;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Khu vực hiển thị ảnh món ăn */
+.popup-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.popup-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.popup-media:hover img {
+  transform: scale(1.05);
+}
+
+.popup-media .popup-placeholder {
+  font-size: 20px;
+  font-weight: 700;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+/* Nhãn Badge món mới / HOT */
+.popup-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #e31837;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(227, 24, 55, 0.4);
+}
+
+/* Thông tin món */
+.popup-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #222222;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.popup-desc {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.popup-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.popup-unit-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #e31837;
+}
+
+/* Tăng giảm số lượng */
+.popup-qty-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #eeeeee;
+}
+
+.popup-qty-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.popup-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.popup-qty-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #dcdcdc;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.popup-qty-btn:hover {
+  background: #e31837;
+  color: #ffffff;
+  border-color: #e31837;
+}
+
+.popup-qty-num {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222222;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Ô nhập ghi chú */
+.popup-note-box {
+  width: 100%;
+}
+
+.popup-note-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.popup-note-input:focus {
+  border-color: #e31837;
+}
+
+/* Nút đặt món / thêm vào giỏ trong popup */
+.popup-submit-btn {
+  width: 100%;
+  background: #e31837;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(227, 24, 55, 0.35);
+  transition: all 0.2s ease;
+  margin-top: 6px;
+}
+
+.popup-submit-btn:hover {
+  background: #c8102e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(227, 24, 55, 0.45);
+}
+
+.popup-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Toast thông báo đã thêm vào giỏ */
+.popup-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #2e7d32;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 100000;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+}
+
+.popup-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Badge hiển thị số lượng trên giỏ hàng header */
+.cart-icon a {
+  position: relative;
+}
+
+#cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  background-color: #ffc72c;
+  color: #e31837;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 0 4px;
+  margin-left: 4px;
+}
+
+/* Thêm con trỏ trỏ vào product card */
+.product-card {
+  cursor: pointer;
+}
+
+/* Responsive cho màn hình máy tính (Desktop) */
+@media (min-width: 768px) {
+  .popup-overlay {
+    padding-bottom: 24px;
+  }
+
+  .popup-container {
+    border-radius: 24px;
+  }
+}
