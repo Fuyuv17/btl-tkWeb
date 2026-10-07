@@ -82,14 +82,8 @@ function moveToSlide(i, animate = true) {
 // ===============================
 
 function updateActiveSlide() {
-
     slidesList.forEach((slide, i) => {
-
-        slide.classList.toggle(
-            "active",
-            i === index
-        );
-
+        slide.classList.toggle("active",i === index);
     });
 }
 

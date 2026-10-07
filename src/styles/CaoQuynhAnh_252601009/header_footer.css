@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&display=swap');
+
+
 :root {
   --red: #e31837;
 }
@@ -35,7 +38,7 @@ body {
 ========================= */
 
 header {
-    padding: 20px 0 10px 0;
+    padding: 0;
     background-color: var(--red);
     font-size: 15px;
     position: sticky;
@@ -47,17 +50,56 @@ header {
 .higher-header {
     display: flex;
     max-width: 1200px;
-    justify-content: space-between;
-    height: 50px;
+    justify-content: flex-end;
     align-items: center;
+    height: 50px;
     margin: auto;
-    padding: 0;
+    padding: 0 20px;
+}
+
+/* Header user actions (cart & login trên cùng 1 dòng) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cart-icon,
+.login-icon {
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon a, .login-icon a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cart-icon img, .login-icon img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.register, .login {
+  font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
+  margin: 5px;
+  color: white;
+}
+
+div.login-icon a:hover {
+  color: #222;
 }
 
 .header-logo img {
+  position: absolute;
   display: block;
   width: 70px;
   height: auto;
+  top: 15px;
+  left: 20px;
 }
 
 /* Desktop navbar */
@@ -65,9 +107,10 @@ header {
   padding: 15px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: white;
     height: 50px;
+    padding-left: 120px; 
 }
 
 .top-menu-desktop {
@@ -76,6 +119,9 @@ header {
 }
 
 .top-menu-desktop a {
+  font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
+  font-weight: 700;
+  text-transform: uppercase;
   text-decoration: none;
   color: white;
   font-size: medium;
@@ -86,11 +132,12 @@ header {
     display: inline;
     font-size: 15px;
     padding: 10px;
-    margin: 30px;
-    margin-bottom: 0;
+    margin: 0 15px;
 }
 
-.category-menu-items:hover
+.category-menu-items:hover {
+    opacity: 0.8;
+}
 
 /* =========================
    MAIN
