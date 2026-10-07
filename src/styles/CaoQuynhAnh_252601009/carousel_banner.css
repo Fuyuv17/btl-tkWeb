@@ -29,7 +29,7 @@
 .slides img {
     flex: 0 0 80%;
     width: 90%;
-    aspect-ratio: 100 / 39;
+    aspect-ratio: 100 / 42;
     object-fit: cover;
     display: block;
     border-radius: 15px;
@@ -58,7 +58,7 @@
     /* Các định dạng trang trí nút (bạn có thể giữ nguyên của bạn) */
     width: 45px;
     height: 45px;
-    background: #1f2937;
+    background: #e31837;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -86,7 +86,7 @@
 }
 
 .dots button.active {
-    background: #1f2937;
+    background: #e31837;
     width: 20px;
     border-radius: 10px;
 }

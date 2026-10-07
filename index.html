@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/header_footer.css"/>
     <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/carousel_banner.css"/>
     <script src="src/js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
+    <script src="src/js/CaoQuynhAnh_252601009/navbar.js" defer></script>
   </head>
 
   <body>
@@ -29,9 +30,18 @@
               </a>
             </div>
             <div class="login-icon">
-              <img src="src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="">
-              <a class="register" href="">Đăng kí</a>/
-              <a class="login" href="">Đăng nhập</a>
+              <!-- Box tròn trắng di chuyển -->
+              <div class="sliding-box"></div>
+              
+              <a href="" class="login-icon-btn">
+                <img src="src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon"/>
+              </a>
+              
+              <div class="login-text">
+                <a class="register" href="">Đăng kí</a>
+                <span class="auth-sep">/</span>
+                <a class="login" href="">Đăng nhập</a>
+              </div>
             </div>
           </div>
           <div class="menu-for-mobile">
@@ -40,10 +50,13 @@
         </div>
         <div class="header-navbar-for-desktop">
           <ul class="top-menu-desktop">
-            <li class="category-menu-items"><a href="">Trang chủ</a></li>
+            <!-- Box trắng bo góc chuyển động trượt -->
+            <div class="menu-indicator"></div>
+
+            <li class="category-menu-items active"><a href="./index.html">Trang chủ</a></li>
             <li class="category-menu-items"><a href="">Menu</a></li>
             <li class="category-menu-items"><a href="">Khuyến mãi</a></li>
-            <li class="category-menu-items"><a href="">Tin tức</a></li>
+            <li class="category-menu-items"><a href="src/pages/tintuc.html">Tin tức</a></li>
           </ul>
         </div>
       </header>
@@ -54,9 +67,9 @@
           <div class="carousel-wrapper">
             <div id="carousel" class="carousel">
               <div id="slides" class="slides">
-                <img src="src/assets/images/CaoQuynhAnh_252601009/tải xuống.jpg" alt="Pic1"/>
-                <img src="src/assets/images/CaoQuynhAnh_252601009/tải xuống1.jpg" alt="Pic2"/>
-                <img src="src/assets/images/CaoQuynhAnh_252601009/typography instastory idea.jpg" alt="Pic3"/>
+                <img src="src/assets/images/CaoQuynhAnh_252601009/banner1.jpg" alt="Pic1"/>
+                <img src="src/assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Pic2"/>
+                <img src="src/assets/images/CaoQuynhAnh_252601009/banner3.jpg" alt="Pic3"/>
               </div>
               <button id="prev" class="ctr-btn prev"><</button>
               <button id="next" class="ctr-btn next">></button>

@@ -64,33 +64,143 @@ header {
     gap: 16px;
 }
 
-.cart-icon,
-.login-icon {
+/* 1. CART ICON (Icon đỏ trong box tròn trắng) */
+.cart-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.25s ease;
 }
 
-.cart-icon a, .login-icon a {
+.cart-icon a {
     display: flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
+    width: 100%;
+    height: 100%;
 }
 
-.cart-icon img, .login-icon img {
-    width: 24px;
-    height: 24px;
+.cart-icon img {
+    width: 20px;
+    height: 20px;
     display: block;
+}
+
+/* Hiệu ứng scale khi hover vào cart */
+.cart-icon:hover {
+    transform: scale(1.12);
+}
+
+/* 2. LOGIN & REGISTER CONTAINER */
+.login-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Box tròn trắng: Mặc định bao quanh icon login, khi hover sang chữ sẽ di chuyển sang và bao quanh chữ */
+.sliding-box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                border-radius 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.25s ease;
+}
+
+/* Nút icon login */
+.login-icon-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+}
+
+.login-icon-btn img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* Hiệu ứng scale khi hover vào icon login (giống hệt cart-icon) */
+.login-icon-btn:hover {
+    transform: scale(1.12);
+}
+
+.login-icon:has(.login-icon-btn:hover) .sliding-box {
+    transform: translateY(-50%) scale(1.12);
+}
+
+/* Phần chữ Đăng kí / Đăng nhập */
+.login-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.register,
+.login,
+.auth-sep {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Khi hover sang chữ đăng kí và đăng nhập:
+   Box tròn di chuyển sang bao quanh chữ và đổi màu chữ thành màu đỏ */
+.login-icon:has(.login-text:hover) .sliding-box {
+    left: 42px;
+    width: calc(100% - 42px);
+    height: 32px;
+    border-radius: 20px;
+}
+
+.login-icon:has(.login-text:hover) .register,
+.login-icon:has(.login-text:hover) .login,
+.login-icon:has(.login-text:hover) .auth-sep {
+    color: var(--red);
+}
+
+/* Khi box trắng đã di chuyển sang chữ, icon login chuyển sang màu trắng để nổi bật trên nền đỏ */
+.login-icon:has(.login-text:hover) .login-icon-btn img {
     filter: brightness(0) invert(1);
 }
 
-.register, .login {
-  font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
-  margin: 5px;
-  color: white;
-}
-
-div.login-icon a:hover {
-  color: #222;
+.login-text a:hover {
+    text-decoration: underline;
 }
 
 .header-logo img {
@@ -104,39 +214,79 @@ div.login-icon a:hover {
 
 /* Desktop navbar */
 .header-navbar-for-desktop {
-  padding: 15px 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
     color: white;
-    height: 50px;
+    height: 52px;
     padding-left: 120px; 
 }
 
 .top-menu-desktop {
+    position: relative;
     display: flex;
-    justify-content: space-around;
-}
-
-.top-menu-desktop a {
-  font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: white;
-  font-size: medium;
-}
-
-.top-menu-desktop li {
+    align-items: flex-end;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    display: inline;
-    font-size: 15px;
-    padding: 10px;
-    margin: 0 15px;
+    gap: 8px;
 }
 
-.category-menu-items:hover {
-    opacity: 0.8;
+/* Box trắng: Bo tròn top-left, top-right; bot-left và bot-right KHÔNG bo tròn */
+.menu-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 42px;
+    background-color: #ffffff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.category-menu-items {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.category-menu-items a {
+    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 0 22px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Mặc định mục active (Trang chủ) và khi hover thì đổi màu chữ thành màu đỏ */
+.category-menu-items.active a,
+.category-menu-items:hover a {
+    color: var(--red);
+}
+
+/* Khi đang hover sang mục khác, mục active nếu không được hover sẽ đổi lại màu trắng */
+.top-menu-desktop:hover .category-menu-items.active:not(:hover) a {
+    color: white;
 }
 
 /* =========================
@@ -148,7 +298,7 @@ div.login-icon a:hover {
 
   margin: auto;
 
-  padding: 45px 20px 70px;
+  padding: 0 20px 70px;
 }
 
 /* =========================
