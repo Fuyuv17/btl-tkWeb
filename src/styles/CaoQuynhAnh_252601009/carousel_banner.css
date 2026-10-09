@@ -1,3 +1,7 @@
+:root {
+  --red: #FF3737;
+}
+
 .carousel-container {
     width: 100%;
     max-width: 1300px;
@@ -29,7 +33,7 @@
 .slides img {
     flex: 0 0 80%;
     width: 90%;
-    aspect-ratio: 100 / 42;
+    aspect-ratio: 100 / 41.5;
     object-fit: cover;
     display: block;
     border-radius: 15px;
@@ -50,18 +54,46 @@
 }
 
 .ctr-btn {
-    position: absolute; /* Bắt buộc để lơ lửng */
-    top: 50%; /* Đẩy xuống giữa chiều dọc */
-    transform: translateY(-50%); /* Căn lại tâm nút cho chuẩn xác */
-    z-index: 10; /* Bắt buộc: Ép nút nổi lên trên mặt ảnh */
-    color: white;
-    /* Các định dạng trang trí nút (bạn có thể giữ nguyên của bạn) */
-    width: 45px;
-    height: 45px;
-    background: #e31837;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    background-color: var(--red);
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    /* Căn giữa icon bên trong nút tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctr-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.ctr-btn img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    /* Đảm bảo icon đổi thành màu trắng */
+    filter: brightness(0) invert(1);
+    pointer-events: none;
+}
+
+/* Căn chỉnh quang học để mũi tên nhìn chuẩn giữa tâm tròn */
+.ctr-btn.prev img {
+    transform: translateX(-1px);
+}
+
+.ctr-btn.next img {
+    transform: translateX(1px);
 }
 
 .dots {
@@ -86,7 +118,7 @@
 }
 
 .dots button.active {
-    background: #e31837;
+    background: var(--red);
     width: 20px;
     border-radius: 10px;
 }
