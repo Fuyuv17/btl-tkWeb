@@ -40,27 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function setupTabs(tabList, isMobile = false) {
     if (!tabList || tabList.length === 0) return;
 
-    tabList.forEach((item, index) => {
+    tabList.forEach((item) => {
       item.addEventListener('click', function (e) {
         const link = this.querySelector('a');
-        const href = link ? link.getAttribute('href') : '';
-
-        // Ngăn reload trang khi href rỗng hoặc '#'
-        if (!href || href === '#' || href === '') {
-          e.preventDefault();
-        }
-
-        // Bỏ active ở tất cả tab desktop và mobile
-        desktopTabs.forEach((el) => el.classList.remove('active'));
-        mobileTabs.forEach((el) => el.classList.remove('active'));
-
-        // Đồng bộ kích hoạt tab tương ứng ở cả hai menu
-        if (desktopTabs[index]) desktopTabs[index].classList.add('active');
-        if (mobileTabs[index]) mobileTabs[index].classList.add('active');
+        if (!link || !link.href) return;
 
         // Nếu click trên mobile thì tự động đóng menu drawer sau khi chọn
         if (isMobile) {
-          setTimeout(closeMobileMenu, 200);
+          closeMobileMenu();
         }
       });
     });
@@ -70,15 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
   setupTabs(desktopTabs, false);
   setupTabs(mobileTabs, true);
 
-  // Mặc định luôn luôn active tab Trang chủ (vị trí đầu tiên)
-  if (desktopTabs.length > 0) {
-    desktopTabs.forEach((el) => el.classList.remove('active'));
-    desktopTabs[0].classList.add('active');
-  }
-  if (mobileTabs.length > 0) {
-    mobileTabs.forEach((el) => el.classList.remove('active'));
-    mobileTabs[0].classList.add('active');
-  }
+  // Đặt trạng thái active theo trang hiện tại, không chặn điều hướng của liên kết.
+  const currentPath = window.location.pathname.replace(/\/$/, '').toLowerCase();
+  [...desktopTabs, ...mobileTabs].forEach((item) => {
+    const link = item.querySelector('a');
+    if (!link) return;
+
+    const linkPath = new URL(link.href, window.location.href).pathname.replace(/\/$/, '').toLowerCase();
+    item.classList.toggle('active', linkPath === currentPath);
+  });
 
   /* ========================================================
      3. HIỆU ỨNG SCROLL HEADER (Đổ bóng khi cuộn trang)

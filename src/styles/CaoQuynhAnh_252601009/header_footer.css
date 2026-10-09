@@ -46,7 +46,6 @@ header {
     z-index: 11;
     top: 0;
     width: 100%;
-    transition: box-shadow 0.3s ease;
 }
 
 header.header-scrolled {
@@ -156,8 +155,6 @@ header.header-scrolled {
     display: flex;
     align-items: flex-end;
     gap: 12px;
-    margin: 0;
-    padding: 0;
     list-style: none;
 }
 
@@ -179,9 +176,7 @@ header.header-scrolled {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 20px 10px 20px;
-    background-color: transparent;
-    border-radius: 14px 14px 0 0; /* Bo tròn 2 góc trên như hình */
+    background-color: transparent;/* Bo tròn 2 góc trên như hình */
     transition: background-color 0.2s ease, color 0.2s ease;
     white-space: nowrap;
 }
@@ -191,6 +186,211 @@ header.header-scrolled {
 .top-menu-desktop li.active a {
     background-color: #ffffff;
     color: var(--red);
+}
+
+/* Desktop layout defaults; the mobile media query below overrides these values. */
+header {
+    height: 66px;
+}
+
+.higher-header {
+    height: 66px;
+    padding: 0;
+}
+
+.header-logo img {
+    width: 64px;
+    height: 54px;
+    object-fit: cover;
+    top: 6px;
+    left: 32px;
+    border-radius: 50%;
+}
+
+.header-navbar-for-desktop {
+    position: absolute;
+    left: 112px;
+    top: 0;
+    height: 66px;
+    align-items: flex-end;
+    padding: 0;
+}
+
+.top-menu-desktop {
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.top-menu-desktop li,
+.top-menu-desktop a {
+    align-items: flex-end;
+}
+
+.top-menu-desktop a {
+    min-height: 45px;
+    padding:  10px 12px;
+    margin-right: 7px;
+    border-radius: 15px 15px 0 0;
+}
+
+.header-actions {
+    top: 50%;
+    right: 28px;
+    transform: translateY(-50%);
+    gap: 14px;
+}
+
+.header-search {
+    width: clamp(170px, 21vw, 285px);
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 12px;
+    background: #fff8f0;
+    border: 1px solid rgba(255, 127, 80, 0.35);
+    border-radius: 24px;
+}
+
+.header-search span {
+    display: grid;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    place-items: center;
+}
+
+.header-search .search-icon {
+    display: block;
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+}
+
+.header-search input {
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #333;
+    font: inherit;
+    text-align: left;
+}
+
+.header-search input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+.header-actions .icon-circle {
+    width: 34px;
+    height: 34px;
+}
+
+.menu-category-tab {
+    position: static;
+}
+
+.menu-category-dropdown {
+    position: fixed;
+    top: 66px;
+    left: 5vw;
+    z-index: 20;
+    width: 90vw;
+    padding: 12px 20px;
+    border-radius: 0 0 18px 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(80, 30, 40, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+/* Bridge the header-to-panel gap so the hover state stays active while moving down. */
+.menu-category-dropdown::before {
+    position: absolute;
+    top: -12px;
+    right: 0;
+    left: 0;
+    height: 12px;
+    content: "";
+}
+
+.menu-category-tab:hover .menu-category-dropdown,
+.menu-category-tab:focus-within .menu-category-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.menu-category-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-category-list li {
+    min-width: 0;
+}
+
+.top-menu-desktop .menu-category-item {
+    display: flex;
+    min-height: 116px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 2px 8px 6px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    color: #171717;
+    text-decoration: none;
+    background: transparent;
+    transition: color 0.18s ease;
+}
+
+.menu-category-image {
+    display: grid;
+    width: 100%;
+    height: 78px;
+    place-items: center;
+}
+
+.menu-category-image img {
+    display: block;
+    max-width: 100%;
+    max-height: 76px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.menu-category-name {
+    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    transition: color 0.18s ease;
+}
+
+.top-menu-desktop .menu-category-item:hover,
+.top-menu-desktop .menu-category-item:focus-visible {
+    color: #FF3737;
+    background: transparent;
+    outline: none;
+}
+
+.top-menu-desktop .menu-category-item:hover .menu-category-image img,
+.top-menu-desktop .menu-category-item:focus-visible .menu-category-image img {
+    transform: scale(1.14);
 }
 
 /* =========================
@@ -262,13 +462,14 @@ header.header-scrolled {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 890px) {
     /* 1. Header trên mobile */
     header {
         position: sticky;
         top: 0;
         z-index: 1000;
         width: 100%;
+        height: auto;
     }
 
     .higher-header {
@@ -300,6 +501,10 @@ header.header-scrolled {
     /* 3. Ẩn thanh navbar desktop */
     .header-navbar-for-desktop {
         display: none !important;
+    }
+
+    .menu-category-dropdown {
+        display: none;
     }
 
     /* Search stays visible; cart, favorites and account links live in the drawer. */
@@ -541,116 +746,6 @@ header.header-scrolled {
         text-decoration: underline;
     }
 
-    /* Footer trên mobile: xếp 1 cột gọn gàng */
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-/* Homepage desktop header: keep the existing navigation and controls on one row. */
-@media (min-width: 769px) {
-    header {
-        height: 66px;
-    }
-
-    .higher-header {
-        height: 66px;
-        padding: 0;
-    }
-
-    .header-logo img {
-        width: 64px;
-        height: 54px;
-        object-fit: cover;
-        top: 6px;
-        left: 32px;
-        border-radius: 50%;
-    }
-
-    .header-navbar-for-desktop {
-        position: absolute;
-        left: 112px;
-        top: 0;
-        height: 66px;
-        align-items: center;
-        padding: 0;
-    }
-
-    .top-menu-desktop {
-        align-items: center;
-        gap: 4px;
-    }
-
-    .top-menu-desktop li,
-    .top-menu-desktop a {
-        align-items: center;
-    }
-
-    .top-menu-desktop a {
-        min-height: 46px;
-        padding: 0 15px;
-        border-radius: 10px;
-    }
-
-    .header-actions {
-        top: 50%;
-        right: 28px;
-        transform: translateY(-50%);
-        gap: 14px;
-    }
-
-    .header-search {
-        width: clamp(170px, 21vw, 285px);
-        height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 8px;
-        padding: 0 12px;
-        background: #fff8f0;
-        border: 1px solid rgba(255, 127, 80, 0.35);
-        border-radius: 24px;
-    }
-
-    .header-search span {
-        display: grid;
-        flex: 0 0 18px;
-        width: 18px;
-        height: 18px;
-        place-items: center;
-    }
-
-    .header-search .search-icon {
-        display: block;
-        width: 17px;
-        height: 17px;
-        object-fit: contain;
-    }
-
-    .header-search input {
-        min-width: 0;
-        width: 100%;
-        border: 0;
-        outline: 0;
-        background: transparent;
-        color: #333;
-        font: inherit;
-        text-align: left;
-    }
-
-    .header-search input::placeholder {
-        color: #777;
-        opacity: 1;
-    }
-
-    .header-actions .icon-circle {
-        width: 34px;
-        height: 34px;
-    }
-}
-
-@media (max-width: 768px) {
     .header-location {
         display: none;
     }
@@ -658,5 +753,21 @@ header.header-scrolled {
     .header-actions {
         right: auto;
         transform: none;
+    }
+
+    /* Footer trên mobile: xếp 1 cột gọn gàng */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-item > span {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .service-item strong {
+        font-size: 12px;
     }
 }
