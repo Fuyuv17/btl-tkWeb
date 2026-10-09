@@ -1,0 +1,577 @@
+{
+  "com": {
+    "name": "Cơm",
+    "products": {
+      "com-tam-suon": {
+        "name": "Cơm tấm sườn",
+        "price": 45000,
+        "toppingOptions": [
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          },
+          {
+            "name": "Thêm sườn",
+            "price": 25000
+          },
+          {
+            "name": "Thêm hành lá",
+            "price": 2000
+          }
+        ]
+      },
+      "com-rang-thap-cam": {
+        "name": "Cơm rang thập cẩm",
+        "price": 40000,
+        "toppingOptions": [
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          },
+          {
+            "name": "Xúc xích",
+            "price": 10000
+          },
+          {
+            "name": "Thêm tôm",
+            "price": 15000
+          }
+        ]
+      },
+      "com-ga-xoi-mo": {
+        "name": "Cơm gà xối mỡ",
+        "price": 45000,
+        "toppingOptions": [
+          {
+            "name": "Thêm đùi gà",
+            "price": 25000
+          },
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          },
+          {
+            "name": "Thêm dưa chua",
+            "price": 3000
+          }
+        ]
+      },
+      "com-suon-bi-cha": {
+        "name": "Cơm sườn bì chả",
+        "price": 55000,
+        "toppingOptions": [
+          {
+            "name": "Thêm sườn",
+            "price": 25000
+          },
+          {
+            "name": "Thêm chả",
+            "price": 10000
+          },
+          {
+            "name": "Thêm bì",
+            "price": 8000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          }
+        ]
+      },
+      "com-bo-luc-lac": {
+        "name": "Cơm bò lúc lắc",
+        "price": 58000,
+        "toppingOptions": [
+          {
+            "name": "Thêm thịt bò",
+            "price": 25000
+          },
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          },
+          {
+            "name": "Thêm rau",
+            "price": 5000
+          }
+        ]
+      }
+    }
+  },
+  "combo": {
+    "name": "Combo",
+    "products": {
+      "combo-com-suon-nuoc": {
+        "name": "Combo cơm sườn + nước",
+        "price": 59000,
+        "toppingOptions": [
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          },
+          {
+            "name": "Khoai tây chiên",
+            "price": 15000
+          },
+          {
+            "name": "Đổi sang trà đào",
+            "price": 5000
+          }
+        ]
+      },
+      "combo-com-ga-nuoc": {
+        "name": "Combo cơm gà + nước",
+        "price": 59000,
+        "toppingOptions": [
+          {
+            "name": "Thêm đùi gà",
+            "price": 25000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          },
+          {
+            "name": "Khoai tây chiên",
+            "price": 15000
+          },
+          {
+            "name": "Đổi sang trà sữa",
+            "price": 10000
+          }
+        ]
+      },
+      "combo-mi-xuc-xich": {
+        "name": "Combo mì xào + xúc xích",
+        "price": 55000,
+        "toppingOptions": [
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Xúc xích",
+            "price": 10000
+          },
+          {
+            "name": "Thêm mì",
+            "price": 10000
+          },
+          {
+            "name": "Nước ngọt",
+            "price": 12000
+          }
+        ]
+      },
+      "combo-doi": {
+        "name": "Combo 2 người",
+        "price": 109000,
+        "toppingOptions": [
+          {
+            "name": "Khoai tây chiên",
+            "price": 15000
+          },
+          {
+            "name": "Thêm 1 nước ngọt",
+            "price": 12000
+          },
+          {
+            "name": "Thêm 1 trứng",
+            "price": 7000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          }
+        ]
+      },
+      "combo-gia-dinh": {
+        "name": "Combo gia đình",
+        "price": 199000,
+        "toppingOptions": [
+          {
+            "name": "Thêm phần cơm",
+            "price": 15000
+          },
+          {
+            "name": "Thêm phần gà",
+            "price": 25000
+          },
+          {
+            "name": "Khoai tây chiên",
+            "price": 15000
+          },
+          {
+            "name": "Thêm 1 nước ngọt",
+            "price": 12000
+          }
+        ]
+      }
+    }
+  },
+  "mi-bun": {
+    "name": "Mì/Bún",
+    "products": {
+      "bun-bo-hue": {
+        "name": "Bún bò Huế",
+        "price": 50000,
+        "toppingOptions": [
+          {
+            "name": "Thêm thịt bò",
+            "price": 20000
+          },
+          {
+            "name": "Chả cua",
+            "price": 12000
+          },
+          {
+            "name": "Giò heo",
+            "price": 20000
+          },
+          {
+            "name": "Thêm bún",
+            "price": 10000
+          }
+        ]
+      },
+      "bun-thit-nuong": {
+        "name": "Bún thịt nướng",
+        "price": 42000,
+        "toppingOptions": [
+          {
+            "name": "Chả giò",
+            "price": 10000
+          },
+          {
+            "name": "Thêm thịt nướng",
+            "price": 20000
+          },
+          {
+            "name": "Thêm bún",
+            "price": 8000
+          },
+          {
+            "name": "Thêm rau",
+            "price": 5000
+          }
+        ]
+      },
+      "mi-xao-bo": {
+        "name": "Mì xào bò",
+        "price": 49000,
+        "toppingOptions": [
+          {
+            "name": "Thêm thịt bò",
+            "price": 20000
+          },
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Thêm mì",
+            "price": 10000
+          },
+          {
+            "name": "Thêm rau",
+            "price": 5000
+          }
+        ]
+      },
+      "mi-tron-ga": {
+        "name": "Mì trộn gà",
+        "price": 45000,
+        "toppingOptions": [
+          {
+            "name": "Thêm thịt gà",
+            "price": 18000
+          },
+          {
+            "name": "Trứng lòng đào",
+            "price": 8000
+          },
+          {
+            "name": "Xúc xích",
+            "price": 10000
+          },
+          {
+            "name": "Thêm mì",
+            "price": 10000
+          }
+        ]
+      },
+      "bun-cha-ha-noi": {
+        "name": "Bún chả Hà Nội",
+        "price": 48000,
+        "toppingOptions": [
+          {
+            "name": "Thêm chả nướng",
+            "price": 20000
+          },
+          {
+            "name": "Nem rán",
+            "price": 10000
+          },
+          {
+            "name": "Thêm bún",
+            "price": 8000
+          },
+          {
+            "name": "Thêm rau",
+            "price": 5000
+          }
+        ]
+      }
+    }
+  },
+  "do-an-vat": {
+    "name": "Đồ ăn vặt",
+    "products": {
+      "khoai-tay-chien": {
+        "name": "Khoai tây chiên",
+        "price": 25000,
+        "toppingOptions": [
+          {
+            "name": "Phô mai bột",
+            "price": 5000
+          },
+          {
+            "name": "Sốt phô mai",
+            "price": 7000
+          },
+          {
+            "name": "Sốt mayonnaise",
+            "price": 3000
+          },
+          {
+            "name": "Thêm phần khoai",
+            "price": 15000
+          }
+        ]
+      },
+      "ca-vien-chien": {
+        "name": "Cá viên chiên",
+        "price": 30000,
+        "toppingOptions": [
+          {
+            "name": "Sốt cay",
+            "price": 3000
+          },
+          {
+            "name": "Sốt mayonnaise",
+            "price": 3000
+          },
+          {
+            "name": "Thêm 5 cá viên",
+            "price": 12000
+          },
+          {
+            "name": "Thêm xúc xích",
+            "price": 10000
+          }
+        ]
+      },
+      "ga-vien-chien": {
+        "name": "Gà viên chiên",
+        "price": 35000,
+        "toppingOptions": [
+          {
+            "name": "Sốt BBQ",
+            "price": 5000
+          },
+          {
+            "name": "Sốt phô mai",
+            "price": 7000
+          },
+          {
+            "name": "Thêm 5 gà viên",
+            "price": 20000
+          },
+          {
+            "name": "Khoai tây chiên",
+            "price": 15000
+          }
+        ]
+      },
+      "xuc-xich-chien": {
+        "name": "Xúc xích chiên",
+        "price": 20000,
+        "toppingOptions": [
+          {
+            "name": "Thêm xúc xích",
+            "price": 10000
+          },
+          {
+            "name": "Sốt cay",
+            "price": 3000
+          },
+          {
+            "name": "Sốt phô mai",
+            "price": 7000
+          },
+          {
+            "name": "Khoai tây chiên",
+            "price": 15000
+          }
+        ]
+      },
+      "banh-trang-tron": {
+        "name": "Bánh tráng trộn",
+        "price": 25000,
+        "toppingOptions": [
+          {
+            "name": "Trứng cút",
+            "price": 5000
+          },
+          {
+            "name": "Khô bò",
+            "price": 10000
+          },
+          {
+            "name": "Khô gà",
+            "price": 10000
+          },
+          {
+            "name": "Thêm xoài",
+            "price": 5000
+          }
+        ]
+      }
+    }
+  },
+  "nuoc-uong": {
+    "name": "Nước uống",
+    "products": {
+      "tra-sua-truyen-thong": {
+        "name": "Trà sữa truyền thống",
+        "price": 30000,
+        "toppingOptions": [
+          {
+            "name": "Trân châu đen",
+            "price": 5000
+          },
+          {
+            "name": "Trân châu trắng",
+            "price": 5000
+          },
+          {
+            "name": "Thạch phô mai",
+            "price": 7000
+          },
+          {
+            "name": "Pudding trứng",
+            "price": 7000
+          }
+        ]
+      },
+      "tra-dao-cam-sa": {
+        "name": "Trà đào cam sả",
+        "price": 35000,
+        "toppingOptions": [
+          {
+            "name": "Thêm đào",
+            "price": 8000
+          },
+          {
+            "name": "Thạch trái cây",
+            "price": 5000
+          },
+          {
+            "name": "Trân châu trắng",
+            "price": 5000
+          },
+          {
+            "name": "Thêm cam",
+            "price": 5000
+          }
+        ]
+      },
+      "tra-chanh": {
+        "name": "Trà chanh",
+        "price": 20000,
+        "toppingOptions": [
+          {
+            "name": "Thạch nha đam",
+            "price": 5000
+          },
+          {
+            "name": "Trân châu trắng",
+            "price": 5000
+          },
+          {
+            "name": "Thạch trái cây",
+            "price": 5000
+          },
+          {
+            "name": "Thêm chanh",
+            "price": 3000
+          }
+        ]
+      },
+      "nuoc-ep-cam": {
+        "name": "Nước ép cam",
+        "price": 30000,
+        "toppingOptions": [
+          {
+            "name": "Thạch nha đam",
+            "price": 5000
+          },
+          {
+            "name": "Hạt chia",
+            "price": 5000
+          },
+          {
+            "name": "Thêm cam",
+            "price": 8000
+          },
+          {
+            "name": "Thạch trái cây",
+            "price": 5000
+          }
+        ]
+      },
+      "ca-phe-sua-da": {
+        "name": "Cà phê sữa đá",
+        "price": 25000,
+        "toppingOptions": [
+          {
+            "name": "Thạch cà phê",
+            "price": 5000
+          },
+          {
+            "name": "Kem sữa",
+            "price": 7000
+          },
+          {
+            "name": "Thêm shot espresso",
+            "price": 10000
+          },
+          {
+            "name": "Trân châu đen",
+            "price": 5000
+          }
+        ]
+      }
+    }
+  }
+}

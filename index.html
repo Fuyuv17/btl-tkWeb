@@ -1,377 +1,174 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jollibee - Món mới món ngon</title>
-    <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/header_footer.css"/>
-    <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/carousel_banner.css"/>
-    <link rel="stylesheet" href="src/styles/QuyDuong_252631030/menu_popup.css" />
-    <script src="src/js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
-    <script src="src/js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
-  </head>
 
-  <body>
-    <div class="master-wrapper-page">
-      <!-- This is begin of header -->
-      <header>
-        <div class="higher-header">
-          <div class="header-logo">
-            <a href="">
-              <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollibee - Món mới món ngon</title>
+  <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/carousel_banner.css" />
+  <link rel="stylesheet" href="src/styles/QuyDuong_252631030/menu_popup.css" />
+  <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/main-content.css" />
+  <script src="src/js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
+  <script src="src/js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="src/js/CaoQuynhAnh_252601009/products.js" defer></script>
+</head>
+
+<body>
+  <div class="master-wrapper-page">
+    <!-- This is begin of header -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="">
+            <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <div class="header-actions">
+          <form class="header-search" role="search">
+            <span aria-hidden="true">
+              <img class="search-icon" src="src/assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="src/pages/giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon" />
             </a>
           </div>
-          <div class="header-actions">
-            <div class="cart-icon">
-              <a href="src/pages/giohang.html" class="icon-circle" title="Giỏ hàng">
-                <img src="src/assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon"/>
-              </a>
-            </div>
-            <div class="login-icon">
-              <a class="icon-circle" href="" title="Tài khoản">
-                <img src="src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon"/>
-              </a>
-              <a class="register" href="">Đăng kí</a>
-              <span class="icons">/</span>
-              <a class="login" href="">Đăng nhập</a>
-            </div>
+          <div class="heart-icon">
+            <a href="src/pages/favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="heart icon">
+            </a>
           </div>
-          <div class="menu-for-mobile">
-            <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
-              <span></span>
-              <span></span>
-              <span></span>
+          <div class="login-icon">
+            <a class="icon-circle" href="" title="Tài khoản">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon" />
+            </a>
+            <a class="register" href="">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <!-- Tab for mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
+          &times;
+        </button>
+        <div class="mobile-drawer-logo">
+          <a href="">
+            <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items">
+            <a href="index.html">Trang chủ</a>
+          </li>
+          <li class="category-menu-items"><a href="">Menu</a></li>
+          <li class="category-menu-items"><a href="">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="src/pages/tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="src/pages/favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="src/pages/giohang.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="src/pages/login.html" title="Tài khoản">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="src/pages/register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="src/pages/login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="">Trang chủ</a></li>
+          <li class="category-menu-items"><a href="">Menu</a></li>
+          <li class="category-menu-items"><a href="">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- This is the end of header -->
+    <!-- Code từ đây -->
+    <div class="wrapper-page-content">
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div id="carousel" class="carousle">
+            <div id="slides" class="slides">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/banner.jpg" alt="Pic1" />
+              <img src="src/assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Pic2" />
+              <img src="src/assets/images/CaoQuynhAnh_252601009/banner3.jpg" alt="Pic3" />
+            </div>
+            <button id="prev" class="ctr-btn prev">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/prev-icon.svg" alt="prev" />
+            </button>
+            <button id="next" class="ctr-btn next">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/next-icon.svg" alt="next" />
             </button>
           </div>
         </div>
-        <!-- Tab for mobile -->
-        <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
-        <div class="mobile-menu-drawer" id="mobile-menu-drawer">
-          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
-          <div class="mobile-drawer-logo">
-            <a href="">
-              <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo"/>
-            </a>
-          </div>
-          <ul class="mobile-menu-list">
-            <li class="category-menu-items"><a href="index.html">Trang chủ</a></li>
-            <li class="category-menu-items"><a href="">Menu</a></li>
-            <li class="category-menu-items"><a href="">Khuyến mãi</a></li>
-            <li class="category-menu-items"><a href="src/pages/tintuc.html">Tin tức</a></li>
-            <li class="category-menu-items"><a href="src/pages/login.html">Đăng nhập</a></li>
-            <li class="category-menu-items"><a href="">Đăng kí</a></li>
-          </ul>
-        </div>
-        <div class="header-navbar-for-desktop">
-          <ul class="top-menu-desktop">
-            <li class="category-menu-items"><a href="">Trang chủ</a></li>
-            <li class="category-menu-items"><a href="">Menu</a></li>
-            <li class="category-menu-items"><a href="">Khuyến mãi</a></li>
-            <li class="category-menu-items"><a href="">Tin tức</a></li>
-          </ul>
-        </div>
-      </header>
-      <!-- This is the end of header -->
-      <!-- Code từ đây -->
-      <div class="wrapper-page-content">
-        <div class="carousel-container">
-          <div class="carousel-wrapper">
-            <div id="carousel" class="carousle">
-              <div id="slides" class="slides">
-                <img src="src/assets/images/CaoQuynhAnh_252601009/banner1.jpg" alt="Pic1"/>
-                <img src="src/assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Pic2"/>
-                <img src="src/assets/images/CaoQuynhAnh_252601009/banner3.jpg" alt="Pic3"/>
-              </div>
-              <button id="prev" class="ctr-btn prev"><img src="src/assets/images/CaoQuynhAnh_252601009/prev-icon.svg" alt="prev"></button>
-              <button id="next" class="ctr-btn next"><img src="src/assets/images/CaoQuynhAnh_252601009/next-icon.svg" alt="next"></button>
-              
-            </div>
-          </div>
-          <div id="dots" class="dots"></div>
-        </div>
-        <!-- CATEGORY -->
-        <div class="categories">
-          <button class="category active" data-category="all">Tất cả</button>
-
-          <button class="category" data-category="chicken">Gà</button>
-
-          <button class="category" data-category="combo">Combo</button>
-
-          <button class="category" data-category="burger">Burger</button>
-
-          <button class="category" data-category="spaghetti">Mì Ý</button>
-
-          <button class="category" data-category="drink">Thức uống</button>
-        </div>
-
-        <!-- TOOLBAR -->
-        <div class="toolbar">
-          <div class="result">
-            <strong id="product-count">8</strong>
-            sản phẩm
-          </div>
-
-          <div class="sort">
-            <label for="sort"> Sắp xếp: </label>
-
-            <select id="sort">
-              <option value="default">Mặc định</option>
-
-              <option value="low">Giá thấp → cao</option>
-
-              <option value="high">Giá cao → thấp</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- PRODUCT GRID -->
-        <section class="product-grid" id="product-list">
-          <!-- PRODUCT 1-->
-          <article
-            class="product-card"
-            data-category="combo"
-            data-price="69000"
-          >
-            <div class="product-image">
-              <span class="badge"> MÓN MỚI </span>
-
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Combo deal hời" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Combo Deal Hời</h2>
-
-              <p>Burger gà giòn + gà giòn + nước ngọt</p>
-
-              <div class="product-bottom">
-                <span class="price"> 69.000 ₫ </span>
-
-                <button class="add-btn" data-name="Combo Deal Hời">
-                  Đặt hàng
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PRODUCT 2-->
-          <article
-            class="product-card"
-            data-category="chicken"
-            data-price="33000"
-          >
-            <div class="product-image">
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/ga_coca.png" alt="gà giòn" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Gà Giòn Vui Vẻ</h2>
-
-              <p>Gà chiên giòn vàng hấp dẫn</p>
-
-              <div class="product-bottom">
-                <span class="price"> 33.000 ₫ </span>
-
-                <button class="add-btn" data-name="Gà Giòn Vui Vẻ">
-                  Đặt hàng
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PRODUCT 3-->
-          <article
-            class="product-card"
-            data-category="spaghetti"
-            data-price="35000"
-          >
-            <div class="product-image">
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="spaghetti" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Mì Ý Jolly</h2>
-
-              <p>Mì Ý sốt đặc biệt cùng thịt bò</p>
-
-              <div class="product-bottom">
-                <span class="price"> 35.000 ₫ </span>
-
-                <button class="add-btn" data-name="Mì Ý Jolly">Đặt hàng</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PRODUCT 4-->
-          <article
-            class="product-card"
-            data-category="burger"
-            data-price="35000"
-          >
-            <div class="product-image">
-              <span class="badge"> HOT </span>
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/burger_chip_coca01.jpg" alt="burger" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Burger Gà Giòn</h2>
-
-              <p>Burger gà giòn thơm ngon</p>
-
-              <div class="product-bottom">
-                <span class="price"> 35.000 ₫ </span>
-
-                <button class="add-btn" data-name="Burger Gà Giòn">
-                  Đặt hàng
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PRODUCT 5 -->
-          <article
-            class="product-card"
-            data-category="combo"
-            data-price="145000"
-          >
-            <div class="product-image">
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/4_mieng_ga_ron.jpg" alt="Cap doi an y" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Cặp Đôi Ăn Ý</h2>
-
-              <p>Combo dành cho hai người</p>
-
-              <div class="product-bottom">
-                <span class="price"> 145.000 ₫ </span>
-
-                <button class="add-btn" data-name="Cặp Đôi Ăn Ý">
-                  Đặt hàng
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PRODUCT 6 -->
-          <article
-            class="product-card"
-            data-category="combo"
-            data-price="185000"
-          >
-            <div class="product-image">
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg" alt="Combo gia đình" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Cả Nhà No Nê</h2>
-
-              <p>Combo gia đình cực kỳ hấp dẫn</p>
-
-              <div class="product-bottom">
-                <span class="price"> 185.000 ₫ </span>
-
-                <button class="add-btn" data-name="Cả Nhà No Nê">
-                  Đặt hàng
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PRODUCT 7 -->
-          <article
-            class="product-card"
-            data-category="drink"
-            data-price="12000"
-          >
-            <div class="product-image">
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="Coca" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Pepsi</h2>
-
-              <p>Nước ngọt mát lạnh</p>
-
-              <div class="product-bottom">
-                <span class="price"> 12.000 ₫ </span>
-
-                <button class="add-btn" data-name="Pepsi">Đặt hàng</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PRODUCT 8 -->
-          <article
-            class="product-card"
-            data-category="chicken"
-            data-price="70000"
-          >
-            <div class="product-image">
-              <div class="placeholder">
-                <img src="src/assets/images/TruongQuyDuong_252631030/6_mieng_ga_ron.jpg" alt="6 mieng ga" class="placeholder">
-              </div>
-            </div>
-
-            <div class="product-info">
-              <h2>Gà Sốt Cay</h2>
-
-              <p>Gà giòn phủ sốt cay đặc biệt</p>
-
-              <div class="product-bottom">
-                <span class="price"> 70.000 ₫ </span>
-
-                <button class="add-btn" data-name="Gà Sốt Cay">Đặt hàng</button>
-              </div>
-            </div>
-          </article>
-        </section>
+        <div id="dots" class="dots"></div>
       </div>
-      <!-- Ket thuc code -->
+      <div class="service-benefits" aria-label="Dịch vụ nổi bật">
+        <div class="service-item"><span aria-hidden="true">🛵</span><div><strong>Giao hàng nhanh</strong><small>Trong 30 phút</small></div></div>
+        <div class="service-item"><span aria-hidden="true">✓</span><div><strong>Thực phẩm an toàn</strong><small>Nguồn gốc rõ ràng</small></div></div>
+        <div class="service-item"><span aria-hidden="true">◆</span><div><strong>Ưu đãi hấp dẫn</strong><small>Món ngon mỗi ngày</small></div></div>
+        <div class="service-item"><span aria-hidden="true">◉</span><div><strong>Hỗ trợ 24/7</strong><small>Luôn bên bạn</small></div></div>
+        <div class="service-item"><span aria-hidden="true">★</span><div><strong>Đánh giá uy tín</strong><small>Hàng ngàn khách hàng tin dùng</small></div></div>
+      </div>
+      <!-- Content -->
+      <div class="page-content">
+        <div class="best-seller">
+          <img class="fire-icon" src="src/assets/images/CaoQuynhAnh_252601009/fire.gif" alt="hot" />
+          <div>Best Seller</div>
+          <p>Những món ăn được yêu thích nhất tại Ăn Ngon!</p>
+        </div>
+        <div id="best-seller-products" class="product-grid" aria-live="polite"></div>
 
-      <!-- This is begin of footer -->
-      <footer class="footer">
-        <div class="footer-container">
-          <div>
-            <h3>Jollibee</h3>
-            <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
-          </div>
+      </div>
+    </div>
+    <!-- Ket thuc code -->
 
-          <div>
-            <h3>Liên kết</h3>
-            <a href="#">Trang chủ</a>
-            <a href="#">Thực đơn</a>
-            <a href="#">Khuyến mãi</a>
-          </div>
 
-          <div>
-            <h3>Liên hệ</h3>
-            <p>Hotline: 1900 1533</p>
 
-            <p>Email: example@email.com</p>
-          </div>
+    <!-- This is begin of footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Jollibee</h3>
+          <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
         </div>
 
-        <div class="copyright">© 2026 Food Website</div>
-      </footer>
-      <!-- This is the end of footer -->
-      <script src="./src/js/CaoQuynhAnh_252601009/navbar.js"></script>
-      <script src="./src/js/CaoQuynhAnh_252601009/carousel_banner.js"></script>
-      <script src="./src/js/QuyDuong_252631030/menu_popup.js"></script>
-      <script src="src/js/menu.js"></script>
-    </div>
-  </body>
+        <div>
+          <h3>Liên kết</h3>
+          <a href="#">Trang chủ</a>
+          <a href="#">Thực đơn</a>
+          <a href="#">Khuyến mãi</a>
+        </div>
+
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+
+          <p>Email: example@email.com</p>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 Food Website</div>
+    </footer>
+    <!-- This is the end of footer -->
+  </div>
+</body>
+
 </html>
