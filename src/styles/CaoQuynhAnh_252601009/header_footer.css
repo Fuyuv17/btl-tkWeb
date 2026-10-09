@@ -269,13 +269,13 @@ header {
 }
 
 .header-search input {
+    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
     min-width: 0;
     width: 100%;
     border: 0;
     outline: 0;
     background: transparent;
     color: #333;
-    font: inherit;
     text-align: left;
 }
 
@@ -555,13 +555,13 @@ header {
     }
 
     .header-search input {
+        font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
         min-width: 0;
         width: 100%;
         border: 0;
         outline: 0;
         background: transparent;
         color: #333;
-        font: inherit;
         font-size: 13px;
         text-align: left;
     }
@@ -768,6 +768,7 @@ header {
     }
 
     .service-item strong {
+        font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
         font-size: 12px;
     }
 }

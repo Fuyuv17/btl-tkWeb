@@ -82,6 +82,7 @@
 }
 
 .service-item strong {
+    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
     color: var(--red);
     font-size: 14px;
 }
@@ -356,6 +357,7 @@
     }
 
     .service-item strong {
+        font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
         font-size: 12px;
     }
 }
