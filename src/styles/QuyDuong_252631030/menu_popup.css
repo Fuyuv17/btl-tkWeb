@@ -305,21 +305,6 @@
   position: relative;
 }
 
-#cart-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 18px;
-  height: 18px;
-  background-color: #ffc72c;
-  color: #e31837;
-  font-size: 11px;
-  font-weight: 700;
-  border-radius: 50%;
-  padding: 0 4px;
-  margin-left: 4px;
-}
-
 /* Thêm con trỏ trỏ vào product card */
 .product-card {
   cursor: pointer;
