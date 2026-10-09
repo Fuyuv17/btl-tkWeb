@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Giỏ hàng - Jollibee</title>
+
+
+    <!-- CSS HEADER -->
+    <link
+        rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css">
+
+
+    <!-- CSS GIỎ HÀNG -->
+    <link rel="stylesheet" href="../styles/ChuSyThanh_252601085/giohang.css">
+</head>
+
+<body>
+
+<div class="master-wrapper-page">
+
+
+    <!-- ================================= -->
+    <!-- HEADER -->
+    <!-- ================================= -->
+
+    <header>
+
+        <!-- HEADER TRÊN -->
+
+        <div class="higher-header">
+
+
+            <!-- LOGO -->
+
+            <div class="header-logo">
+
+                <a href="../index.html">
+
+                    <img
+                        src="../assets/images/CaoQuynhAnh_252601009/logo.jpg"
+                        alt="page logo"
+                    >
+
+                </a>
+
+            </div>
+
+
+            <!-- ICON -->
+
+            <div>
+
+
+                <!-- GIỎ HÀNG -->
+
+                <div class="cart-icon">
+
+                    <a href="giohang.html">
+
+                        <img
+                            src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon"
+                        >
+
+                    </a>
+
+                </div>
+
+
+                <!-- ĐĂNG NHẬP -->
+
+                <div class="login-icon">
+
+                    <a href="#">
+
+                        <img
+                            src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon"
+                        >
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- MOBILE MENU -->
+
+            <div class="menu-for-mobile">
+
+                <!-- Menu điện thoại -->
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- NAVBAR -->
+        <!-- ================================= -->
+
+        <div class="header-navbar-for-desktop">
+
+            <ul class="top-menu-desktop">
+
+
+                <li class="category-menu-items">
+
+                    <a href="../../index.html">
+                        Trang chu
+                    </a>
+
+                </li>
+
+
+                <li class="category-menu-items">
+
+                    <a href="#">
+                        Menu
+                    </a>
+
+                </li>
+
+
+                <li class="category-menu-items">
+
+                    <a href="#">
+                        Khuyen mai
+                    </a>
+
+                </li>
+
+
+                <li class="category-menu-items">
+
+                    <a href="#">
+                        Tin tuc
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================================= -->
+    <!-- NỘI DUNG GIỎ HÀNG -->
+    <!-- ================================= -->
+
+    <main class="cart-container">
+
+
+        <h1>
+            Giỏ hàng của bạn
+        </h1>
+
+
+        <!-- DANH SÁCH SẢN PHẨM -->
+
+        <div id="cart-list">
+
+            <!-- JS sẽ thêm sản phẩm vào đây -->
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- GIỎ HÀNG TRỐNG -->
+        <!-- ================================= -->
+
+        <div
+            id="empty-cart"
+            class="empty-cart"
+        >
+
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+
+            <h2>
+                Giỏ hàng đang trống
+            </h2>
+
+
+            <p>
+                Bạn chưa có sản phẩm nào trong giỏ hàng.
+            </p>
+
+
+            <a
+                href="../../index.html"
+                class="continue-shopping"
+            >
+                Tiếp tục mua hàng
+            </a>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- TỔNG TIỀN -->
+        <!-- ================================= -->
+
+        <div
+            id="cart-summary"
+            class="cart-summary"
+        >
+
+
+            <!-- TẠM TÍNH -->
+
+            <div class="summary-row">
+
+                <span>
+                    Tạm tính
+                </span>
+
+                <strong id="subtotal">
+                    0 ₫
+                </strong>
+
+            </div>
+
+
+            <!-- PHÍ GIAO HÀNG -->
+
+            <div class="summary-row">
+
+                <span>
+                    Phí giao hàng
+                </span>
+
+                <strong>
+                    0 ₫
+                </strong>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- TỔNG -->
+
+            <div class="summary-total">
+
+                <span>
+                    Tổng cộng
+                </span>
+
+                <strong id="total">
+                    0 ₫
+                </strong>
+
+            </div>
+
+
+            <!-- ĐẶT HÀNG -->
+
+            <button
+                id="checkout-btn"
+                class="checkout-btn"
+            >
+                Đặt hàng
+            </button>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ================================= -->
+    <!-- FOOTER -->
+    <!-- ================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div>
+
+                <h3>
+                    Jollibee
+                </h3>
+
+                <p>
+                    Mang đến những bữa ăn vui vẻ
+                    cho mọi gia đình.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Liên kết
+                </h3>
+
+                <a href="../../index.html">
+                    Trang chủ
+                </a>
+
+                <a href="index.html">
+                    Thực đơn
+                </a>
+
+                <a href="#">
+                    Khuyến mãi
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Liên hệ
+                </h3>
+
+                <p>
+                    Hotline: 1900 1533
+                </p>
+
+                <p>
+                    Email: example@email.com
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Food Website
+
+        </div>
+
+    </footer>
+
+
+
+</div>
+
+
+<!-- JS GIỎ HÀNG -->
+
+<script>
+    src="../js/giohang.js"
+</script>
+
+
+</body>
+
+</html>
