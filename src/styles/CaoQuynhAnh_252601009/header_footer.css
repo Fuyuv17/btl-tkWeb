@@ -45,27 +45,42 @@ header {
     z-index: 11;
     top: 0;
     width: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+header.header-scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .higher-header {
     display: flex;
-    max-width: 1200px;
     justify-content: flex-end;
     align-items: center;
     height: 50px;
-    margin: auto;
     padding: 0 20px;
 }
 
-/* Header user actions (cart & login trên cùng 1 dòng) */
-.header-actions {
+/* Header user actions (cart & login trên cùng 1 dòng, cố định bên phải cách 20px) */
+.header-actions,
+.header-action {
+    position: absolute;
+    right: 25px;
+    top: 7px;
     display: flex;
     align-items: center;
     gap: 16px;
+    z-index: 10;
 }
 
-/* 1. CART ICON (Icon đỏ trong box tròn trắng) */
-.cart-icon {
+.cart-icon,.login-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+/* Box tròn trắng */
+.icon-circle {
     width: 36px;
     height: 36px;
     background-color: #ffffff;
@@ -73,134 +88,47 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: transform 0.25s ease;
-}
-
-.cart-icon a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
-    width: 100%;
-    height: 100%;
+    flex-shrink: 0;
 }
 
-.cart-icon img {
+.icon-circle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon đỏ trên nền trắng */
+.icon-circle img {
     width: 20px;
     height: 20px;
     display: block;
+    transition: transform 0.2s;
 }
 
-/* Hiệu ứng scale khi hover vào cart */
-.cart-icon:hover {
-    transform: scale(1.12);
+.icon-circle:hover img {
+    transform: scale(1.05);
 }
 
-/* 2. LOGIN & REGISTER CONTAINER */
-.login-icon {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.register, .login {
+  font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
 }
 
-/* Box tròn trắng: Mặc định bao quanh icon login, khi hover sang chữ sẽ di chuyển sang và bao quanh chữ */
-.sliding-box {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    z-index: 1;
-    pointer-events: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                border-radius 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                transform 0.25s ease;
+.register:hover, .login:hover {
+  text-decoration: underline;
 }
 
-/* Nút icon login */
-.login-icon-btn {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    border-radius: 50%;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.25s ease;
-}
-
-.login-icon-btn img {
-    width: 20px;
-    height: 20px;
-    display: block;
-    transition: filter 0.3s ease;
-}
-
-/* Hiệu ứng scale khi hover vào icon login (giống hệt cart-icon) */
-.login-icon-btn:hover {
-    transform: scale(1.12);
-}
-
-.login-icon:has(.login-icon-btn:hover) .sliding-box {
-    transform: translateY(-50%) scale(1.12);
-}
-
-/* Phần chữ Đăng kí / Đăng nhập */
-.login-text {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 14px;
-    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.register,
-.login,
-.auth-sep {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* Khi hover sang chữ đăng kí và đăng nhập:
-   Box tròn di chuyển sang bao quanh chữ và đổi màu chữ thành màu đỏ */
-.login-icon:has(.login-text:hover) .sliding-box {
-    left: 42px;
-    width: calc(100% - 42px);
-    height: 32px;
-    border-radius: 20px;
-}
-
-.login-icon:has(.login-text:hover) .register,
-.login-icon:has(.login-text:hover) .login,
-.login-icon:has(.login-text:hover) .auth-sep {
-    color: var(--red);
-}
-
-/* Khi box trắng đã di chuyển sang chữ, icon login chuyển sang màu trắng để nổi bật trên nền đỏ */
-.login-icon:has(.login-text:hover) .login-icon-btn img {
-    filter: brightness(0) invert(1);
-}
-
-.login-text a:hover {
-    text-decoration: underline;
+.icons {
+  font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  user-select: none;
 }
 
 .header-logo img {
@@ -215,78 +143,53 @@ header {
 /* Desktop navbar */
 .header-navbar-for-desktop {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end; /* Tab chạm sát mép dưới navbar */
     justify-content: flex-start;
     color: white;
-    height: 52px;
+    height: 50px;
     padding-left: 120px; 
+    padding-bottom: 0;
 }
 
 .top-menu-desktop {
-    position: relative;
     display: flex;
     align-items: flex-end;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    gap: 8px;
-}
-
-/* Box trắng: Bo tròn top-left, top-right; bot-left và bot-right KHÔNG bo tròn */
-.menu-indicator {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 42px;
-    background-color: #ffffff;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    pointer-events: none;
-    z-index: 1;
-    transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-                width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.category-menu-items {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
+    gap: 12px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.category-menu-items a {
+.top-menu-desktop li {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.top-menu-desktop a {
     font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
     color: white;
     font-size: 15px;
-    padding: 0 22px;
-    height: 42px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: color 0.3s ease;
+    padding: 12px 20px 10px 20px;
+    background-color: transparent;
+    border-radius: 14px 14px 0 0; /* Bo tròn 2 góc trên như hình */
+    transition: background-color 0.2s ease, color 0.2s ease;
     white-space: nowrap;
 }
 
-/* Mặc định mục active (Trang chủ) và khi hover thì đổi màu chữ thành màu đỏ */
-.category-menu-items.active a,
-.category-menu-items:hover a {
+/* Khi hover hoặc tab đang active: nền trắng, chữ đỏ */
+.top-menu-desktop a:hover,
+.top-menu-desktop li.active a {
+    background-color: #ffffff;
     color: var(--red);
-}
-
-/* Khi đang hover sang mục khác, mục active nếu không được hover sẽ đổi lại màu trắng */
-.top-menu-desktop:hover .category-menu-items.active:not(:hover) a {
-    color: white;
 }
 
 /* =========================
@@ -295,9 +198,7 @@ header {
 
 .wrapper-page-content {
   max-width: 1400px;
-
   margin: auto;
-
   padding: 0 20px 70px;
 }
 
@@ -605,4 +506,246 @@ img.placeholder{
   color: #aaa;
 
   font-size: 13px;
+}
+
+/* ========================================================
+   RESPONSIVE CHO ĐIỆN THOẠI (MOBILE <= 768px)
+======================================================== */
+
+/* Mặc định trên Desktop: ẩn các phần tử của menu mobile */
+.menu-for-mobile,
+.mobile-menu-backdrop,
+.mobile-menu-drawer {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* 1. Header trên mobile */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .higher-header {
+        height: 60px;
+        padding: 0 15px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* 2. Logo ở giữa trên cùng */
+    .header-logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+    }
+
+    .header-logo img {
+        position: static;
+        width: 52px;
+        height: auto;
+        display: block;
+    }
+
+    /* 3. Ẩn thanh navbar desktop */
+    .header-navbar-for-desktop {
+        display: none !important;
+    }
+
+    /* 4. Giỏ hàng & Nút mở menu ở bên phải */
+    .header-actions,
+    .header-action {
+        position: static;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 6;
+    }
+
+    /* Ẩn đăng nhập trên thanh header mobile (đã chuyển xuống cuối menu drawer) */
+    .header-actions .login-icon {
+        display: none !important;
+    }
+
+    /* Nút mở tab menu ở bên phải */
+    .menu-for-mobile {
+        display: flex;
+        align-items: center;
+        z-index: 6;
+        margin-left: 12px;
+    }
+
+    .mobile-menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 19px;
+        padding: 0;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    /* 5. Nền mờ backdrop khi mở menu drawer */
+    .mobile-menu-backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-menu-backdrop.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 6. Bảng menu trượt từ bên phải (tab menu ở bên phải) */
+    .mobile-menu-drawer {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0; /* Nằm cố định ở bên phải */
+        width: 290px;
+        max-width: 85%;
+        height: 100vh;
+        background-color: var(--red);
+        z-index: 2000;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.35);
+        transform: translateX(100%); /* Trượt từ bên phải */
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        padding: 20px 16px 30px;
+    }
+
+    .mobile-menu-drawer.active {
+        transform: translateX(0);
+    }
+
+    /* Nút đóng menu (✕) */
+    .mobile-menu-close {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 32px;
+        line-height: 1;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* 7. [Drawer] Logo ở giữa trên cùng */
+    .mobile-drawer-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 25px auto 25px;
+        width: 100%;
+    }
+
+    .mobile-drawer-logo img {
+        width: 75px;
+        height: auto;
+        display: block;
+    }
+
+    /* 8. [Drawer] Các tab menu phía dưới logo */
+    .mobile-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .mobile-menu-list li {
+        width: 100%;
+    }
+
+    .mobile-menu-list a {
+        display: block;
+        width: 100%;
+        font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        padding: 12px 18px;
+        border-radius: 12px;
+        background-color: transparent;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        text-align: center;
+    }
+
+    /* Khi hover hoặc tab active trong menu mobile: nền trắng, chữ đỏ */
+    .mobile-menu-list a:hover,
+    .mobile-menu-list li.active a {
+        background-color: #ffffff;
+        color: var(--red);
+    }
+
+    /* 9. [Drawer] Đăng kí và đăng nhập ở cuối */
+    .mobile-drawer-auth {
+        margin-top: auto; /* Đẩy xuống tận đáy của menu drawer */
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .mobile-drawer-auth .login-icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+    }
+
+    .mobile-drawer-auth .register,
+    .mobile-drawer-auth .login {
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .mobile-drawer-auth .register:hover,
+    .mobile-drawer-auth .login:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer trên mobile: xếp 1 cột gọn gàng */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }

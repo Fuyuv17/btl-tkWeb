@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/carousel_banner.css"/>
     <link rel="stylesheet" href="src/styles/QuyDuong_252631030/menu_popup.css" />
     <script src="src/js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
+    <script src="src/js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
   </head>
 
   <body>
@@ -17,28 +18,50 @@
         <div class="higher-header">
           <div class="header-logo">
             <a href="">
-              <img
-                src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg"
-                alt="page logo"
-              />
+              <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo"/>
             </a>
           </div>
           <div class="header-actions">
             <div class="cart-icon">
-              <a href="">
+              <a href="src/pages/giohang.html" class="icon-circle" title="Giỏ hàng">
                 <img src="src/assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon"/>
                 <span id="cart-count">0</span>
               </a>
             </div>
             <div class="login-icon">
-              <img src="src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="">
-              <a class="register" href="">Đăng kí</a>/
+              <a class="icon-circle" href="" title="Tài khoản">
+                <img src="src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon"/>
+              </a>
+              <a class="register" href="">Đăng kí</a>
+              <span class="icons">/</span>
               <a class="login" href="">Đăng nhập</a>
             </div>
           </div>
           <div class="menu-for-mobile">
-            <!-- Menu dien thoai -->
+            <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
+        </div>
+        <!-- Tab for mobile -->
+        <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+        <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
+          <div class="mobile-drawer-logo">
+            <a href="">
+              <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo"/>
+            </a>
+          </div>
+          <ul class="mobile-menu-list">
+            <li class="category-menu-items"><a href="">Trang chủ</a></li>
+            <li class="category-menu-items"><a href="">Menu</a></li>
+            <li class="category-menu-items"><a href="">Khuyến mãi</a></li>
+            <li class="category-menu-items"><a href="">Tin tức</a></li>
+            <li class="category-menu-items"><a href="">Đăng nhập</a></li>
+            <li class="category-menu-items"><a href="">Đăng kí</a></li>
+          </ul>
         </div>
         <div class="header-navbar-for-desktop">
           <ul class="top-menu-desktop">
@@ -60,9 +83,9 @@
                 <img src="src/assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Pic2"/>
                 <img src="src/assets/images/CaoQuynhAnh_252601009/banner3.jpg" alt="Pic3"/>
               </div>
-              <button id="prev" class="ctrl-btn prev">⟨</button>
-              <button id="next" class="ctrl-btn next">⟩</button>
-              <div id="dots" class="dots"></div>
+              <button id="prev" class="ctr-btn prev"><img src="src/assets/images/CaoQuynhAnh_252601009/prev-icon.svg" alt="prev"></button>
+              <button id="next" class="ctr-btn next"><img src="src/assets/images/CaoQuynhAnh_252601009/next-icon.svg" alt="next"></button>
+              
             </div>
           </div>
         </div>
