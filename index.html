@@ -6,6 +6,7 @@
     <title>Jollibee - Món mới món ngon</title>
     <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/header_footer.css"/>
     <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/carousel_banner.css"/>
+    <link rel="stylesheet" href="src/styles/QuyDuong_252631030/menu_popup.css" />
     <script src="src/js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
     <script src="src/js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
   </head>
@@ -24,6 +25,7 @@
             <div class="cart-icon">
               <a href="src/pages/giohang.html" class="icon-circle" title="Giỏ hàng">
                 <img src="src/assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon"/>
+                <span id="cart-count">0</span>
               </a>
             </div>
             <div class="login-icon">
@@ -75,7 +77,7 @@
       <div class="wrapper-page-content">
         <div class="carousel-container">
           <div class="carousel-wrapper">
-            <div id="carousel" class="carousel">
+            <div id="carousel" class="carousle">
               <div id="slides" class="slides">
                 <img src="src/assets/images/CaoQuynhAnh_252601009/banner1.jpg" alt="Pic1"/>
                 <img src="src/assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Pic2"/>
@@ -86,7 +88,6 @@
               
             </div>
           </div>
-          <div id="dots" class="dots"></div>
         </div>
         <!-- CATEGORY -->
         <div class="categories">
@@ -125,7 +126,7 @@
 
         <!-- PRODUCT GRID -->
         <section class="product-grid" id="product-list">
-          <!-- PRODUCT -->
+          <!-- PRODUCT 1-->
           <article
             class="product-card"
             data-category="combo"
@@ -134,7 +135,9 @@
             <div class="product-image">
               <span class="badge"> MÓN MỚI </span>
 
-              <div class="placeholder">FOOD IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Combo deal hời" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -152,14 +155,16 @@
             </div>
           </article>
 
-          <!-- PRODUCT -->
+          <!-- PRODUCT 2-->
           <article
             class="product-card"
             data-category="chicken"
             data-price="33000"
           >
             <div class="product-image">
-              <div class="placeholder">FOOD IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/ga_coca.png" alt="gà giòn" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -177,14 +182,16 @@
             </div>
           </article>
 
-          <!-- PRODUCT -->
+          <!-- PRODUCT 3-->
           <article
             class="product-card"
             data-category="spaghetti"
             data-price="35000"
           >
             <div class="product-image">
-              <div class="placeholder">FOOD IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="spaghetti" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -200,7 +207,7 @@
             </div>
           </article>
 
-          <!-- PRODUCT -->
+          <!-- PRODUCT 4-->
           <article
             class="product-card"
             data-category="burger"
@@ -208,8 +215,9 @@
           >
             <div class="product-image">
               <span class="badge"> HOT </span>
-
-              <div class="placeholder">FOOD IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/burger_chip_coca01.jpg" alt="burger" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -227,14 +235,16 @@
             </div>
           </article>
 
-          <!-- PRODUCT -->
+          <!-- PRODUCT 5 -->
           <article
             class="product-card"
             data-category="combo"
             data-price="145000"
           >
             <div class="product-image">
-              <div class="placeholder">FOOD IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/4_mieng_ga_ron.jpg" alt="Cap doi an y" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -252,14 +262,16 @@
             </div>
           </article>
 
-          <!-- PRODUCT -->
+          <!-- PRODUCT 6 -->
           <article
             class="product-card"
             data-category="combo"
             data-price="185000"
           >
             <div class="product-image">
-              <div class="placeholder">FOOD IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg" alt="Combo gia đình" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -277,14 +289,16 @@
             </div>
           </article>
 
-          <!-- PRODUCT -->
+          <!-- PRODUCT 7 -->
           <article
             class="product-card"
             data-category="drink"
             data-price="12000"
           >
             <div class="product-image">
-              <div class="placeholder">DRINK IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="Coca" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -300,14 +314,16 @@
             </div>
           </article>
 
-          <!-- PRODUCT -->
+          <!-- PRODUCT 8 -->
           <article
             class="product-card"
             data-category="chicken"
             data-price="70000"
           >
             <div class="product-image">
-              <div class="placeholder">FOOD IMAGE</div>
+              <div class="placeholder">
+                <img src="src/assets/images/TruongQuyDuong_252631030/6_mieng_ga_ron.jpg" alt="6 mieng ga" class="placeholder">
+              </div>
             </div>
 
             <div class="product-info">
@@ -352,7 +368,10 @@
         <div class="copyright">© 2026 Food Website</div>
       </footer>
       <!-- This is the end of footer -->
-      <script src="./src/js/menu.js"></script>
+      <script src="./src/js/CaoQuynhAnh_252601009/navbar.js"></script>
+      <script src="./src/js/CaoQuynhAnh_252601009/carousel_banner.js"></script>
+      <script src="./src/js/QuyDuong_252631030/menu_popup.js"></script>
+      <script src="src/js/menu.js"></script>
     </div>
   </body>
 </html>

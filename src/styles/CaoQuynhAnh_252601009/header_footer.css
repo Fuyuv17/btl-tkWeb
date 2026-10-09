@@ -321,15 +321,8 @@ header.header-scrolled {
 
 .product-image {
   height: 230px;
-
-  background: #f1f1f1;
-
-  position: relative;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
@@ -352,6 +345,10 @@ header.header-scrolled {
   font-size: 14px;
 
   font-weight: bold;
+}
+img.placeholder{
+  width: 100%;
+  height: 100%;
 }
 
 /* BADGE */
