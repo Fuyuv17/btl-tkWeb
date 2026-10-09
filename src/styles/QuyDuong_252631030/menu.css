@@ -1,0 +1,50 @@
+/* Container bọc ngoài cùng */
+.menu-categories {
+    display: flex;
+    flex-direction: column; /* Xếp theo chiều dọc để tạo các hàng */
+    align-items: center;    /* Căn giữa toàn bộ */
+    gap: 30px;              /* Khoảng cách giữa 2 hàng */
+    padding: 40px 20px;
+    background-color: #fdf8f5; /* Màu nền nhẹ cho đẹp */
+}
+
+/* Flexbox để dàn các item trong 1 hàng */
+.category-row {
+    display: flex;
+    justify-content: center; /* Căn giữa các item trong hàng */
+    gap: 30px;               /* Khoảng cách giữa các category */
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Định dạng từng thẻ Category */
+.category-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none; /* Bỏ gạch chân của thẻ a */
+    width: 320px;          /* Chiều rộng của 1 box */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.category-card:hover {
+    transform: translateY(-5px); /* Hiệu ứng nảy lên khi di chuột vào */
+}
+
+/* Định dạng ảnh bên trong thẻ */
+.category-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Cắt ảnh cho vuông vức không bị méo */
+}
+
+/* Định dạng chữ */
+.category-card h3 {
+    padding: 20px 10px;
+    margin: 0;
+    font-size: 22px;
+    color: #8a1515; /* Màu chữ đỏ sẫm */
+    font-weight: bold;
+}
