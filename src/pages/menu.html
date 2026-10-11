@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Ăn Ngon</title>
+
+  <!-- CSS Header/Footer chung -->
   <link href="/src/styles/CaoQuynhAnh_252601009/header_footer.css" rel="stylesheet">
-  <link href="/src/styles/CaoQuynhAnh_252601009/main-content.css" rel="stylesheet">
-  <link href="../styles/QuyDuong_252631030/trangchu_popup.css">
-  <script src="/src/js/CaoQuynhAnh_252601009/products.js" defer></script>
-  <script src="/src/js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
+  <!-- CSS riêng cho trang Menu (layout cards) -->
+  <link href="/src/styles/QuyDuong_252631030/menu.css" rel="stylesheet">
+  <!-- CSS riêng cho Popup sản phẩm -->
+  <link href="/src/styles/QuyDuong_252631030/menu_popup.css" rel="stylesheet">
+
+  <!-- JS Header/Footer chung -->
   <script src="/src/js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
-  <title></title>
+  <!-- JS riêng cho trang Menu (logic điều hướng categories) -->
+  <script src="/src/js/QuyDuong_252631030/menu.js" defer></script>
+  <!-- JS riêng cho Popup sản phẩm -->
+  <script src="/src/js/QuyDuong_252631030/menu_popup.js" defer></script>
 </head>
 
 <body>
 
+  <!-- ===== HEADER (giữ nguyên) ===== -->
   <header>
     <div class="higher-header">
       <div class="header-logo">
@@ -57,7 +66,6 @@
       </div>
     </div>
 
-
     <!-- Tab for mobile -->
     <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
     <div class="mobile-menu-drawer" id="mobile-menu-drawer">
@@ -70,9 +78,7 @@
         </a>
       </div>
       <ul class="mobile-menu-list">
-        <li class="category-menu-items">
-          <a href="../../index.html">Trang chủ</a>
-        </li>
+        <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
         <li class="category-menu-items"><a href="menu.html">Menu</a></li>
         <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
         <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
@@ -81,7 +87,7 @@
       </ul>
       <div class="mobile-drawer-auth">
         <div class="login-icon">
-          <a class="icon-circle" href="src/pages/login.html" title="Tài khoản">
+          <a class="icon-circle" href="/src/pages/login.html" title="Tài khoản">
             <img src="/src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
           </a>
           <a class="register" href="/src/pages/register.html">Đăng kí</a>
@@ -91,53 +97,133 @@
       </div>
     </div>
 
-    <!-- end of moblie-->
-
+    <!-- end of mobile -->
 
     <!-- desktop nav -->
     <div class="header-navbar-for-desktop">
       <ul class="top-menu-desktop">
         <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
-        <li class="category-menu-items menu-category-tab">
+        <li class="category-menu-items menu-category-tab active">
           <a href="menu.html">Menu</a>
           <div class="menu-category-dropdown">
             <ul class="menu-category-list" aria-label="Danh mục món ăn">
-              <li><a class="menu-category-item" href="/src/pages/menu.html#combo"><span class="menu-category-image"><img
-                      src="src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="" /></span><span
-                    class="menu-category-name">Combo</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#com"><span class="menu-category-image"><img
-                      src="src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="" /></span><span
-                    class="menu-category-name">Cơm</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#mi-bun"><span
-                    class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/spagetti_01.png"
-                      alt="" /></span><span class="menu-category-name">Mì / Bún</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#do-an-vat"><span
-                    class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/chips_01.png"
-                      alt="" /></span><span class="menu-category-name">Đồ ăn vặt</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#do-uong"><span
-                    class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/drinks_01.png"
-                      alt="" /></span><span class="menu-category-name">Đồ uống</span></a></li>
+              <li><a class="menu-category-item" href="/src/pages/menu.html#combo"><span class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="" /></span><span class="menu-category-name">Combo</span></a></li>
+              <li><a class="menu-category-item" href="/src/pages/menu.html#com"><span class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="" /></span><span class="menu-category-name">Cơm</span></a></li>
+              <li><a class="menu-category-item" href="/src/pages/menu.html#mi-bun"><span class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="" /></span><span class="menu-category-name">Mì / Bún</span></a></li>
+              <li><a class="menu-category-item" href="/src/pages/menu.html#do-an-vat"><span class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/chips_01.png" alt="" /></span><span class="menu-category-name">Đồ ăn vặt</span></a></li>
+              <li><a class="menu-category-item" href="/src/pages/menu.html#do-uong"><span class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="" /></span><span class="menu-category-name">Đồ uống</span></a></li>
             </ul>
           </div>
         </li>
         <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
         <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
       </ul>
-
-  </header>
-  <!-- end of desktop nav -->
-  <!-- CONTENT -->
-  <div class="page-content">
-    <div class="best-seller">
-      <img class="fire-icon" src="src/assets/images/CaoQuynhAnh_252601009/fire.gif" alt="hot" />
-      <div>Best Seller</div>
-      <p>Những món ăn được yêu thích nhất tại Ăn Ngon!</p>
     </div>
-    <div id="best-seller-products" class="product-grid" aria-live="polite"></div>
+  </header>
+  <!-- ===== KẾT THÚC HEADER ===== -->
+
+  <!-- ===== NỘI DUNG CHÍNH ===== -->
+  <div class="wrapper-page-content">
+
+    <!-- ── HERO BANNER ── -->
+    <div class="menu-page-hero">
+      <div class="menu-hero-text">
+        <span class="menu-hero-badge">🍽️ Thực Đơn</span>
+        <h1 class="menu-page-title">Hôm nay ăn gì?</h1>
+        <p class="menu-page-subtitle">Khám phá hàng chục món ngon — chọn danh mục bạn thích và đặt ngay!</p>
+      </div>
+      <!-- Dải mờ trang trí góc phải hero -->
+      <div class="menu-hero-deco" aria-hidden="true">
+        <span>🍗</span><span>🍜</span><span>🥤</span>
+      </div>
+    </div>
+
+    <!-- ── LƯỚI 5 CATEGORY CARDS (Grid: 3 trên / 2 dưới) ── -->
+    <section class="menu-categories" aria-label="Danh mục thực đơn">
+
+      <!-- Hàng trên: 3 cards -->
+      <!-- Card 1: Cơm -->
+      <div class="category-card" id="com">
+        <a href="" class="category-card-link" aria-label="Xem tất cả món Cơm">
+          <div class="category-card-image-wrap">
+            <img src="/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Cơm gà nước" loading="lazy" />
+            <span class="category-card-overlay-label">Xem tất cả →</span>
+          </div>
+          <div class="category-card-body">
+            <span class="category-card-icon">🍚</span>
+            <h2 class="category-card-title">Cơm</h2>
+            <p class="category-card-desc">Cơm gà, cơm sườn và nhiều món cơm hấp dẫn</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 2: Mì / Bún -->
+      <div class="category-card" id="mi-bun">
+        <a href="" class="category-card-link" aria-label="Xem tất cả món Mì / Bún">
+          <div class="category-card-image-wrap">
+            <img src="/src/assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="Mì Ý" loading="lazy" />
+            <span class="category-card-overlay-label">Xem tất cả →</span>
+          </div>
+          <div class="category-card-body">
+            <span class="category-card-icon">🍜</span>
+            <h2 class="category-card-title">Mì / Bún</h2>
+            <p class="category-card-desc">Mì Ý, bún bò, hủ tiếu và nhiều lựa chọn khác</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 3: Đồ ăn vặt -->
+      <div class="category-card" id="do-an-vat">
+        <a href="" class="category-card-link" aria-label="Xem tất cả Đồ ăn vặt">
+          <div class="category-card-image-wrap">
+            <img src="/src/assets/images/TruongQuyDuong_252631030/chips_01.png" alt="Khoai tây chiên" loading="lazy" />
+            <span class="category-card-overlay-label">Xem tất cả →</span>
+          </div>
+          <div class="category-card-body">
+            <span class="category-card-icon">🍟</span>
+            <h2 class="category-card-title">Đồ ăn vặt</h2>
+            <p class="category-card-desc">Khoai tây chiên, gà rán và đồ ăn nhẹ hàng ngày</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Hàng dưới: 2 cards (căn giữa tự động nhờ grid subgrid/justify) -->
+      <!-- Card 4: Đồ uống -->
+      <div class="category-card category-card--wide" id="do-uong">
+        <a href="" class="category-card-link" aria-label="Xem tất cả Đồ uống">
+          <div class="category-card-image-wrap">
+            <img src="/src/assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="Đồ uống" loading="lazy" />
+            <span class="category-card-overlay-label">Xem tất cả →</span>
+          </div>
+          <div class="category-card-body">
+            <span class="category-card-icon">🥤</span>
+            <h2 class="category-card-title">Đồ uống</h2>
+            <p class="category-card-desc">Nước ngọt, trà sữa, sinh tố tươi mát</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Card 5: Combo -->
+      <div class="category-card category-card--wide" id="combo">
+        <a href="" class="category-card-link" aria-label="Xem tất cả Combo">
+          <div class="category-card-image-wrap">
+            <img src="/src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="Combo gà nước + khoai" loading="lazy" />
+            <span class="category-card-overlay-label">Xem tất cả →</span>
+          </div>
+          <div class="category-card-body">
+            <span class="category-card-icon">🎁</span>
+            <h2 class="category-card-title">Combo</h2>
+            <p class="category-card-desc">Bộ combo tiết kiệm — ăn ngon, giá tốt hơn</p>
+          </div>
+        </a>
+      </div>
+
+    </section>
+    <!-- Kết thúc lưới cards -->
 
   </div>
-  </div>
-  </div>
+  <!-- ===== KẾT THÚC NỘI DUNG CHÍNH ===== -->
+
 </body>
 
 </html>
