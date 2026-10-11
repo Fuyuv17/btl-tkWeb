@@ -1,0 +1,53 @@
+/* ==========================================================================
+   MENU HERO BANNER (Title & Subtitle giống ảnh "Ăn Ngon")
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/menu-hero.css
+   ========================================================================== */
+
+.menu-page-hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px 0 16px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.menu-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Tiêu đề "Menu" chữ đỏ viền nét vàng cam vui tươi */
+.menu-page-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-page-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: #d61827;
+  margin: 0;
+  line-height: 1.1;
+  font-family: 'Chiron GoRound TC', 'Segoe UI', cursive, sans-serif;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+/* Dấu gạch trang trí vui mắt */
+.menu-title-sparks {
+  color: #f59e0b;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menu-page-subtitle {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #555555;
+  margin: 0;
+}

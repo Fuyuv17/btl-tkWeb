@@ -118,16 +118,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2800);
   }
 
-  // 8. Bắt sự kiện click vào từng sản phẩm (.product-card)
-  const productCards = document.querySelectorAll(".product-card");
-  productCards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      // Nếu click trúng nút "Đặt hàng" trực tiếp trên card thì không mở popup
-      if (e.target.closest(".add-btn")) {
-        return;
-      }
-      openPopup(card);
-    });
+  // 8. Bắt sự kiện click vào từng sản phẩm (.product-card) bằng event delegation (hỗ trợ cả các card sinh tự động bằng JS)
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest(".product-card");
+    if (!card) return;
+    if (e.target.closest(".add-btn") || e.target.closest(".favorite-btn")) {
+      return;
+    }
+    openPopup(card);
   });
 
   // 9. Bắt sự kiện đóng Popup

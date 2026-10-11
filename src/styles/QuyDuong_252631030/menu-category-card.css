@@ -1,0 +1,110 @@
+/* ==========================================================================
+   MENU CATEGORY GRID & CARDS (Ảnh phong cách "Ăn Ngon")
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/menu-category-card.css
+   ========================================================================== */
+
+/* ── Container danh mục (Nằm trên nền trắng mờ bo tròn, căn gọn gàng) ── */
+.menu-categories-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0 24px;
+}
+
+.menu-categories {
+  display: grid;
+  /* 3 cột kích thước cố định hoặc vừa vặn, căn sang bên trái */
+  grid-template-columns: repeat(3, 190px);
+  gap: 14px 16px;
+  justify-content: start; /* Căn toàn bộ grid về bên trái */
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* 2 category ở hàng dưới cùng kích thước, tự động rơi vào cột 1 và cột 2 (căn trái) */
+.category-card {
+  width: 190px;
+  background: #ffffff;
+  border: 1.5px solid #f0e6e2;
+  border-radius: 50px; /* Bo tròn dạng con nhộng giống hình */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(.22, 1, .36, 1);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  border-color: #ff3737;
+  box-shadow: 0 6px 16px rgba(255, 55, 55, 0.15);
+}
+
+/* Tab active (ví dụ Combo màu đỏ nổi bật như trong ảnh) */
+.category-card.is-active,
+.category-card#combo {
+  background: #d61827;
+  border-color: #d61827;
+}
+
+.category-card.is-active .category-card-title,
+.category-card#combo .category-card-title {
+  color: #ffffff;
+}
+
+.category-card.is-active .category-card-icon-wrap,
+.category-card#combo .category-card-icon-wrap {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Link bao toàn bộ card */
+.category-card-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 10px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Khung tròn chứa icon / ảnh nhỏ */
+.category-card-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff4f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.category-card-icon-wrap img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.category-card-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Tên danh mục */
+.category-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0;
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+
+/* Card active từ hash (#com, #mi-bun...) */
+.category-card--active {
+  border-color: #ff3737;
+  box-shadow: 0 0 0 3px rgba(255, 55, 55, 0.2);
+}

@@ -573,5 +573,108 @@
         ]
       }
     }
-  }
+  },
+
+  
+  "bestSeller": [
+    {
+      "id": "com-tam-suon",
+      "name": "Cơm tấm sườn",
+      "description": "Sườn nướng thơm lừng, đậm đà hương vị Sài Gòn.",
+      "price": 45000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg",
+      "badge": "Bán chạy"
+    },
+    {
+      "id": "com-rang-hai-san",
+      "name": "Cơm rang hải sản",
+      "description": "Cơm rang tôm, mực, trứng, rau củ thơm ngon.",
+      "price": 40000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg",
+      "badge": ""
+    },
+    {
+      "id": "com-ga",
+      "name": "Cơm gà",
+      "description": "Cơm gà mềm ngọt, da vàng óng hấp dẫn.",
+      "price": 42000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg",
+      "badge": ""
+    },
+    {
+      "id": "com-suon",
+      "name": "Cơm sườn",
+      "description": "Sườn nướng đậm vị, ăn là ghiền.",
+      "price": 47000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/4_mieng_ga_ron.jpg",
+      "badge": ""
+    },
+    {
+      "id": "bun-bo-hue",
+      "name": "Bún bò Huế",
+      "description": "Nước dùng đậm đà, thịt bò mềm chuẩn vị Huế.",
+      "price": 50000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/spagetti_01.png",
+      "badge": ""
+    },
+    {
+      "id": "cha-gio",
+      "name": "Chả giò",
+      "description": "Giòn rụm, nhân thịt đậm đà thơm phức.",
+      "price": 35000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/chips_01.png",
+      "badge": ""
+    }
+  ],
+  "suggestions": [
+    {
+      "comment":"data menu",
+      "id": "combo-1-com-tam-nuoc",
+      "name": "Combo 1 - Cơm tấm sườn + nước",
+      "description": "Đầy đủ dinh dưỡng, no lâu, giải khát đã khát.",
+      "price": 60000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png",
+      "badge": "Combo"
+    },
+    {
+      "id": "bun-bo-hue-dac-biet",
+      "name": "Bún bò Huế đặc biệt",
+      "description": "Thịt bò nhiều, nước dùng ngọt thanh đậm đà.",
+      "price": 55000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/spagetti_02.png",
+      "badge": ""
+    },
+    {
+      "id": "com-rang-tom",
+      "name": "Cơm rang tôm",
+      "description": "Tôm tươi, hạt cơm tơi xốp, vàng ươm.",
+      "price": 45000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg",
+      "badge": ""
+    },
+    {
+      "id": "khoai-tay-lac-pho-mai",
+      "name": "Khoai tây lắc phô mai",
+      "description": "Giòn tan, béo ngậy, món ăn vặt cực cuốn.",
+      "price": 20000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/chips_01.png",
+      "badge": ""
+    },
+    {
+      "id": "tra-sua-tran-chau",
+      "name": "Trà sữa trân châu",
+      "description": "Thơm béo, mát lạnh, giải nhiệt sảng khoái.",
+      "price": 25000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/drinks_01.png",
+      "badge": ""
+    },
+    {
+      "id": "com-ga-nuong",
+      "name": "Cơm gà nướng",
+      "description": "Thơm ngon, đậm vị, da giòn thịt ngọt.",
+      "price": 48000,
+      "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg",
+      "badge": ""
+    }
+  ]
 }
