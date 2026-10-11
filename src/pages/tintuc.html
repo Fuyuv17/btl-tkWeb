@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollibee - Món mới món ngon</title>
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/carousel_banner.css" />
+  <link rel="stylesheet" href="../styles/QuyDuong_252631030/menu_popup.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/main-content.css" />
+  <link rel="stylesheet" href="../styles/PhamQuangThanh_252601086/tintuc.css" />
+  <script src="../js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
+  <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../js/CaoQuynhAnh_252601009/products.js" defer></script>
+  <script src="../js/PhamQuangThanh_252601086/article_popup.js" defer></script>
+</head>
+
+<body>
+  <div class="master-wrapper-page">
+    <!-- This is begin of header -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <div class="header-actions">
+          <form class="header-search" role="search">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon" />
+            </a>
+          </div>
+          <div class="heart-icon">
+            <a href="favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="heart icon">
+            </a>
+          </div>
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <!-- Tab for mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
+          &times;
+        </button>
+        <div class="mobile-drawer-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items">
+            <a href="../../index.html">Trang chủ</a>
+          </li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items menu-category-tab">
+            <a href="menu.html">Menu</a>
+            <div class="menu-category-dropdown">
+              <ul class="menu-category-list" aria-label="Danh mục món ăn">
+                <li><a class="menu-category-item" href="menu.html#combo"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="" /></span><span class="menu-category-name">Combo</span></a></li>
+                <li><a class="menu-category-item" href="menu.html#com"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="" /></span><span class="menu-category-name">Cơm</span></a></li>
+                <li><a class="menu-category-item" href="menu.html#mi-bun"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="" /></span><span class="menu-category-name">Mì / Bún</span></a></li>
+                <li><a class="menu-category-item" href="menu.html#do-an-vat"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/chips_01.png" alt="" /></span><span class="menu-category-name">Đồ ăn vặt</span></a></li>
+                <li><a class="menu-category-item" href="menu.html#do-uong"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="" /></span><span class="menu-category-name">Đồ uống</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- This is the end of header -->
+    <!-- Code từ đây -->
+    <div class="wrapper-page-content">
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div id="carousel" class="carousle">
+            <div id="slides" class="slides">
+              <img src="../assets/images/CaoQuynhAnh_252601009/banner.jpg" alt="Pic1" />
+              <img src="../assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Pic2" />
+              <img src="../assets/images/CaoQuynhAnh_252601009/banner3.jpg" alt="Pic3" />
+            </div>
+            <button id="prev" class="ctr-btn prev">
+              <img src="../assets/images/CaoQuynhAnh_252601009/prev-icon.svg" alt="prev" />
+            </button>
+            <button id="next" class="ctr-btn next">
+              <img src="../assets/images/CaoQuynhAnh_252601009/next-icon.svg" alt="next" />
+            </button>
+          </div>
+        </div>
+        <div id="dots" class="dots"></div>
+      </div>
+      <div class="service-benefits" aria-label="Dịch vụ nổi bật">
+        <div class="service-item"><span aria-hidden="true">🛵</span><div><strong>Giao hàng nhanh</strong><small>Trong 30 phút</small></div></div>
+        <div class="service-item"><span aria-hidden="true">✓</span><div><strong>Thực phẩm an toàn</strong><small>Nguồn gốc rõ ràng</small></div></div>
+        <div class="service-item"><span aria-hidden="true">◆</span><div><strong>Ưu đãi hấp dẫn</strong><small>Món ngon mỗi ngày</small></div></div>
+        <div class="service-item"><span aria-hidden="true">◉</span><div><strong>Hỗ trợ 24/7</strong><small>Luôn bên bạn</small></div></div>
+        <div class="service-item"><span aria-hidden="true">★</span><div><strong>Đánh giá uy tín</strong><small>Hàng ngàn khách hàng tin dùng</small></div></div>
+      </div>
+        <!-- CATEGORY -->
+        <section class="news-intro" aria-labelledby="news-title">
+          <p class="eyebrow">JOLLIBEE NEWS</p>
+          <h1 id="news-title">Tin vui mỗi ngày</h1>
+          <p>
+            Khám phá món ngon mới, ưu đãi hấp dẫn và những câu chuyện vui vẻ
+            đang diễn ra tại Jollibee.
+          </p>
+          <a class="news-button" href="#latest-news">Khám phá tin mới</a>
+        </section>
+
+        <section class="news-section" id="latest-news" aria-labelledby="latest-news-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CẬP NHẬT MỚI NHẤT</p>
+              <h2 id="latest-news-title">Chuyện vui nhà Jollibee</h2>
+            </div>
+            <a class="all-news-link" href="#latest-news" data-show-all>Tất cả tin tức <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="news-controls">
+            <div class="news-categories" role="group" aria-label="Lọc tin tức theo chủ đề">
+              <button class="news-category is-active" type="button" data-category="all" aria-pressed="true">Tất cả</button>
+              <button class="news-category" type="button" data-category="promotion" aria-pressed="false">Khuyến mãi</button>
+              <button class="news-category" type="button" data-category="product" aria-pressed="false">Món mới</button>
+              <button class="news-category" type="button" data-category="community" aria-pressed="false">Cộng đồng</button>
+            </div>
+            <label class="news-search">
+              <span class="visually-hidden">Tìm kiếm tin tức</span>
+              <input type="search" id="news-search" placeholder="Tìm tin tức..." autocomplete="off" />
+              <span aria-hidden="true">⌕</span>
+            </label>
+          </div>
+
+          <p class="news-result" aria-live="polite">
+            Hiển thị <strong id="news-count">6</strong> tin tức
+          </p>
+
+          <div class="news-grid" id="news-list">
+            <article class="news-card" data-category="product" data-article="Lớp sốt đậm đà hòa quyện cùng phần gà vàng giòn, tạo nên lựa chọn mới cho những ai yêu thích vị ngon thật tròn đầy. Ghé Jollibee và khám phá món gà sốt trong lần dùng bữa tiếp theo của bạn.">
+              <a class="news-image" href="#article" data-open-article aria-label="Đọc tin: Gà sốt mới, vị ngon thêm bùng nổ">
+                <img src="../assets/images/PhamQuangThanh_252601086/ga_sot_cay.jpg" alt="Gà rán phủ sốt hấp dẫn" loading="lazy" />
+                <span class="news-tag">MÓN MỚI</span>
+              </a>
+              <div class="news-card-content">
+                <p class="news-meta"><time datetime="2026-10-05">05.10.2026</time> <span aria-hidden="true">·</span> Món mới</p>
+                <h3><a href="#article" data-open-article>Gà sốt mới, vị ngon thêm bùng nổ</a></h3>
+                <p>Gà giòn rụm kết hợp lớp sốt đậm đà, sẵn sàng làm bữa ăn của bạn vui hơn.</p>
+                <button class="read-more" type="button" data-open-article>Đọc tiếp <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+
+            <article class="news-card" data-category="promotion" data-article="Một buổi hẹn sẽ thêm rôm rả khi cả nhóm cùng chọn món mình yêu thích. Rủ bạn bè đến Jollibee, chia sẻ món ngon và đừng quên theo dõi các kênh chính thức để cập nhật chương trình ưu đãi đang áp dụng.">
+              <a class="news-image" href="#article" data-open-article aria-label="Đọc tin: Rủ hội bạn thân, cùng vui cùng hời">
+                <img src="../assets/images/PhamQuangThanh_252601086/cungnhauan.jpg" alt="Hình ảnh chương trình ưu đãi Jollibee" loading="lazy" />
+                <span class="news-tag">ƯU ĐÃI</span>
+              </a>
+              <div class="news-card-content">
+                <p class="news-meta"><time datetime="2026-10-01">01.10.2026</time> <span aria-hidden="true">·</span> Khuyến mãi</p>
+                <h3><a href="#article" data-open-article>Rủ hội bạn thân, cùng vui cùng hời</a></h3>
+                <p>Thêm món ngon cho buổi hẹn và tận hưởng những khoảnh khắc vui vẻ bên nhau.</p>
+                <button class="read-more" type="button" data-open-article>Đọc tiếp <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+
+            <article class="news-card" data-category="community" data-article="Jollibee tin rằng một bữa ăn vui vẻ có thể mang mọi người lại gần nhau hơn. Những hoạt động sẻ chia dành cho trẻ em là dịp để cùng lan tỏa sự quan tâm và mang thêm niềm vui đến cộng đồng.">
+              <a class="news-image" href="#article" data-open-article aria-label="Đọc tin: Gửi yêu thương đến những mầm non">
+                <img src="../assets/images/PhamQuangThanh_252601086/yeuthuong.jpg" alt="Bữa ăn Jollibee dành cho gia đình" loading="lazy" />
+                <span class="news-tag">CỘNG ĐỒNG</span>
+              </a>
+              <div class="news-card-content">
+                <p class="news-meta"><time datetime="2026-09-24">24.09.2026</time> <span aria-hidden="true">·</span> Cộng đồng</p>
+                <h3><a href="#article" data-open-article>Gửi yêu thương đến những mầm non</a></h3>
+                <p>Jollibee tiếp tục đồng hành, sẻ chia niềm vui và những bữa ăn ấm áp với các em nhỏ.</p>
+                <button class="read-more" type="button" data-open-article>Đọc tiếp <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+
+            <article class="news-card" data-category="product" data-article="Gà rán vàng giòn và thức uống mát lạnh là cặp đôi hợp vị cho bữa trưa nhanh gọn. Bạn có thể chọn món yêu thích trong thực đơn Jollibee để thưởng thức cùng đồng nghiệp hoặc bạn bè.">
+              <a class="news-image" href="#article" data-open-article aria-label="Đọc tin: Thử ngay combo ngon trọn vị">
+                <img src="../assets/images/PhamQuangThanh_252601086/combo_2.jpg" alt="Gà rán và nước uống trong combo" loading="lazy" />
+                <span class="news-tag">GỢI Ý MÓN NGON</span>
+              </a>
+              <div class="news-card-content">
+                <p class="news-meta"><time datetime="2026-09-18">18.09.2026</time> <span aria-hidden="true">·</span> Món ngon</p>
+                <h3><a href="#article" data-open-article>Thử ngay combo ngon trọn vị</a></h3>
+                <p>Gà rán vàng giòn cùng thức uống mát lạnh – lựa chọn tuyệt vời cho giờ nghỉ trưa.</p>
+                <button class="read-more" type="button" data-open-article>Đọc tiếp <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+
+            <article class="news-card" data-category="promotion" data-article="Dành thời gian quây quần bên gia đình với những món ăn được mọi người yêu thích. Khám phá các lựa chọn trên thực đơn và kiểm tra thông tin ưu đãi tại cửa hàng hoặc kênh chính thức của Jollibee.">
+              <a class="news-image" href="#article" data-open-article aria-label="Đọc tin: Niềm vui nhân đôi với ưu đãi gia đình">
+                <img src="../assets/images/PhamQuangThanh_252601086/giadinh.jpg" alt="Phần cơm gà trong chương trình ưu đãi" loading="lazy" />
+                <span class="news-tag">ƯU ĐÃI</span>
+              </a>
+              <div class="news-card-content">
+                <p class="news-meta"><time datetime="2026-09-10">10.09.2026</time> <span aria-hidden="true">·</span> Khuyến mãi</p>
+                <h3><a href="#article" data-open-article>Niềm vui nhân đôi với ưu đãi gia đình</a></h3>
+                <p>Cùng cả nhà quây quần bên món ngon yêu thích với những lựa chọn tiết kiệm hấp dẫn.</p>
+                <button class="read-more" type="button" data-open-article>Đọc tiếp <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+
+            <article class="news-card" data-category="community" data-article="Sự tử tế đôi khi bắt đầu từ những điều giản dị: cùng quan tâm, cùng chia sẻ và dành cho nhau một nụ cười. Jollibee mong muốn tiếp tục đồng hành cùng cộng đồng để lan tỏa những khoảnh khắc tích cực.">
+              <a class="news-image" href="#article" data-open-article aria-label="Đọc tin: Chung tay lan tỏa những điều tử tế">
+                <img src="../assets/images/PhamQuangThanh_252601086/tuthien.jpg" alt="Món ăn Jollibee được chuẩn bị để chia sẻ" loading="lazy" />
+                <span class="news-tag">CỘNG ĐỒNG</span>
+              </a>
+              <div class="news-card-content">
+                <p class="news-meta"><time datetime="2026-09-02">02.09.2026</time> <span aria-hidden="true">·</span> Cộng đồng</p>
+                <h3><a href="#article" data-open-article>Chung tay lan tỏa những điều tử tế</a></h3>
+                <p>Mỗi hành động sẻ chia nhỏ đều có thể mang đến thật nhiều nụ cười cho cộng đồng.</p>
+                <button class="read-more" type="button" data-open-article>Đọc tiếp <span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+          </div>
+
+          <p class="news-empty" id="news-empty" hidden>Không tìm thấy tin tức phù hợp. Hãy thử từ khóa hoặc chủ đề khác nhé.</p>
+        </section>
+      </div>
+
+      <div class="article-backdrop" data-close-article></div>
+      <section class="article-drawer"
+        id="article-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="article-title"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="article-drawer-header">
+          <span class="article-drawer-category" id="article-category"></span>
+          <button class="article-drawer-close" type="button" aria-label="Đóng bài viết" data-close-article>&times;</button>
+        </div>
+        <div class="article-drawer-content">
+          <p class="article-drawer-meta" id="article-meta"></p>
+          <h2 id="article-title"></h2>
+          <img class="article-drawer-image" id="article-image" src="" alt="" />
+          <p class="article-drawer-excerpt" id="article-excerpt"></p>
+        </div>
+      </section>
+      
+      <!-- Ket thuc code -->
+
+      <!-- This is begin of footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div>
+            <h3>Jollibee</h3>
+            <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
+          </div>
+
+          <div>
+            <h3>Liên kết</h3>
+            <a href="#">Trang chủ</a>
+            <a href="#">Thực đơn</a>
+            <a href="#">Khuyến mãi</a>
+          </div>
+
+          <div>
+            <h3>Liên hệ</h3>
+            <p>Hotline: 1900 1533</p>
+
+            <p>Email: example@email.com</p>
+          </div>
+        </div>
+
+        <div class="copyright">© 2026 Food Website</div>
+      </footer>
+      <!-- This is the end of footer -->
+    </div>
+  </body>
+</html>
