@@ -1,0 +1,91 @@
+/* ==========================================================================
+   POPUP BASE & LAYOUT (Lớp phủ mờ, khung bottom-sheet và hiệu ứng trượt)
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/modules/popup-base.css
+   ========================================================================== */
+
+/* Nền mờ bao phủ toàn màn hình */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: flex-end; /* Cố định vị trí ở đáy màn hình */
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+/* Trạng thái Overlay khi mở popup */
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Khung nội dung Pop-up */
+.popup-container {
+  width: 100%;
+  max-width: 550px;
+  background: #ffffff;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.25);
+  padding: 16px 24px 28px;
+  box-sizing: border-box;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  /* Hiệu ứng trượt từ dưới lên */
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Khi active: trượt lên vị trí bình thường */
+.popup-overlay.active .popup-container {
+  transform: translateY(0);
+}
+
+/* Thanh kéo trang trí kiểu Bottom Sheet */
+.popup-drag-handle {
+  width: 44px;
+  height: 5px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  margin: 0 auto 12px;
+}
+
+/* Nút đóng (X) */
+.popup-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+.popup-close-btn:hover {
+  background: #e31837;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+

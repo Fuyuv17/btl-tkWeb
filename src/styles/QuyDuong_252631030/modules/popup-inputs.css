@@ -1,0 +1,81 @@
+/* ==========================================================================
+   POPUP INPUTS (Tăng giảm số lượng và ghi chú)
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/modules/popup-inputs.css
+   ========================================================================== */
+
+/* Tăng giảm số lượng */
+.popup-qty-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #eeeeee;
+}
+
+.popup-qty-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.popup-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.popup-qty-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #dcdcdc;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.popup-qty-btn:hover {
+  background: #e31837;
+  color: #ffffff;
+  border-color: #e31837;
+}
+
+.popup-qty-num {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222222;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Ô nhập ghi chú */
+.popup-note-box {
+  width: 100%;
+}
+
+.popup-note-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.popup-note-input:focus {
+  border-color: #e31837;
+}
+

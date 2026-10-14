@@ -1,0 +1,90 @@
+/* ==========================================================================
+   POPUP DETAILS (Ảnh món ăn, tên món, mô tả, giá và nhãn badge)
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/modules/popup-details.css
+   ========================================================================== */
+
+/* Khu vực hiển thị ảnh món ăn */
+.popup-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.popup-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.popup-media:hover img {
+  transform: scale(1.05);
+}
+
+.popup-media .popup-placeholder {
+  font-size: 20px;
+  font-weight: 700;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+/* Nhãn Badge món mới / HOT */
+.popup-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #e31837;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(227, 24, 55, 0.4);
+}
+
+/* Thông tin món */
+.popup-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #222222;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.popup-desc {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.popup-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.popup-unit-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #e31837;
+}
+

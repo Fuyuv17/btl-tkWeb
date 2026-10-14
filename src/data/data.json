@@ -111,6 +111,28 @@
             "price": 5000
           }
         ]
+      },
+      "com-ga-nuong": {
+        "name": "Cơm gà nướng",
+        "price": 48000,
+        "toppingOptions": [
+          {
+            "name": "Trứng ốp la",
+            "price": 7000
+          },
+          {
+            "name": "Thêm cơm",
+            "price": 5000
+          },
+          {
+            "name": "Thêm đùi gà nướng",
+            "price": 25000
+          },
+          {
+            "name": "Thêm xốt cay ngọt",
+            "price": 5000
+          }
+        ]
       }
     }
   },

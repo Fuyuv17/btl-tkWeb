@@ -1,125 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Món Cơm | Ăn Ngon - Món ngon mỗi ngày</title>
+
+  <!-- CSS chung (Cao Quỳnh Anh) -->
+  <link rel="stylesheet" href="../../styles/CaoQuynhAnh_252601009/header_footer.css">
+  <link rel="stylesheet" href="../../styles/CaoQuynhAnh_252601009/main-content.css">
+
+  <!-- CSS Menu, Popup & Category Cơm (Quy Dương) -->
+  <link rel="stylesheet" href="../../styles/QuyDuong_252631030/menu.css">
+  <link rel="stylesheet" href="../../styles/QuyDuong_252631030/menu_popup.css">
+  <link rel="stylesheet" href="../../styles/QuyDuong_252631030/com.css/com.css">
+
+  <!-- JS -->
+  <script src="../../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../../js/QuyDuong_252631030/menu_popup.js" defer></script>
 </head>
 
 <body>
-    <!-- ===== HEADER (Chuẩn 100% theo ảnh giao diện Ăn Ngon) ===== -->
+  <div class="master-wrapper-page">
+
+    <!-- ===== HEADER ===== -->
     <header>
-        <div class="higher-header">
-            <div class="header-logo">
-                <a href="">
-                    <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
-                </a>
-            </div>
-            <div class="header-actions">
-                <form class="header-search" role="search">
-                    <span aria-hidden="true">
-                        <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
-                    </span>
-                    <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
-                </form>
-                <div class="cart-icon">
-                    <a href="src/pages/giohang.html" class="icon-circle" title="Giỏ hàng">
-                        <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon" />
-                    </a>
-                </div>
-                <div class="heart-icon">
-                    <a href="src/pages/favorites.html" class="icon-circle" title="Yêu thích">
-                        <img src="../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="heart icon">
-                    </a>
-                </div>
-                <div class="login-icon">
-                    <a class="icon-circle" href="#" title="Tài khoản">
-                        <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon" />
-                    </a>
-                    <a class="register" href="register.html">Đăng kí</a>
-                    <span class="icons">/</span>
-                    <a class="login" href="login.html">Đăng nhập</a>
-                </div>
-            </div>
-            <div class="menu-for-mobile">
-                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html">
+            <img src="../../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
         </div>
+        <div class="header-actions">
+          <form class="header-search" role="search">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="../giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="Giỏ hàng" />
+            </a>
+          </div>
+          <div class="heart-icon">
+            <a href="../favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="../../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="Yêu thích">
+            </a>
+          </div>
+          <div class="login-icon">
+            <a class="icon-circle" href="../login.html" title="Tài khoản">
+              <img src="../../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="../register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="../login.html">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
 
+      <!-- Drawer for mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
+        <div class="mobile-drawer-logo">
+          <a href="../../index.html">
+            <img src="../../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items active"><a href="../menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="../khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="../tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="../favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="../giohang.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="../login.html" title="Tài khoản">
+              <img src="../../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="../register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="../login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
 
-        <!-- Tab for mobile -->
-        <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
-        <div class="mobile-menu-drawer" id="mobile-menu-drawer">
-            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
-                &times;
-            </button>
-            <div class="mobile-drawer-logo">
-                <a href="">
-                    <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
-                </a>
-            </div>
-            <ul class="mobile-menu-list">
-                <li class="category-menu-items">
-                    <a href="../../index.html">Trang chủ</a>
-                </li>
-                <li class="category-menu-items"><a href="menu.html">Menu</a></li>
-                <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
-                <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
-                <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
-                <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
-            </ul>
-            <div class="mobile-drawer-auth">
-                <div class="login-icon">
-                    <a class="icon-circle" href="./login.html" title="Tài khoản">
-                        <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
-                    </a>
-                    <a class="register" href="src/pages/register.html">Đăng kí</a>
-                    <span class="icons">/</span>
-                    <a class="login" href="src/pages/login.html">Đăng nhập</a>
-                </div>
-            </div>
-        </div>
-        <div class="header-navbar-for-desktop">
-            <ul class="top-menu-desktop">
-                <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
-                <li class="category-menu-items menu-category-tab">
-                    <a href="menu.html">Menu</a>
-                    <div class="menu-category-dropdown">
-                        <ul class="menu-category-list" aria-label="Danh mục món ăn">
-                            <li><a class="menu-category-item" href="src/pages/menu.html#combo"><span
-                                        class="menu-category-image"><img
-                                            src="src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png"
-                                            alt="" /></span><span class="menu-category-name">Combo</span></a></li>
-                            <li><a class="menu-category-item" href="src/pages/menu.html#com"><span
-                                        class="menu-category-image"><img
-                                            src="src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg"
-                                            alt="" /></span><span class="menu-category-name">Cơm</span></a></li>
-                            <li><a class="menu-category-item" href="src/pages/menu.html#mi-bun"><span
-                                        class="menu-category-image"><img
-                                            src="src/assets/images/TruongQuyDuong_252631030/spagetti_01.png"
-                                            alt="" /></span><span class="menu-category-name">Mì / Bún</span></a></li>
-                            <li><a class="menu-category-item" href="src/pages/menu.html#do-an-vat"><span
-                                        class="menu-category-image"><img
-                                            src="src/assets/images/TruongQuyDuong_252631030/chips_01.png"
-                                            alt="" /></span><span class="menu-category-name">Đồ ăn vặt</span></a></li>
-                            <li><a class="menu-category-item" href="src/pages/menu.html#do-uong"><span
-                                        class="menu-category-image"><img
-                                            src="src/assets/images/TruongQuyDuong_252631030/drinks_01.png"
-                                            alt="" /></span><span class="menu-category-name">Đồ uống</span></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="category-menu-items"><a href="src/pages/khuyenmai.html">Khuyến mãi</a></li>
-                <li class="category-menu-items"><a href="src/pages/tintuc.html">Tin tức</a></li>
-            </ul>
-        </div>
+      <!-- Desktop navigation -->
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items menu-category-tab active">
+            <a href="../menu.html">Menu</a>
+          </li>
+          <li class="category-menu-items"><a href="../khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="../tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
     </header>
     <!-- ===== KẾT THÚC HEADER ===== -->
+
+    <!-- ===== NỘI DUNG CHÍNH (wrapper-page-content) ===== -->
+    <main class="wrapper-page-content">
+
+      <!-- Breadcrumb điều hướng -->
+      <nav class="category-breadcrumb" aria-label="Đường dẫn liên kết">
+        <a href="../../../index.html">Trang chủ</a>
+        <span>›</span>
+        <a href="../menu.html">Menu</a>
+        <span>›</span>
+        <span class="current">Cơm</span>
+      </nav>
+
+      <!-- THANH 5 DANH MỤC CỐ ĐỊNH (Cơm đang Active) -->
+      <section class="menu-fixed-category-bar" aria-label="Danh mục thực đơn">
+        <ul class="menu-category-list">
+          <li>
+            <a class="menu-category-item" href="../menu.html#combo">
+              <span class="menu-category-image">
+                <img src="../../assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="Combo" />
+              </span>
+              <span class="menu-category-name">Combo</span>
+            </a>
+          </li>
+          <li>
+            <a class="menu-category-item active" href="com.html">
+              <span class="menu-category-image">
+                <img src="../../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Cơm" />
+              </span>
+              <span class="menu-category-name">Cơm</span>
+            </a>
+          </li>
+          <li>
+            <a class="menu-category-item" href="../menu.html#mi-bun">
+              <span class="menu-category-image">
+                <img src="../../assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="Mì / Bún" />
+              </span>
+              <span class="menu-category-name">Mì / Bún</span>
+            </a>
+          </li>
+          <li>
+            <a class="menu-category-item" href="../menu.html#do-an-vat">
+              <span class="menu-category-image">
+                <img src="../../assets/images/TruongQuyDuong_252631030/chips_01.png" alt="Đồ ăn vặt" />
+              </span>
+              <span class="menu-category-name">Đồ ăn vặt</span>
+            </a>
+          </li>
+          <li>
+            <a class="menu-category-item" href="../menu.html#do-uong">
+              <span class="menu-category-image">
+                <img src="../../assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="Đồ uống" />
+              </span>
+              <span class="menu-category-name">Đồ uống</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- BANNER TIÊU ĐỀ DANH MỤC CƠM -->
+      <div class="com-page-header">
+        <div class="com-header-info">
+          <h1><span>🍚</span> Món Cơm Đặc Sắc</h1>
+          <p>Hạt cơm dẻo thơm, sườn nướng đậm vị, gà chiên giòn rụm cùng topping phong phú cho bữa ăn trọn vị!</p>
+        </div>
+        <div class="com-header-tag">✨ Nhấn vào món để chọn thêm Topping</div>
+      </div>
+
+      <!-- DANH SÁCH MÓN ĂN LIÊN QUAN ĐẾN CƠM (6 CARDS) -->
+      <section class="com-grid menu-showcase-grid" aria-label="Danh sách món cơm">
+
+        <!-- Món 1: Cơm tấm sườn -->
+        <article class="product-card" data-product-id="com-tam-suon" data-price="45000">
+          <div class="product-image">
+            <img src="../../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Cơm tấm sườn" loading="lazy" />
+            <span class="badge">👑 Bán chạy</span>
+          </div>
+          <div class="product-info">
+            <h2>Cơm tấm sườn</h2>
+            <p>Sườn nướng than hoa thơm lừng, thịt mềm đậm đà ăn kèm mỡ hành và dưa leo chua ngọt.</p>
+            <div class="product-card-footer">
+              <span class="price">45.000đ</span>
+              <div class="product-actions">
+                <button class="add-btn" type="button" aria-label="Thêm vào giỏ hàng Cơm tấm sườn">
+                  🛒 <span>Thêm vào giỏ hàng</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Món 2: Cơm rang thập cẩm -->
+        <article class="product-card" data-product-id="com-rang-thap-cam" data-price="40000">
+          <div class="product-image">
+            <img src="../../assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg" alt="Cơm rang thập cẩm" loading="lazy" />
+            <span class="badge">🔥 Yêu thích</span>
+          </div>
+          <div class="product-info">
+            <h2>Cơm rang thập cẩm</h2>
+            <p>Cơm chiên hạt vàng ươm, săn dẻo, kết hợp cùng tôm, xúc xích và rau củ tươi ngon.</p>
+            <div class="product-card-footer">
+              <span class="price">40.000đ</span>
+              <div class="product-actions">
+                <button class="add-btn" type="button" aria-label="Thêm vào giỏ hàng Cơm rang thập cẩm">
+                  🛒 <span>Thêm vào giỏ hàng</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Món 3: Cơm gà xối mỡ -->
+        <article class="product-card" data-product-id="com-ga-xoi-mo" data-price="45000">
+          <div class="product-image">
+            <img src="../../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Cơm gà xối mỡ" loading="lazy" />
+            <span class="badge">🍗 Giòn rụm</span>
+          </div>
+          <div class="product-info">
+            <h2>Cơm gà xối mỡ</h2>
+            <p>Đùi gà vàng ươm da giòn rụm, thịt bên trong mềm ngọt tự nhiên, ăn cùng cơm chiên tỏi thơm phức.</p>
+            <div class="product-card-footer">
+              <span class="price">45.000đ</span>
+              <div class="product-actions">
+                <button class="add-btn" type="button" aria-label="Thêm vào giỏ hàng Cơm gà xối mỡ">
+                  🛒 <span>Thêm vào giỏ hàng</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Món 4: Cơm sườn bì chả -->
+        <article class="product-card" data-product-id="com-suon-bi-cha" data-price="55000">
+          <div class="product-image">
+            <img src="../../assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg" alt="Cơm sườn bì chả" loading="lazy" />
+            <span class="badge">⭐ Đặc biệt</span>
+          </div>
+          <div class="product-info">
+            <h2>Cơm sườn bì chả</h2>
+            <p>Suất cơm đặc biệt với sườn nướng mọng nước, chả trứng hấp thơm béo và sợi bì bùi ngậy.</p>
+            <div class="product-card-footer">
+              <span class="price">55.000đ</span>
+              <div class="product-actions">
+                <button class="add-btn" type="button" aria-label="Thêm vào giỏ hàng Cơm sườn bì chả">
+                  🛒 <span>Thêm vào giỏ hàng</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Món 5: Cơm bò lúc lắc -->
+        <article class="product-card" data-product-id="com-bo-luc-lac" data-price="58000">
+          <div class="product-image">
+            <img src="../../assets/images/TruongQuyDuong_252631030/4_mieng_ga_ron.jpg" alt="Cơm bò lúc lắc" loading="lazy" />
+            <span class="badge">🥩 Bổ dưỡng</span>
+          </div>
+          <div class="product-info">
+            <h2>Cơm bò lúc lắc</h2>
+            <p>Thịt bò mềm đậm đà sốt tiêu đen thượng hạng, xào cùng ớt chuông, hành tây giòn ngọt.</p>
+            <div class="product-card-footer">
+              <span class="price">58.000đ</span>
+              <div class="product-actions">
+                <button class="add-btn" type="button" aria-label="Thêm vào giỏ hàng Cơm bò lúc lắc">
+                  🛒 <span>Thêm vào giỏ hàng</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Món 6: Cơm gà nướng -->
+        <article class="product-card" data-product-id="com-ga-nuong" data-price="48000">
+          <div class="product-image">
+            <img src="../../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Cơm gà nướng" loading="lazy" />
+            <span class="badge">🆕 Món mới</span>
+          </div>
+          <div class="product-info">
+            <h2>Cơm gà nướng</h2>
+            <p>Gà ướp sốt cay ngọt nướng xém cạnh, chuẩn phong vị ăn ngon cho bữa trưa và bữa tối.</p>
+            <div class="product-card-footer">
+              <span class="price">48.000đ</span>
+              <div class="product-actions">
+                <button class="add-btn" type="button" aria-label="Thêm vào giỏ hàng Cơm gà nướng">
+                  🛒 <span>Thêm vào giỏ hàng</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+    </main>
+    <!-- ===== KẾT THÚC NỘI DUNG CHÍNH ===== -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Ăn Ngon</h3>
+          <p>Mang đến những bữa ăn ngon miệng và trọn vẹn niềm vui cho mọi gia đình.</p>
+        </div>
+        <div>
+          <h3>Liên kết</h3>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="../menu.html">Thực đơn</a>
+          <a href="../khuyenmai.html">Khuyến mãi</a>
+          <a href="../tintuc.html">Tin tức</a>
+        </div>
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+          <p>Email: hotro@anngon.vn</p>
+        </div>
+      </div>
+      <div class="copyright">© 2026 Ăn Ngon - Món ngon mỗi ngày. All rights reserved.</div>
+    </footer>
+    <!-- ===== KẾT THÚC FOOTER ===== -->
+
+  </div>
 </body>
 
 </html>

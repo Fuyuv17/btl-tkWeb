@@ -5,13 +5,38 @@
  * 
  * Mục đích:
  *  - Tải dữ liệu từ src/data/data.json và render danh sách Best Seller + Gợi ý hôm nay
- *  - Xử lý tương tác danh mục pills (Combo, Cơm, Mì/Bún...)
  *  - Xử lý nút "Thêm vào giỏ hàng"
  */
 
 // Đường dẫn file dữ liệu
-const DATA_JSON_PATH = "../data/data.json";
-const BACKUP_DATA_JSON_PATH = "/src/data/data.json";
+const DATA_JSON_PATHS = [
+  "../data/data.json",
+  "../../data/data.json",
+  "src/data/data.json",
+  "./src/data/data.json",
+  "/src/data/data.json"
+];
+
+/**
+ * Tự động chuẩn hoá đường dẫn ảnh theo ngữ cảnh trang (pages/, categories/, hoặc root)
+ */
+function resolveImagePath(path) {
+  if (!path) return "";
+  if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("data:") || path.startsWith("blob:")) {
+    return path;
+  }
+  const clean = path.replace(/^\/?(src\/)?/, "");
+  const inCategories = window.location.pathname.includes("/categories/");
+  const inPages = window.location.pathname.includes("/pages/");
+
+  if (inCategories) {
+    return "../../" + clean;
+  }
+  if (inPages) {
+    return "../" + clean;
+  }
+  return "src/" + clean;
+}
 
 /**
  * Định dạng tiền tệ VNĐ (ví dụ: 45.000đ)
@@ -21,7 +46,7 @@ function formatVND(amount) {
 }
 
 /**
- * Tạo phần tử DOM cho từng thẻ món ăn đúng 100% giao diện ảnh
+ * Tạo phần tử DOM cho từng thẻ món ăn đúng giao diện ảnh
  */
 function createProductCardElement(product) {
   const card = document.createElement("article");
@@ -34,9 +59,24 @@ function createProductCardElement(product) {
   imageFrame.className = "product-image";
 
   const image = document.createElement("img");
-  image.src = product.image;
+  image.src = resolveImagePath(product.image);
   image.alt = product.name;
   image.loading = "lazy";
+  image.onerror = function () {
+    if (!this.dataset.fallbackTried) {
+      this.dataset.fallbackTried = "true";
+      const filename = (product.image || "").split("/").pop();
+      if (filename) {
+        if (window.location.pathname.includes("/categories/")) {
+          this.src = `../../assets/images/TruongQuyDuong_252631030/${filename}`;
+        } else if (window.location.pathname.includes("/pages/")) {
+          this.src = `../assets/images/TruongQuyDuong_252631030/${filename}`;
+        } else {
+          this.src = `src/assets/images/TruongQuyDuong_252631030/${filename}`;
+        }
+      }
+    }
+  };
   imageFrame.appendChild(image);
 
   // Nhãn badge nếu có (ví dụ: 👑 Bán chạy)
@@ -127,22 +167,14 @@ function renderProductGrid(containerId, products) {
 async function loadMenuSectionsData() {
   let data = null;
 
-  try {
-    const response = await fetch(DATA_JSON_PATH);
-    if (response.ok) {
-      data = await response.json();
-    } else {
-      throw new Error(`Status ${response.status}`);
-    }
-  } catch (err) {
+  for (const path of DATA_JSON_PATHS) {
     try {
-      const fallback = await fetch(BACKUP_DATA_JSON_PATH);
-      if (fallback.ok) {
-        data = await fallback.json();
+      const response = await fetch(path);
+      if (response.ok) {
+        data = await response.json();
+        break;
       }
-    } catch (e) {
-      console.warn("Lỗi fetch data.json:", e);
-    }
+    } catch (e) {}
   }
 
   if (data) {
@@ -153,15 +185,6 @@ async function loadMenuSectionsData() {
       renderProductGrid("menu-suggestion-grid", data.suggestions);
     }
   }
-
-  // Tương tác chuyển đổi tab active trên các pills danh mục
-  const pills = document.querySelectorAll(".category-pill");
-  pills.forEach((pill) => {
-    pill.addEventListener("click", function(e) {
-      pills.forEach(p => p.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
 }
 
 document.addEventListener("DOMContentLoaded", loadMenuSectionsData);

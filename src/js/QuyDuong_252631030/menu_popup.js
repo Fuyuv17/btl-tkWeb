@@ -2,9 +2,34 @@
  * ==========================================================================
  * XỬ LÝ CHUYỂN ĐỘNG VÀ TƯƠNG TÁC CHO PRODUCT POP-UP (BOTTOM SHEET)
  * Hiệu ứng: Trượt từ dưới lên (Slide-up from bottom to top)
+ * Tích hợp: Chọn Topping & Tự động tính toán tổng giá tiền
  * Author: Quy Duong (MSV: 252631030)
  * ==========================================================================
  */
+
+let cachedProductsData = null;
+
+// Hàm tải data.json dùng chung cho popup
+async function getProductsData() {
+  if (cachedProductsData) return cachedProductsData;
+  const paths = [
+    "../../data/data.json",
+    "../data/data.json",
+    "src/data/data.json",
+    "./src/data/data.json",
+    "/src/data/data.json"
+  ];
+  for (const p of paths) {
+    try {
+      const res = await fetch(p);
+      if (res.ok) {
+        cachedProductsData = await res.json();
+        return cachedProductsData;
+      }
+    } catch (e) {}
+  }
+  return null;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Tự động khởi tạo giao diện Pop-up nếu chưa có trong DOM
@@ -28,33 +53,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("popup-submit");
   const toast = document.getElementById("popup-toast");
   const toastMsg = document.getElementById("popup-toast-msg");
+  const toppingsSection = document.getElementById("popup-toppings-section");
+  const toppingsList = document.getElementById("popup-toppings-list");
 
   // Biến lưu trạng thái món ăn đang xem
   let currentItemPrice = 0;
   let currentQuantity = 1;
   let currentItemName = "";
+  let selectedToppings = [];
 
   // 3. Hàm định dạng tiền tệ VNĐ (ví dụ: 69.000 ₫)
   function formatMoney(amount) {
     return new Intl.NumberFormat("vi-VN").format(amount) + " ₫";
   }
 
-  // 4. Hàm cập nhật lại tổng tiền theo số lượng
+  // 4. Hàm cập nhật lại tổng tiền theo số lượng và toppings
   function updateSubtotal() {
     qtyValue.textContent = currentQuantity;
-    const total = currentItemPrice * currentQuantity;
+    const toppingsSum = selectedToppings.reduce((acc, t) => acc + t.price, 0);
+    const total = (currentItemPrice + toppingsSum) * currentQuantity;
     popupTotalPrice.textContent = formatMoney(total);
   }
 
   // 5. Hàm mở Pop-up (kích hoạt chuyển động từ dưới lên trên)
-  function openPopup(productCard) {
-    // Trích xuất dữ liệu từ thẻ món ăn được click
+  async function openPopup(productCard) {
     const titleEl = productCard.querySelector("h2");
     const descEl = productCard.querySelector(".product-info > p");
     const priceEl = productCard.querySelector(".price");
     const badgeEl = productCard.querySelector(".badge");
     const imgEl = productCard.querySelector(".product-image img");
     const rawPrice = productCard.dataset.price;
+    const productId = productCard.dataset.productId;
 
     currentItemName = titleEl ? titleEl.textContent.trim() : "Món ăn";
     popupTitle.textContent = currentItemName;
@@ -90,23 +119,71 @@ document.addEventListener("DOMContentLoaded", () => {
       popupPlaceholder.textContent = currentItemName.toUpperCase();
     }
 
-    // Reset lại số lượng và ghi chú
+    // Reset lại số lượng, topping và ghi chú
     currentQuantity = 1;
+    selectedToppings = [];
     if (noteInput) noteInput.value = "";
+
+    // Nạp toppingOptions nếu có từ data.json
+    if (toppingsSection && toppingsList) {
+      toppingsList.innerHTML = "";
+      const data = await getProductsData();
+      let toppingOptions = null;
+
+      if (data) {
+        // Tìm kiếm trong category com, combo, v.v..
+        for (const catKey of Object.keys(data)) {
+          if (data[catKey] && data[catKey].products && data[catKey].products[productId]) {
+            toppingOptions = data[catKey].products[productId].toppingOptions;
+            break;
+          }
+        }
+      }
+
+      if (toppingOptions && toppingOptions.length > 0) {
+        toppingsSection.style.display = "flex";
+        toppingOptions.forEach((top, idx) => {
+          const itemLabel = document.createElement("label");
+          itemLabel.className = "popup-topping-item";
+          itemLabel.innerHTML = `
+            <div class="popup-topping-left">
+              <input type="checkbox" data-index="${idx}" data-price="${top.price}" data-name="${top.name}" />
+              <span>${top.name}</span>
+            </div>
+            <span class="popup-topping-price">+${formatMoney(top.price)}</span>
+          `;
+
+          const checkbox = itemLabel.querySelector("input");
+          checkbox.addEventListener("change", (e) => {
+            if (e.target.checked) {
+              selectedToppings.push({ name: top.name, price: top.price });
+            } else {
+              selectedToppings = selectedToppings.filter(t => t.name !== top.name);
+            }
+            updateSubtotal();
+          });
+
+          toppingsList.appendChild(itemLabel);
+        });
+      } else {
+        toppingsSection.style.display = "none";
+      }
+    }
+
     updateSubtotal();
 
     // Mở popup: Thêm class .active để kích hoạt transition trượt lên
     overlay.classList.add("active");
-    document.body.style.overflow = "hidden"; // Khóa cuộn trang nền
+    document.body.style.overflow = "hidden";
   }
 
-  // 6. Hàm đóng Pop-up (trượt xuống lại)
+  // 6. Hàm đóng Pop-up
   function closePopup() {
     overlay.classList.remove("active");
-    document.body.style.overflow = ""; // Mở lại cuộn trang
+    document.body.style.overflow = "";
   }
 
-  // 7. Hàm hiển thị Toast thông báo khi đặt món thành công
+  // 7. Hàm hiển thị Toast thông báo
   let toastTimer = null;
   function showToast(message) {
     if (!toast) return;
@@ -118,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2800);
   }
 
-  // 8. Bắt sự kiện click vào từng sản phẩm (.product-card) bằng event delegation (hỗ trợ cả các card sinh tự động bằng JS)
+  // 8. Bắt sự kiện click vào từng sản phẩm bằng event delegation
   document.addEventListener("click", (e) => {
     const card = e.target.closest(".product-card");
     if (!card) return;
@@ -131,14 +208,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 9. Bắt sự kiện đóng Popup
   closeBtn.addEventListener("click", closePopup);
 
-  // Click vào vùng mờ bên ngoài khung nội dung để đóng
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
       closePopup();
     }
   });
 
-  // Nhấn phím Escape (ESC) để đóng
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && overlay.classList.contains("active")) {
       closePopup();
@@ -162,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 11. Bấm nút Thêm vào giỏ hàng trong Popup
   submitBtn.addEventListener("click", () => {
-    // Cập nhật số lượng giỏ hàng trên Header nếu có
     const cartCountEl = document.querySelector("#cart-count");
     if (cartCountEl) {
       let currentCart = parseInt(cartCountEl.textContent || "0", 10);
@@ -170,14 +244,16 @@ document.addEventListener("DOMContentLoaded", () => {
       cartCountEl.textContent = currentCart + currentQuantity;
     }
 
-    // Hiển thị thông báo
-    showToast(`Đã thêm ${currentQuantity}x "${currentItemName}" vào giỏ hàng!`);
+    let toppingText = "";
+    if (selectedToppings.length > 0) {
+      toppingText = ` (Topping: ${selectedToppings.map(t => t.name).join(", ")})`;
+    }
 
-    // Đóng popup
+    showToast(`Đã thêm ${currentQuantity}x "${currentItemName}"${toppingText} vào giỏ hàng!`);
     closePopup();
   });
 
-  // 12. Hỗ trợ thao tác vuốt xuống (Swipe down) để đóng trên điện thoại / tablet
+  // 12. Hỗ trợ thao tác vuốt xuống để đóng trên điện thoại / tablet
   let startY = 0;
   let currentY = 0;
 
@@ -190,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { passive: true });
 
   container.addEventListener("touchend", () => {
-    // Nếu vuốt xuống quá 70px thì kích hoạt đóng popup
     if (currentY - startY > 70 && container.scrollTop <= 0) {
       closePopup();
     }
@@ -204,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function initPopupDOM() {
   if (document.getElementById("product-popup-overlay")) {
-    return; // Đã tồn tại, không tạo lại
+    return;
   }
 
   const popupHTML = `
@@ -226,6 +301,12 @@ function initPopupDOM() {
             
             <div class="popup-price-row">
               <span id="popup-price" class="popup-unit-price">0 ₫</span>
+            </div>
+
+            <!-- Khối tùy chọn Topping -->
+            <div id="popup-toppings-section" class="popup-toppings-section" style="display: none;">
+              <span class="popup-toppings-title">✨ Tùy chọn Topping:</span>
+              <div id="popup-toppings-list" class="popup-toppings-list"></div>
             </div>
 
             <div class="popup-qty-group">
@@ -258,4 +339,3 @@ function initPopupDOM() {
 
   document.body.insertAdjacentHTML("beforeend", popupHTML);
 }
-

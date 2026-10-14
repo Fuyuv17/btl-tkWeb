@@ -1,69 +1,7 @@
 /* ==========================================================================
-   MENU CATEGORY PILLS (5 thẻ con nhộng ngang hàng tiêu đề)
+   MENU CATEGORY PILLS (Đã xoá các pills theo yêu cầu của dự án)
    Author: Quy Duong (MSV: 252631030)
    File: src/styles/QuyDuong_252631030/menu-category-card.css
    ========================================================================== */
 
-/* Thanh chứa 5 pills bo tròn nằm ngang */
-.menu-categories-nav {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  flex: 1;
-}
-
-/* Từng thẻ danh mục dạng viên thuốc (Pill) */
-.category-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 22px;
-  min-width: 130px;
-  background: #ffffff;
-  border: 1.5px solid #ece4dc;
-  border-radius: 40px;
-  text-decoration: none;
-  color: #222222;
-  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  transition: all 0.22s cubic-bezier(.22, 1, .36, 1);
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.category-pill-icon {
-  font-size: 20px;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.category-pill-name {
-  white-space: nowrap;
-}
-
-.category-pill:hover {
-  transform: translateY(-2px);
-  border-color: #ff3737;
-  color: #ff3737;
-  box-shadow: 0 4px 14px rgba(214, 24, 39, 0.12);
-}
-
-/* Thẻ đang được chọn (Active) - Mặc định là Combo theo đúng ảnh mẫu */
-.category-pill.active {
-  background: #ff3737;
-  border-color: #ff3737;
-  color: #ffffff;
-  box-shadow: 0 4px 14px rgba(214, 24, 39, 0.3);
-}
-
-.category-pill.active:hover {
-  color: #ffffff;
-  background: #bd1321;
-}
+/* Các pills cũ đã được dọn sạch và thay thế bằng menu-category-fixed.css */

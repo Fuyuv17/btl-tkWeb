@@ -1,0 +1,96 @@
+/* ==========================================================================
+   FIXED MENU CATEGORY BAR (Thanh 5 lựa chọn cố định trên trang menu)
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/modules/menu-category-fixed.css
+   ========================================================================== */
+
+/* Wrapper của thanh category cố định trên trang menu */
+.menu-fixed-category-bar {
+  width: 100%;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(80, 30, 40, 0.08);
+  margin: 20px 0 30px;
+  box-sizing: border-box;
+}
+
+/* Lưới 5 danh mục dàn đều giống dropdown */
+.menu-fixed-category-bar .menu-category-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.menu-fixed-category-bar .menu-category-list li {
+  min-width: 0;
+}
+
+/* Item từng category */
+.menu-fixed-category-bar .menu-category-item {
+  display: flex;
+  min-height: 116px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: #171717;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+/* Khung ảnh danh mục */
+.menu-fixed-category-bar .menu-category-image {
+  display: grid;
+  width: 100%;
+  height: 78px;
+  place-items: center;
+}
+.menu-fixed-category-bar .menu-category-image img {
+  display: block;
+  max-width: 100%;
+  max-height: 76px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+/* Tên danh mục */
+.menu-fixed-category-bar .menu-category-name {
+  font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+  color: #222;
+  transition: color 0.18s ease;
+}
+
+/* Hover & Active hiệu ứng */
+.menu-fixed-category-bar .menu-category-item:hover,
+.menu-fixed-category-bar .menu-category-item.active {
+  color: #FF3737;
+}
+.menu-fixed-category-bar .menu-category-item:hover .menu-category-image img,
+.menu-fixed-category-bar .menu-category-item.active .menu-category-image img {
+  transform: scale(1.12);
+}
+.menu-fixed-category-bar .menu-category-item:hover .menu-category-name,
+.menu-fixed-category-bar .menu-category-item.active .menu-category-name {
+  color: #FF3737;
+}
+
+/* Responsive cho thanh cố định */
+@media (max-width: 768px) {
+  .menu-fixed-category-bar { padding: 12px 10px; margin: 14px 0 24px; }
+  .menu-fixed-category-bar .menu-category-list { grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .menu-fixed-category-bar .menu-category-image { height: 56px; }
+  .menu-fixed-category-bar .menu-category-image img { max-height: 54px; }
+  .menu-fixed-category-bar .menu-category-name { font-size: 12px; }
+}
+

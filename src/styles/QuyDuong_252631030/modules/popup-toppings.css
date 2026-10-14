@@ -1,0 +1,61 @@
+/* ==========================================================================
+   POPUP TOPPINGS (Tuỳ chọn topping kèm món)
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/modules/popup-toppings.css
+   ========================================================================== */
+
+.popup-toppings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #fffdfb;
+  border: 1px dashed #ffc5b3;
+  border-radius: 12px;
+}
+
+.popup-toppings-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #d61827;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.popup-toppings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.popup-topping-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.popup-topping-item:hover {
+  background: #fff1ed;
+}
+
+.popup-topping-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.popup-topping-price {
+  font-weight: 700;
+  color: #d61827;
+  font-size: 12.5px;
+}
+

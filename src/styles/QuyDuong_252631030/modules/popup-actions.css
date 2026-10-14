@@ -1,0 +1,80 @@
+/* ==========================================================================
+   POPUP ACTIONS & TOAST (Nút đặt món, Toast thông báo và responsive)
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/modules/popup-actions.css
+   ========================================================================== */
+
+/* Nút đặt món / thêm vào giỏ trong popup */
+.popup-submit-btn {
+  width: 100%;
+  background: #e31837;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(227, 24, 55, 0.35);
+  transition: all 0.2s ease;
+  margin-top: 6px;
+}
+
+.popup-submit-btn:hover {
+  background: #c8102e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(227, 24, 55, 0.45);
+}
+
+.popup-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Toast thông báo đã thêm vào giỏ */
+.popup-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #2e7d32;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 100000;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+}
+
+.popup-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Badge hiển thị số lượng trên giỏ hàng header */
+.cart-icon a {
+  position: relative;
+}
+
+/* Thêm con trỏ trỏ vào product card */
+.product-card {
+  cursor: pointer;
+}
+
+/* Responsive cho màn hình máy tính (Desktop) */
+@media (min-width: 768px) {
+  .popup-overlay {
+    padding-bottom: 24px;
+  }
+
+  .popup-container {
+    border-radius: 24px;
+  }
+}
+
