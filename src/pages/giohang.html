@@ -2,26 +2,115 @@
 <html lang="vi">
 
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Giỏ hàng - Jollibee</title>
-
-
-    <!-- CSS HEADER -->
-    <link
-        rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css">
-
-
-    <!-- CSS GIỎ HÀNG -->
-    <link rel="stylesheet" href="../styles/ChuSyThanh_252601085/giohang.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollibee - Món mới món ngon</title>
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/carousel_banner.css" />
+  <link rel="stylesheet" href="../styles/QuyDuong_252631030/menu_popup.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/main-content.css" />
+  <link rel="stylesheet" href="../styles/ChuSyThanh_252601085/giohang.css"/>
+  <script ..="../js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
+  <script ..="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script ..="../js/CaoQuynhAnh_252601009/products.js" defer></script>
 </head>
 
+<body>
+  <div class="master-wrapper-page">
+    <!-- This is begin of header -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <div class="header-actions">
+          <form class="header-search" role="search">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="../pages/giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon" />
+            </a>
+          </div>
+          <div class="heart-icon">
+            <a href="../pages/favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="heart icon">
+            </a>
+          </div>
+          <div class="login-icon">
+            <a class="icon-circle" href="" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon" />
+            </a>
+            <a class="register" href="">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <!-- Tab for mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
+          &times;
+        </button>
+        <div class="mobile-drawer-logo">
+          <a href="">
+            <img src = "../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items">
+            <a href="index.html">Trang chủ</a>
+          </li>
+          <li class="category-menu-items"><a href="../pages/menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="../pages/khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="../pages/tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="../pages/favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="../pages/giohang.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="../pages/login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="../pages/register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="../pages/login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items menu-category-tab">
+            <a href="../pages/menu.html">Menu</a>
+            <div class="menu-category-dropdown">
+              <ul class="menu-category-list" aria-label="Danh mục món ăn">
+                <li><a class="menu-category-item" href="../pages/menu.html#combo"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="" /></span><span class="menu-category-name">Combo</span></a></li>
+                <li><a class="menu-category-item" href="../pages/menu.html#com"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="" /></span><span class="menu-category-name">Cơm</span></a></li>
+                <li><a class="menu-category-item" href="../pages/menu.html#mi-bun"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="" /></span><span class="menu-category-name">Mì / Bún</span></a></li>
+                <li><a class="menu-category-item" href="../pages/menu.html#do-an-vat"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/chips_01.png" alt="" /></span><span class="menu-category-name">Đồ ăn vặt</span></a></li>
+                <li><a class="menu-category-item" href="../pages/menu.html#do-uong"><span class="menu-category-image"><img src="../assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="" /></span><span class="menu-category-name">Đồ uống</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="category-menu-items"><a href="../pages/khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="../pages/tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
 <body>
 
 <div class="master-wrapper-page">
@@ -30,131 +119,6 @@
     <!-- ================================= -->
     <!-- HEADER -->
     <!-- ================================= -->
-
-    <header>
-
-        <!-- HEADER TRÊN -->
-
-        <div class="higher-header">
-
-
-            <!-- LOGO -->
-
-            <div class="header-logo">
-
-                <a href="../index.html">
-
-                    <img
-                        src="../assets/images/CaoQuynhAnh_252601009/logo.jpg"
-                        alt="page logo"
-                    >
-
-                </a>
-
-            </div>
-
-
-            <!-- ICON -->
-
-            <div>
-
-
-                <!-- GIỎ HÀNG -->
-
-                <div class="cart-icon">
-
-                    <a href="giohang.html">
-
-                        <img
-                            src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon"
-                        >
-
-                    </a>
-
-                </div>
-
-
-                <!-- ĐĂNG NHẬP -->
-
-                <div class="login-icon">
-
-                    <a href="#">
-
-                        <img
-                            src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon"
-                        >
-
-                    </a>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- MOBILE MENU -->
-
-            <div class="menu-for-mobile">
-
-                <!-- Menu điện thoại -->
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- ================================= -->
-        <!-- NAVBAR -->
-        <!-- ================================= -->
-
-        <div class="header-navbar-for-desktop">
-
-            <ul class="top-menu-desktop">
-
-
-                <li class="category-menu-items">
-
-                    <a href="../../index.html">
-                        Trang chủ
-                    </a>
-
-                </li>
-
-
-                <li class="category-menu-items">
-
-                    <a href="#">
-                        Menu
-                    </a>
-
-                </li>
-
-
-                <li class="category-menu-items">
-
-                    <a href="#">
-                        Khuyến mãi
-                    </a>
-
-                </li>
-
-
-                <li class="category-menu-items">
-
-                    <a href="#">
-                        Tin tức
-                    </a>
-
-                </li>
-
-
-            </ul>
-
-        </div>
-
-    </header>
 
 
 
@@ -369,7 +333,7 @@
 
 <!-- JS GIỎ HÀNG -->
 
-<script src="../js/giohang.js" ></script>
+<script ..="../js/giohang.js" ></script>
 
 
 </body>

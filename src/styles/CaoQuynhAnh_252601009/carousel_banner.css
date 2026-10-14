@@ -87,7 +87,6 @@
     pointer-events: none;
 }
 
-/* Căn chỉnh quang học để mũi tên nhìn chuẩn giữa tâm tròn */
 .ctr-btn.prev img {
     transform: translateX(-1px);
 }
@@ -121,4 +120,60 @@
     background: var(--red);
     width: 20px;
     border-radius: 10px;
+}
+
+/* Full-width hero slide, matching the compact homepage banner layout. */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 16px 0 14px;
+    overflow: hidden;
+}
+
+#carousel {
+    width: 100%;
+}
+
+.slides {
+    gap: 0;
+}
+
+.slides img {
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 4.28 / 1;
+    opacity: 1;
+}
+
+.ctr-btn {
+    width: 42px;
+    height: 42px;
+    background-color: var(--red);
+}
+
+.ctr-btn img {
+    filter: none;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        margin: 12px 0;
+    }
+
+    .slides img {
+        aspect-ratio: 2.1 / 1;
+    }
+
+    .ctr-btn {
+        width: 34px;
+        height: 34px;
+    }
 }
