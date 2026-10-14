@@ -4,270 +4,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | Ăn Ngon</title>
+  <title>Menu | Ăn Ngon - Món ngon mỗi ngày</title>
 
-  <!-- CSS Header/Footer & Component chung từ project (tái sử dụng product-card, add-btn, ...) -->
+  <!-- CSS Header/Footer & Layout chung -->
   <link href="/src/styles/CaoQuynhAnh_252601009/header_footer.css" rel="stylesheet">
   <link href="/src/styles/CaoQuynhAnh_252601009/main-content.css" rel="stylesheet">
 
-  <!-- CSS Menu riêng biệt (module hoá theo thư mục QuyDuong_252631030) -->
+  <!-- CSS riêng cho Menu (Quy Duong) -->
   <link href="/src/styles/QuyDuong_252631030/menu.css" rel="stylesheet">
-  <!-- CSS Popup sản phẩm -->
   <link href="/src/styles/QuyDuong_252631030/menu_popup.css" rel="stylesheet">
 
-  <!-- JS Header/Footer chung -->
+  <!-- JS -->
   <script src="/src/js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
-  <!-- JS điều hướng category -->
   <script src="/src/js/QuyDuong_252631030/menu.js" defer></script>
-  <!-- JS render Best Seller & Gợi ý hôm nay -->
   <script src="/src/js/QuyDuong_252631030/menu-sections.js" defer></script>
-  <!-- JS Popup xem chi tiết & chọn topping -->
   <script src="/src/js/QuyDuong_252631030/menu_popup.js" defer></script>
 </head>
 
 <body>
+  <div class="master-wrapper-page">
 
-  <!-- ===== HEADER (giữ nguyên hoàn toàn) ===== -->
-  <header>
-    <div class="higher-header">
-      <div class="header-logo">
-        <a href="../../index.html">
-          <img src="/src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
-        </a>
-      </div>
-      <div class="header-actions">
-        <form class="header-search" role="search">
-          <span aria-hidden="true">
-            <img class="search-icon" src="/src/assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
-          </span>
-          <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
-        </form>
-        <div class="cart-icon">
-          <a href="giohang.html" class="icon-circle" title="Giỏ hàng">
-            <img src="/src/assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon" />
+    <!-- ===== HEADER (Chuẩn 100% theo ảnh giao diện Ăn Ngon) ===== -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
           </a>
         </div>
-        <div class="heart-icon">
-          <a href="favorites.html" class="icon-circle" title="Yêu thích">
-            <img src="/src/assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="heart icon">
-          </a>
-        </div>
-        <div class="login-icon">
-          <a class="icon-circle" href="login.html" title="Tài khoản">
-            <img src="/src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon" />
-          </a>
-          <a class="register" href="register.html">Đăng kí</a>
-          <span class="icons">/</span>
-          <a class="login" href="login.html">Đăng nhập</a>
-        </div>
-      </div>
-      <div class="menu-for-mobile">
-        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Tab for mobile -->
-    <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
-    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
-      <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
-        &times;
-      </button>
-      <div class="mobile-drawer-logo">
-        <a href="../../index.html">
-          <img src="/src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
-        </a>
-      </div>
-      <ul class="mobile-menu-list">
-        <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
-        <li class="category-menu-items"><a href="menu.html">Menu</a></li>
-        <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
-        <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
-        <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
-        <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
-      </ul>
-      <div class="mobile-drawer-auth">
-        <div class="login-icon">
-          <a class="icon-circle" href="/src/pages/login.html" title="Tài khoản">
-            <img src="/src/assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
-          </a>
-          <a class="register" href="/src/pages/register.html">Đăng kí</a>
-          <span class="icons">/</span>
-          <a class="login" href="/src/pages/login.html">Đăng nhập</a>
-        </div>
-      </div>
-    </div>
-    <!-- end of mobile -->
-
-    <!-- desktop nav -->
-    <div class="header-navbar-for-desktop">
-      <ul class="top-menu-desktop">
-        <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
-        <li class="category-menu-items menu-category-tab active">
-          <a href="menu.html">Menu</a>
-          <div class="menu-category-dropdown">
-            <ul class="menu-category-list" aria-label="Danh mục món ăn">
-              <li><a class="menu-category-item" href="/src/pages/menu.html#combo"><span class="menu-category-image"><img
-                      src="/src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="" /></span><span
-                    class="menu-category-name">Combo</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#com"><span class="menu-category-image"><img
-                      src="/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="" /></span><span
-                    class="menu-category-name">Cơm</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#mi-bun"><span
-                    class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/spagetti_01.png"
-                      alt="" /></span><span class="menu-category-name">Mì / Bún</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#do-an-vat"><span
-                    class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/chips_01.png"
-                      alt="" /></span><span class="menu-category-name">Đồ ăn vặt</span></a></li>
-              <li><a class="menu-category-item" href="/src/pages/menu.html#do-uong"><span
-                    class="menu-category-image"><img src="/src/assets/images/TruongQuyDuong_252631030/drinks_01.png"
-                      alt="" /></span><span class="menu-category-name">Đồ uống</span></a></li>
-            </ul>
+        <div class="header-actions">
+          <form class="header-search" role="search">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="src/pages/giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon" />
+            </a>
           </div>
-        </li>
-        <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
-        <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
-      </ul>
-    </div>
-  </header>
-  <!-- ===== KẾT THÚC HEADER ===== -->
-
-  <!-- ===== NỘI DUNG CHÍNH (nằm chính giữa với wrapper-page-content) ===== -->
-  <div class="wrapper-page-content">
-
-    <!-- 1. TIÊU ĐỀ TRANG BẮT MẮT (Theo style ảnh) -->
-    <div class="menu-page-hero">
-      <div class="menu-hero-text">
-        <div class="menu-page-title-wrap">
-          <span class="menu-title-sparks">›</span>
-          <h1 class="menu-page-title">Menu</h1>
-          <span class="menu-title-sparks">‹</span>
+          <div class="heart-icon">
+            <a href="src/pages/favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="heart icon">
+            </a>
+          </div>
+          <div class="login-icon">
+            <a class="icon-circle" href="#" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
         </div>
-        <p class="menu-page-subtitle">Món ngon, đa dạng, luôn hấp dẫn!</p>
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- 2. NỘI DUNG 5 CATEGORY CARDS (Grid: 3 thẻ hàng trên, 2 thẻ hàng dưới cùng kích thước căn trái) -->
-    <div class="menu-categories-wrapper">
-      <section class="menu-categories" aria-label="Danh mục thực đơn">
 
-        <!-- Thẻ 1: Combo -->
-        <div class="category-card" id="combo">
-          <a href="" class="category-card-link" aria-label="Xem danh mục Combo">
-            <div class="category-card-icon-wrap">
-              <span class="category-card-icon">🍲</span>
-            </div>
-            <h2 class="category-card-title">Combo</h2>
+      <!-- Tab for mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
+          &times;
+        </button>
+        <div class="mobile-drawer-logo">
+          <a href="">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
           </a>
         </div>
-
-        <!-- Thẻ 2: Cơm -->
-        <div class="category-card" id="com">
-          <a href="" class="category-card-link" aria-label="Xem danh mục Cơm">
-            <div class="category-card-icon-wrap">
-              <span class="category-card-icon">🍚</span>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items">
+            <a href="../../index.html">Trang chủ</a>
+          </li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="./login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="src/pages/register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="src/pages/login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items menu-category-tab">
+            <a href="menu.html">Menu</a>
+            <div class="menu-category-dropdown">
+              <ul class="menu-category-list" aria-label="Danh mục món ăn">
+                <li><a class="menu-category-item" href="src/pages/menu.html#combo"><span class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="" /></span><span class="menu-category-name">Combo</span></a></li>
+                <li><a class="menu-category-item" href="src/pages/menu.html#com"><span class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="" /></span><span class="menu-category-name">Cơm</span></a></li>
+                <li><a class="menu-category-item" href="src/pages/menu.html#mi-bun"><span class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="" /></span><span class="menu-category-name">Mì / Bún</span></a></li>
+                <li><a class="menu-category-item" href="src/pages/menu.html#do-an-vat"><span class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/chips_01.png" alt="" /></span><span class="menu-category-name">Đồ ăn vặt</span></a></li>
+                <li><a class="menu-category-item" href="src/pages/menu.html#do-uong"><span class="menu-category-image"><img src="src/assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="" /></span><span class="menu-category-name">Đồ uống</span></a></li>
+              </ul>
             </div>
-            <h2 class="category-card-title">Cơm</h2>
-          </a>
+          </li>
+          <li class="category-menu-items"><a href="src/pages/khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="src/pages/tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- ===== KẾT THÚC HEADER ===== -->
+
+    <!-- ===== NỘI DUNG CHÍNH (wrapper-page-content) ===== -->
+    <main class="wrapper-page-content">
+
+      <!-- HÀNG TRÊN: Tiêu đề Menu (bên trái) + 5 Danh mục dạng con nhộng (bên phải) -->
+      <section class="menu-top-bar" aria-label="Menu và danh mục">
+        
+        <!-- Khối tiêu đề Menu -->
+        <div class="menu-page-hero">
+          <div class="menu-hero-text">
+            <div class="menu-page-title-wrap">
+              <span class="title-spark-left">›</span>
+              <h1 class="menu-page-title">Menu</h1>
+              <span class="title-spark-right">‹</span>
+            </div>
+            <p class="menu-page-subtitle">Món ngon, đa dạng, luôn hấp dẫn!</p>
+          </div>
         </div>
 
-        <!-- Thẻ 3: Mì / Bún -->
-        <div class="category-card" id="mi-bun">
-          <a href="" class="category-card-link" aria-label="Xem danh mục Mì/Bún">
-            <div class="category-card-icon-wrap">
-              <span class="category-card-icon">🍜</span>
-            </div>
-            <h2 class="category-card-title">Mì/Bún</h2>
+        <!-- Khối 5 Thẻ Category (Combo, Cơm, Mì/Bún, Đồ ăn vặt, Đồ uống) -->
+        <nav class="menu-categories-nav" aria-label="Danh mục món ăn">
+          
+          <!-- Thẻ 1: Combo (Active màu đỏ nổi bật) -->
+          <a href="#combo" class="category-pill active" id="cat-combo" aria-label="Xem danh mục Combo">
+            <span class="category-pill-icon">🍲</span>
+            <span class="category-pill-name">Combo</span>
           </a>
-        </div>
 
-        <!-- Thẻ 4: Đồ ăn vặt (Hàng dưới, cột 1) -->
-        <div class="category-card" id="do-an-vat">
-          <a href="" class="category-card-link" aria-label="Xem danh mục Đồ ăn vặt">
-            <div class="category-card-icon-wrap">
-              <span class="category-card-icon">🍟</span>
-            </div>
-            <h2 class="category-card-title">Đồ ăn vặt</h2>
+          <!-- Thẻ 2: Cơm -->
+          <a href="#com" class="category-pill" id="cat-com" aria-label="Xem danh mục Cơm">
+            <span class="category-pill-icon">🍚</span>
+            <span class="category-pill-name">Cơm</span>
           </a>
-        </div>
 
-        <!-- Thẻ 5: Đồ uống (Hàng dưới, cột 2) -->
-        <div class="category-card" id="do-uong">
-          <a href="" class="category-card-link" aria-label="Xem danh mục Đồ uống">
-            <div class="category-card-icon-wrap">
-              <span class="category-card-icon">🥤</span>
-            </div>
-            <h2 class="category-card-title">Đồ uống</h2>
+          <!-- Thẻ 3: Mì/Bún -->
+          <a href="#mi-bun" class="category-pill" id="cat-mi-bun" aria-label="Xem danh mục Mì/Bún">
+            <span class="category-pill-icon">🍜</span>
+            <span class="category-pill-name">Mì/Bún</span>
           </a>
-        </div>
 
+          <!-- Thẻ 4: Đồ ăn vặt -->
+          <a href="#do-an-vat" class="category-pill" id="cat-do-an-vat" aria-label="Xem danh mục Đồ ăn vặt">
+            <span class="category-pill-icon">🍟</span>
+            <span class="category-pill-name">Đồ ăn vặt</span>
+          </a>
+
+          <!-- Thẻ 5: Đồ uống -->
+          <a href="#do-uong" class="category-pill" id="cat-do-uong" aria-label="Xem danh mục Đồ uống">
+            <span class="category-pill-icon">🥤</span>
+            <span class="category-pill-name">Đồ uống</span>
+          </a>
+
+        </nav>
       </section>
-    </div>
 
-    <!-- 3. MỤC BEST SELLER -->
-    <section class="menu-section" aria-labelledby="heading-best-seller">
-      <div class="menu-section-header">
-        <div class="menu-section-title-group">
-          <h2 id="heading-best-seller" class="menu-section-title">
-            <span class="menu-section-icon">🔥</span>
-            Best Seller
-          </h2>
-          <span class="menu-section-subtitle">Những món ăn được yêu thích nhất tại Ăn Ngon!</span>
+      <!-- KHỐI 1: BEST SELLER -->
+      <section class="menu-section" aria-labelledby="heading-best-seller">
+        <div class="menu-section-header">
+          <div class="menu-section-title-group">
+            <h2 id="heading-best-seller" class="menu-section-title">
+              <span class="menu-section-icon fire-icon-symbol">🔥</span>
+              Best Seller
+            </h2>
+            <span class="menu-section-subtitle">Những món ăn được yêu thích nhất tại Ăn Ngon!</span>
+          </div>
+          <a href="" class="menu-view-all">Xem tất cả <span class="arrow-right">→</span></a>
         </div>
-        <a href="" class="menu-view-all">Xem tất cả →</a>
-      </div>
-      <!-- Lưới 6 thẻ Best Seller render tự động từ menu-sections.js -->
-      <div id="menu-best-seller-grid" class="product-grid menu-showcase-grid" aria-live="polite"></div>
-    </section>
+        <!-- Lưới 6 thẻ món ăn Best Seller -->
+        <div id="menu-best-seller-grid" class="menu-showcase-grid" aria-live="polite"></div>
+      </section>
 
-    <!-- 4. MỤC GỢI Ý HÔM NAY ĂN GÌ? -->
-    <section class="menu-section" aria-labelledby="heading-suggestion">
-      <div class="menu-section-header">
-        <div class="menu-section-title-group">
-          <h2 id="heading-suggestion" class="menu-section-title">
-            <span class="menu-section-icon">💡</span>
-            Gợi ý hôm nay ăn gì?
-          </h2>
-          <span class="menu-section-subtitle">Dựa trên khẩu vị và xu hướng được yêu thích nhất!</span>
+      <!-- KHỐI 2: GỢI Ý HÔM NAY ĂN GÌ? -->
+      <section class="menu-section" aria-labelledby="heading-suggestion">
+        <div class="menu-section-header">
+          <div class="menu-section-title-group">
+            <h2 id="heading-suggestion" class="menu-section-title">
+              <span class="menu-section-icon bulb-icon-symbol">💡</span>
+              Gợi ý hôm nay ăn gì?
+            </h2>
+            <span class="menu-section-subtitle">Dựa trên khẩu vị và xu hướng được yêu thích nhất!</span>
+          </div>
+          <a href="" class="menu-view-all">Xem tất cả <span class="arrow-right">→</span></a>
         </div>
-        <a href="" class="menu-view-all">Xem tất cả →</a>
+        <!-- Lưới 6 thẻ món ăn Gợi ý -->
+        <div id="menu-suggestion-grid" class="menu-showcase-grid" aria-live="polite"></div>
+      </section>
+
+    </main>
+    <!-- ===== KẾT THÚC NỘI DUNG CHÍNH ===== -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Ăn Ngon</h3>
+          <p>Mang đến những bữa ăn ngon miệng và trọn vẹn niềm vui cho mọi gia đình.</p>
+        </div>
+        <div>
+          <h3>Liên kết</h3>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="menu.html">Thực đơn</a>
+          <a href="khuyenmai.html">Khuyến mãi</a>
+          <a href="tintuc.html">Tin tức</a>
+        </div>
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+          <p>Email: hotro@anngon.vn</p>
+        </div>
       </div>
-      <!-- Lưới 6 thẻ Gợi ý render tự động từ menu-sections.js -->
-      <div id="menu-suggestion-grid" class="product-grid menu-showcase-grid" aria-live="polite"></div>
-    </section>
+      <div class="copyright">© 2026 Ăn Ngon - Món ngon mỗi ngày. All rights reserved.</div>
+    </footer>
+    <!-- ===== KẾT THÚC FOOTER ===== -->
+
   </div>
-  <!-- ===== KẾT THÚC NỘI DUNG CHÍNH ===== -->
-
-  <!-- This is begin of footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div>
-        <h3>Jollibee</h3>
-        <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
-      </div>
-
-      <div>
-        <h3>Liên kết</h3>
-        <a href="#">Trang chủ</a>
-        <a href="#">Thực đơn</a>
-        <a href="#">Khuyến mãi</a>
-      </div>
-
-      <div>
-        <h3>Liên hệ</h3>
-        <p>Hotline: 1900 1533</p>
-
-        <p>Email: example@email.com</p>
-      </div>
-    </div>
-
-    <div class="copyright">© 2026 Food Website</div>
-  </footer>
-  <!-- This is the end of footer -->
-
 </body>
 
 </html>

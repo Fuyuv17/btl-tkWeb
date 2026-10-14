@@ -1,53 +1,71 @@
 /* ==========================================================================
-   MENU HERO BANNER (Title & Subtitle giống ảnh "Ăn Ngon")
+   MENU TOP BAR & HERO (Tiêu đề Menu + Slogan giống ảnh mẫu)
    Author: Quy Duong (MSV: 252631030)
    File: src/styles/QuyDuong_252631030/menu-hero.css
    ========================================================================== */
 
-.menu-page-hero {
-  width: 100%;
+/* Thanh trên cùng chứa cả Tiêu đề và Danh mục nằm ngang */
+.menu-top-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 24px 0 16px;
-  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 0 20px;
+  gap: 20px;
   box-sizing: border-box;
+}
+
+/* Khối tiêu đề Menu bên trái */
+.menu-page-hero {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .menu-hero-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
-/* Tiêu đề "Menu" chữ đỏ viền nét vàng cam vui tươi */
 .menu-page-title-wrap {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  position: relative;
 }
 
 .menu-page-title {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 900;
-  color: #d61827;
+  color: #ff5757;
   margin: 0;
   line-height: 1.1;
   font-family: 'Chiron GoRound TC', 'Segoe UI', cursive, sans-serif;
   letter-spacing: -0.5px;
-  position: relative;
 }
 
-/* Dấu gạch trang trí vui mắt */
-.menu-title-sparks {
-  color: #f59e0b;
-  font-size: 22px;
-  font-weight: bold;
+/* Các tia trang trí màu cam xung quanh chữ Menu */
+.title-spark-left {
+  color: #e67e22;
+  font-size: 26px;
+  font-weight: 800;
+  transform: rotate(-10deg);
+  display: inline-block;
+}
+
+.title-spark-right {
+  color: #e67e22;
+  font-size: 26px;
+  font-weight: 800;
+  transform: rotate(10deg);
+  display: inline-block;
 }
 
 .menu-page-subtitle {
-  font-size: 14.5px;
-  font-weight: 500;
+  font-size: 13.5px;
   color: #555555;
   margin: 0;
+  font-weight: 500;
+  white-space: nowrap;
 }

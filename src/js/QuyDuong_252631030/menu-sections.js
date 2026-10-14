@@ -4,13 +4,12 @@
  * File: src/js/QuyDuong_252631030/menu-sections.js
  * 
  * Mục đích:
- *  - Logic tải dữ liệu từ src/data/data.json
- *  - Render giao diện danh sách Best Seller và Gợi ý hôm nay ăn gì
- *  - Xử lý hành vi thêm nhanh vào giỏ hàng
- * (Dữ liệu đã được tách hoàn toàn ra file src/data/data.json)
+ *  - Tải dữ liệu từ src/data/data.json và render danh sách Best Seller + Gợi ý hôm nay
+ *  - Xử lý tương tác danh mục pills (Combo, Cơm, Mì/Bún...)
+ *  - Xử lý nút "Thêm vào giỏ hàng"
  */
 
-// Đường dẫn tới file dữ liệu dùng chung
+// Đường dẫn file dữ liệu
 const DATA_JSON_PATH = "../data/data.json";
 const BACKUP_DATA_JSON_PATH = "/src/data/data.json";
 
@@ -22,7 +21,7 @@ function formatVND(amount) {
 }
 
 /**
- * Tạo phần tử DOM cho từng thẻ món ăn (tái sử dụng cấu trúc product-card)
+ * Tạo phần tử DOM cho từng thẻ món ăn đúng 100% giao diện ảnh
  */
 function createProductCardElement(product) {
   const card = document.createElement("article");
@@ -40,7 +39,7 @@ function createProductCardElement(product) {
   image.loading = "lazy";
   imageFrame.appendChild(image);
 
-  // Nhãn badge nếu có (ví dụ: Bán chạy, Combo)
+  // Nhãn badge nếu có (ví dụ: 👑 Bán chạy)
   if (product.badge) {
     const badge = document.createElement("span");
     badge.className = "badge";
@@ -68,17 +67,17 @@ function createProductCardElement(product) {
   const actions = document.createElement("div");
   actions.className = "product-actions";
 
-  // Nút thêm vào giỏ hàng
+  // Nút "Thêm vào giỏ hàng" kèm icon xe đẩy
   const addBtn = document.createElement("button");
   addBtn.className = "add-btn";
   addBtn.type = "button";
   addBtn.setAttribute("aria-label", `Thêm vào giỏ hàng ${product.name}`);
-  addBtn.innerHTML = `<span>Thêm vào giỏ hàng</span>`;
+  addBtn.innerHTML = `🛒 <span>Thêm vào giỏ hàng</span>`;
 
   addBtn.addEventListener("click", (e) => {
     e.stopPropagation();
 
-    // Cập nhật số lượng giỏ hàng trên Header nếu có badge giỏ hàng
+    // Tăng số lượng giỏ hàng trên header
     const cartCountEl = document.querySelector("#cart-count");
     if (cartCountEl) {
       let current = parseInt(cartCountEl.textContent || "0", 10) || 0;
@@ -110,7 +109,7 @@ function createProductCardElement(product) {
 }
 
 /**
- * Render danh sách sản phẩm vào một container
+ * Render mảng sản phẩm vào grid
  */
 function renderProductGrid(containerId, products) {
   const container = document.getElementById(containerId);
@@ -123,7 +122,7 @@ function renderProductGrid(containerId, products) {
 }
 
 /**
- * Tải dữ liệu từ src/data/data.json và khởi tạo hiển thị
+ * Tải dữ liệu từ src/data/data.json
  */
 async function loadMenuSectionsData() {
   let data = null;
@@ -133,20 +132,19 @@ async function loadMenuSectionsData() {
     if (response.ok) {
       data = await response.json();
     } else {
-      throw new Error(`Fetch failed with status ${response.status}`);
+      throw new Error(`Status ${response.status}`);
     }
   } catch (err) {
     try {
-      const retryResponse = await fetch(BACKUP_DATA_JSON_PATH);
-      if (retryResponse.ok) {
-        data = await retryResponse.json();
+      const fallback = await fetch(BACKUP_DATA_JSON_PATH);
+      if (fallback.ok) {
+        data = await fallback.json();
       }
-    } catch (fallbackErr) {
-      console.warn("Không thể tải data.json qua fetch (có thể do mở file trực tiếp qua giao thức file://):", fallbackErr);
+    } catch (e) {
+      console.warn("Lỗi fetch data.json:", e);
     }
   }
 
-  // Nếu tải được file data.json thành công
   if (data) {
     if (data.bestSeller) {
       renderProductGrid("menu-best-seller-grid", data.bestSeller);
@@ -155,7 +153,15 @@ async function loadMenuSectionsData() {
       renderProductGrid("menu-suggestion-grid", data.suggestions);
     }
   }
+
+  // Tương tác chuyển đổi tab active trên các pills danh mục
+  const pills = document.querySelectorAll(".category-pill");
+  pills.forEach((pill) => {
+    pill.addEventListener("click", function(e) {
+      pills.forEach(p => p.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
 }
 
-// Khởi chạy khi DOM đã sẵn sàng
 document.addEventListener("DOMContentLoaded", loadMenuSectionsData);
