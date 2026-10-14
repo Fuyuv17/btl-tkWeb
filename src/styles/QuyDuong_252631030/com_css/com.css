@@ -3,7 +3,13 @@
    Author: Quy Duong (MSV: 252631030)
    File: src/styles/QuyDuong_252631030/com.css/com.css (< 100 lines)
    ========================================================================== */
-
+/* van la wrapper nhung width = 90%*/
+.wrapper{
+    width: 100%;
+    max-width: 1400px;
+    align-items: stretch;
+    padding: 0 20px 48px;
+}
 /* Breadcrumb điều hướng */
 .category-breadcrumb {
   display: flex;
