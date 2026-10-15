@@ -772,5 +772,73 @@
         { "name": "Xốt cay ngọt", "price": 5000 }
       ]
     }
+  ],
+  "indexProducts": [
+    {
+      "id": "fried-chicken",
+      "name": "Gà rán giòn vui vẻ",
+      "price": 69000,
+      "toppingOptions": [
+        { "name": "Thêm 1 miếng gà giòn", "price": 35000 },
+        { "name": "Khoai tây chiên cỡ vừa", "price": 15000 },
+        { "name": "Xốt phô mai béo", "price": 7000 },
+        { "name": "Xốt cay ngọt Hàn Quốc", "price": 5000 }
+      ]
+    },
+    {
+      "id": "chicken-rice",
+      "name": "Cơm gà sốt",
+      "price": 59000,
+      "toppingOptions": [
+        { "name": "Thêm cơm trắng", "price": 5000 },
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Thêm miếng gà sốt", "price": 25000 },
+        { "name": "Canh rong biển", "price": 8000 }
+      ]
+    },
+    {
+      "id": "spaghetti",
+      "name": "Mì Ý sốt bò bằm",
+      "price": 49000,
+      "toppingOptions": [
+        { "name": "Thêm sợi mì Ý", "price": 10000 },
+        { "name": "Thêm sốt bò bằm", "price": 15000 },
+        { "name": "Phô mai sợi kéo", "price": 10000 },
+        { "name": "Xúc xích nướng", "price": 10000 }
+      ]
+    },
+    {
+      "id": "chicken-burger",
+      "name": "Burger gà giòn",
+      "price": 79000,
+      "toppingOptions": [
+        { "name": "Thêm miếng phô mai lát", "price": 8000 },
+        { "name": "Thêm thịt xông khói", "price": 15000 },
+        { "name": "Khoai tây chiên", "price": 15000 },
+        { "name": "Nâng cấp ly nước lớn", "price": 6000 }
+      ]
+    },
+    {
+      "id": "sauced-chicken",
+      "name": "Gà rán xốt cay",
+      "price": 72000,
+      "toppingOptions": [
+        { "name": "Thêm 1 miếng gà cay", "price": 36000 },
+        { "name": "Xốt cay đặc biệt", "price": 5000 },
+        { "name": "Rong biển lắc", "price": 5000 },
+        { "name": "Khoai tây lắc phô mai", "price": 18000 }
+      ]
+    },
+    {
+      "id": "ice-cream",
+      "name": "Kem vani",
+      "price": 19000,
+      "toppingOptions": [
+        { "name": "Sốt socola fudge", "price": 5000 },
+        { "name": "Sốt dâu tây", "price": 5000 },
+        { "name": "Hạt đậu phộng giòn", "price": 4000 },
+        { "name": "Bánh quế giòn", "price": 5000 }
+      ]
+    }
   ]
 }

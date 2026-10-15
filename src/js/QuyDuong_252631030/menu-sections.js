@@ -115,7 +115,7 @@ function createProductCardElement(product) {
   addBtn.className = "add-btn";
   addBtn.type = "button";
   addBtn.setAttribute("aria-label", `Thêm vào giỏ hàng ${product.name}`);
-  addBtn.innerHTML = `🛒 <span>Thêm vào giỏ hàng</span>`;
+  addBtn.innerHTML = `<span>Thêm vào giỏ hàng</span>`;
 
   addBtn.addEventListener("click", (e) => {
     e.stopPropagation();
