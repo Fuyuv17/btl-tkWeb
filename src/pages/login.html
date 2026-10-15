@@ -8,23 +8,11 @@
 
   <!-- CSS chung của dự án -->
   <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
-  <link rel="stylesheet" href="../styles/auth_popup.css" />
-
-  <style>
-    .login-page-container {
-      width: 100%;
-      max-width: 480px;
-      margin: 40px auto 60px;
-      border-radius: 18px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
-      overflow: hidden;
-      background: #ffffff;
-    }
-  </style>
+  <link rel="stylesheet" href="../styles/DuongVanMinh/login.css" />
 
   <!-- Scripts -->
   <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
-  <script src="../js/auth_popup.js" defer></script>
+  <script src="../js/DuongVanMinh/login.js" defer></script>
 </head>
 
 <body>
@@ -108,41 +96,29 @@
       </div>
     </header>
 
-    <!-- ==================== GIAO DIỆN ĐĂNG NHẬP (CHUẨN FORM ẢNH 1) ==================== -->
+    <!-- ==================== GIAO DIỆN ĐĂNG NHẬP ==================== -->
     <main class="wrapper-page-content" style="align-items: center;">
-      <div class="login-page-container">
-        
-        <!-- Nửa trên màu Đỏ -->
-        <div class="auth-red-section">
-          <div class="auth-logo-wrap">
-            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" class="auth-logo-img" />
-            <span class="auth-brand-name">Ăn Ngon</span>
+      <div class="register-page-wrapper">
+        <h1 class="register-page-title">ĐĂNG NHẬP TÀI KHOẢN</h1>
+
+        <form id="standalone-login-form" autocomplete="on">
+          <div class="register-form-grid">
+            <div class="reg-input-group">
+              <input type="text" id="page-login-account" class="reg-input" placeholder="Email / Số điện thoại *" autocomplete="username" required />
+            </div>
+
+            <div class="reg-input-group">
+              <input type="password" id="page-login-password" class="reg-input" placeholder="Mật khẩu *" autocomplete="current-password" required />
+            </div>
+
+            <div class="reg-action-row">
+              <button type="submit" class="reg-submit-btn">ĐĂNG NHẬP</button>
+              <span class="reg-login-prompt">
+                Bạn chưa có tài khoản? <a href="register.html">Đăng ký ngay</a>
+              </span>
+            </div>
           </div>
-
-          <h1 class="auth-title">VUI LÒNG ĐĂNG NHẬP</h1>
-
-          <form id="standalone-login-form" autocomplete="on">
-            <div class="auth-input-group">
-              <input type="text" id="page-login-account" class="auth-input" placeholder="Email / Số điện thoại" required />
-            </div>
-
-            <div class="auth-input-group">
-              <input type="password" id="page-login-password" class="auth-input" placeholder="Mật khẩu" required />
-              <button type="button" class="auth-password-toggle" aria-label="Xem mật khẩu">👁️</button>
-              <a href="#" class="auth-forgot-link">Quên mật khẩu?</a>
-            </div>
-          </form>
-        </div>
-
-        <!-- Nửa dưới màu Vàng -->
-        <div class="auth-yellow-section">
-          <button type="submit" form="standalone-login-form" class="auth-submit-btn">ĐĂNG NHẬP</button>
-
-          <p class="auth-switch-text">
-            Bạn chưa có tài khoản? <a href="register.html" class="auth-switch-link">Đăng ký ngay</a>
-          </p>
-        </div>
-
+        </form>
       </div>
     </main>
 

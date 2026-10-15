@@ -14,13 +14,12 @@
 
   <!-- CSS chuyên biệt cho trang Đồ uống -->
   <link rel="stylesheet" href="../styles/douong.css" />
-  <link rel="stylesheet" href="../styles/auth_popup.css" />
+  <link rel="stylesheet" href="../styles/DuongVanMinh/login.css" />
 
   <!-- Scripts -->
   <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
   <script src="../js/douong.js" defer></script>
   <script src="../js/QuyDuong_252631030/menu_popup.js" defer></script>
-  <script src="../js/auth_popup.js" defer></script>
 </head>
 
 <body>
@@ -86,7 +85,6 @@
         <ul class="mobile-menu-list">
           <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
           <li class="category-menu-items active"><a href="menu.html">Menu</a></li>
-          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
           <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
           <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
           <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
@@ -154,7 +152,6 @@
               </ul>
             </div>
           </li>
-          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
           <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
         </ul>
       </div>
@@ -203,94 +200,28 @@
         </a>
       </nav>
 
-      <!-- 2. BANNER HERO CAROUSEL ĐỒ UỐNG (THEO MOCKUP) -->
-      <section class="drink-carousel-container" aria-label="Banner quảng cáo đồ uống">
-        <div class="drink-carousel-wrapper">
-          <div class="drink-banner-slide">
-            <img src="../assets/images/douong/banner_douong_clean.png" alt="Thức uống mới - Trà Sữa & Trà Trái Cây - Thanh mát đậm vị" />
-          </div>
-          <!-- Nút bấm điều hướng 2 bên chuẩn form -->
-          <button class="banner-ctr-btn prev" type="button" aria-label="Banner trước">
-            <img src="../assets/images/CaoQuynhAnh_252601009/prev-icon.svg" alt="prev" />
-          </button>
-          <button class="banner-ctr-btn next" type="button" aria-label="Banner kế tiếp">
-            <img src="../assets/images/CaoQuynhAnh_252601009/next-icon.svg" alt="next" />
-          </button>
-        </div>
-      </section>
-
-      <!-- 3. THANH CAM KẾT DỊCH VỤ (SERVICE BENEFITS) -->
-      <section class="drink-service-benefits" aria-label="Dịch vụ nổi bật">
-        <div class="drink-service-item">
-          <span class="drink-service-icon" aria-hidden="true">🛵</span>
-          <div class="drink-service-text">
-            <strong>Giao hàng nhanh</strong>
-            <small>Trong 30 phút</small>
-          </div>
-        </div>
-
-        <div class="drink-service-item">
-          <span class="drink-service-icon" aria-hidden="true">✓</span>
-          <div class="drink-service-text">
-            <strong>Thực phẩm an toàn</strong>
-            <small>Nguồn gốc rõ ràng</small>
-          </div>
-        </div>
-
-        <div class="drink-service-item">
-          <span class="drink-service-icon" aria-hidden="true">◆</span>
-          <div class="drink-service-text">
-            <strong>Ưu đãi hấp dẫn</strong>
-            <small>Đồ uống ngon mỗi ngày</small>
-          </div>
-        </div>
-
-        <div class="drink-service-item">
-          <span class="drink-service-icon" aria-hidden="true">◉</span>
-          <div class="drink-service-text">
-            <strong>Hỗ trợ 24/7</strong>
-            <small>Luôn bên bạn</small>
-          </div>
-        </div>
-
-        <div class="drink-service-item">
-          <span class="drink-service-icon" aria-hidden="true">★</span>
-          <div class="drink-service-text">
-            <strong>Đánh giá uy tín</strong>
-            <small>Hàng ngàn khách hàng tin dùng</small>
-          </div>
-        </div>
-      </section>
-
       <!-- 4. THANH BỘ LỌC PHÂN LOẠI ĐỒ UỐNG (SUB-CATEGORIES PILLS) -->
       <section class="drink-filter-wrapper" aria-label="Bộ lọc phân loại đồ uống">
         <div class="drink-subcategories" role="tablist">
           <button class="subcat-pill active" data-category="all" role="tab" aria-selected="true">
-            <span class="subcat-icon">🥤</span>
             <span>Tất cả</span>
           </button>
           <button class="subcat-pill" data-category="tra-sua" role="tab" aria-selected="false">
-            <span class="subcat-icon">🧋</span>
             <span>Trà sữa</span>
           </button>
           <button class="subcat-pill" data-category="tra-trai-cay" role="tab" aria-selected="false">
-            <span class="subcat-icon">🍹</span>
             <span>Trà trái cây</span>
           </button>
           <button class="subcat-pill" data-category="ca-phe" role="tab" aria-selected="false">
-            <span class="subcat-icon">☕</span>
             <span>Cà phê</span>
           </button>
           <button class="subcat-pill" data-category="nuoc-ep" role="tab" aria-selected="false">
-            <span class="subcat-icon">🍊</span>
             <span>Nước ép</span>
           </button>
           <button class="subcat-pill" data-category="da-xay" role="tab" aria-selected="false">
-            <span class="subcat-icon">🍨</span>
             <span>Đá xay</span>
           </button>
           <button class="subcat-pill" data-category="do-uong-khac" role="tab" aria-selected="false">
-            <span class="subcat-icon">🥤</span>
             <span>Đồ uống khác</span>
           </button>
         </div>

@@ -119,6 +119,68 @@ header.header-scrolled {
   font-size: 14px;
 }
 
+.header-user-name {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.header-account-menu {
+    position: relative;
+}
+
+.header-account-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 20;
+    display: none;
+    min-width: 140px;
+    padding: 6px 0;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.header-account-dropdown::before {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    height: 8px;
+    content: "";
+}
+
+.header-account-menu:hover .header-account-dropdown,
+.header-account-menu:focus-within .header-account-dropdown,
+.header-account-menu.menu-open .header-account-dropdown {
+    display: block;
+}
+
+.header-account-dropdown .register,
+.header-account-dropdown .login {
+    display: block;
+    padding: 9px 14px;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.header-account-dropdown .icons {
+    display: none;
+}
+
+.header-account-dropdown .register:hover,
+.header-account-dropdown .login:hover {
+    background: #fff1f1;
+    color: var(--red);
+}
+
 .register:hover, .login:hover {
   text-decoration: underline;
 }
@@ -725,6 +787,23 @@ header {
         align-items: center;
         gap: 8px;
         color: white;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mobile-drawer-auth .header-account-menu {
+        position: relative;
+    }
+
+    .mobile-drawer-auth .header-user-name {
+        max-width: 210px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .mobile-drawer-auth .header-account-dropdown {
+        right: 50%;
+        transform: translateX(50%);
     }
 
     .mobile-drawer-auth .icon-circle {

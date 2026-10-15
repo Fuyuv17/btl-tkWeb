@@ -8,45 +8,11 @@
 
   <!-- CSS chung của dự án -->
   <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
-  <link rel="stylesheet" href="../styles/auth_popup.css" />
-
-  <style>
-    .register-page-wrapper {
-      width: 100%;
-      max-width: 680px;
-      margin: 40px auto 60px;
-      padding: 36px 40px 44px;
-      background: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-      box-sizing: border-box;
-    }
-
-    .register-page-title {
-      font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--red, #ff3737);
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin: 0 0 28px;
-    }
-
-    @media (max-width: 768px) {
-      .register-page-wrapper {
-        margin: 20px 16px 40px;
-        padding: 24px 20px 30px;
-      }
-      .register-page-title {
-        font-size: 22px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../styles/DuongVanMinh/login.css" />
 
   <!-- Scripts -->
   <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
-  <script src="../js/auth_popup.js" defer></script>
+  <script src="../js/DuongVanMinh/register.js" defer></script>
 </head>
 
 <body>
@@ -161,53 +127,14 @@
             <!-- Mật khẩu & Độ bảo mật (ảnh 2) -->
             <div class="reg-input-group">
               <input type="password" id="page-reg-password" class="reg-input" placeholder="Mật khẩu *" required />
-              <div id="page-reg-strength-box" class="password-strength-box">
-                <span class="password-strength-text">Độ bảo mật: <span id="page-reg-strength-text"><strong>Không</strong></span></span>
-                <div class="password-strength-bar">
-                  <span class="strength-dot"></span>
-                  <span class="strength-dot"></span>
-                  <span class="strength-dot"></span>
-                </div>
-              </div>
+              
             </div>
 
             <!-- Xác nhận mật khẩu -->
             <div class="reg-input-group">
               <input type="password" id="page-reg-repassword" class="reg-input" placeholder="Xác nhận mật khẩu *" required />
             </div>
-
-            <!-- Ngày sinh -->
-            <div class="reg-input-group">
-              <input type="date" id="page-reg-birthday" class="reg-input" placeholder="Ngày sinh *" required />
-            </div>
-
-            <!-- Giới tính -->
-            <div class="reg-input-group">
-              <select id="page-reg-gender" class="reg-select" required>
-                <option value="" disabled selected>Chọn giới tính *</option>
-                <option value="male">Nam</option>
-                <option value="female">Nữ</option>
-                <option value="other">Khác</option>
-              </select>
-            </div>
-
-            <!-- Tỉnh thành -->
-            <div class="reg-input-group">
-              <select id="page-reg-province" class="reg-select" required>
-                <option value="" disabled selected>Chọn tỉnh thành *</option>
-                <option value="HN">Hà Nội</option>
-                <option value="HCM">TP. Hồ Chí Minh</option>
-                <option value="DN">Đà Nẵng</option>
-                <option value="HP">Hải Phòng</option>
-                <option value="CT">Cần Thơ</option>
-                <option value="BD">Bình Dương</option>
-                <option value="DNA">Đồng Nai</option>
-                <option value="QN">Quảng Ninh</option>
-                <option value="KH">Khánh Hòa</option>
-                <option value="other">Tỉnh thành khác</option>
-              </select>
-            </div>
-
+            
             <!-- Checkbox điều khoản (ảnh 3) -->
             <div class="reg-checkbox-group">
               <label class="reg-checkbox-item">

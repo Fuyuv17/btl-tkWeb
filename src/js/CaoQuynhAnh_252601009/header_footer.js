@@ -8,6 +8,85 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ========================================================
+     0. HIỂN THỊ TRẠNG THÁI TÀI KHOẢN
+  ======================================================== */
+  const isPagesDirectory = window.location.pathname.toLowerCase().includes('/src/pages/');
+  const profileUrl = new URL(isPagesDirectory ? 'profile.html' : 'src/pages/profile.html', window.location.href);
+  const homeUrl = new URL(isPagesDirectory ? '../../index.html' : 'index.html', window.location.href);
+  let currentUser = null;
+
+  ['btl_current_user', 'CurrentUser'].some((storageKey) => {
+    try {
+      const storedUser = JSON.parse(localStorage.getItem(storageKey) || 'null');
+      if (storedUser && typeof storedUser === 'object') {
+        currentUser = storedUser;
+        return true;
+      }
+    } catch (error) {
+      localStorage.removeItem(storageKey);
+    }
+    return false;
+  });
+
+  const displayName = currentUser?.fullName
+    || currentUser?.fullname
+    || `${currentUser?.ho || ''} ${currentUser?.ten || ''}`.trim();
+
+  document.querySelectorAll('header .login-icon').forEach((accountLinks) => {
+    const profileLink = accountLinks.querySelector(':scope > .register');
+    const logoutLink = accountLinks.querySelector(':scope > .login');
+    const accountIcon = accountLinks.querySelector(':scope > .icon-circle');
+    if (!profileLink || !logoutLink) return;
+
+    if (currentUser) {
+      const separator = accountLinks.querySelector(':scope > .icons');
+      const accountMenu = document.createElement('div');
+      accountMenu.className = 'header-account-menu';
+
+      const userName = document.createElement('button');
+      userName.className = 'header-user-name';
+      userName.type = 'button';
+      userName.setAttribute('aria-expanded', 'false');
+
+      const dropdown = document.createElement('div');
+      dropdown.className = 'header-account-dropdown';
+      dropdown.setAttribute('aria-label', 'Tùy chọn tài khoản');
+
+      userName.textContent = displayName ? `Xin chào, ${displayName}` : 'Xin chào';
+
+      profileLink.href = profileUrl.href;
+      profileLink.textContent = 'Xem hồ sơ';
+      logoutLink.textContent = 'Đăng xuất';
+      logoutLink.href = homeUrl.href;
+      if (accountIcon) accountIcon.href = profileUrl.href;
+
+      accountMenu.append(userName, dropdown);
+      dropdown.append(profileLink);
+      if (separator) dropdown.append(separator);
+      dropdown.append(logoutLink);
+      accountLinks.append(accountMenu);
+
+      userName.addEventListener('click', () => {
+        const isOpen = accountMenu.classList.toggle('menu-open');
+        userName.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      logoutLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        ['CurrentUser', 'btl_current_user'].forEach((key) => localStorage.removeItem(key));
+        window.location.assign(homeUrl.href);
+      });
+    } else {
+      accountLinks.querySelector(':scope > .header-user-name')?.remove();
+      profileLink.href = isPagesDirectory ? 'register.html' : 'src/pages/register.html';
+      profileLink.textContent = 'Đăng kí';
+      logoutLink.href = isPagesDirectory ? 'login.html' : 'src/pages/login.html';
+      logoutLink.textContent = 'Đăng nhập';
+      if (accountIcon) accountIcon.href = isPagesDirectory ? 'login.html' : 'src/pages/login.html';
+    }
+  });
+
+  /* ========================================================
      1. XỬ LÝ TOGGLE MENU MOBILE (DRAWER BÊN PHẢI)
   ======================================================== */
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
