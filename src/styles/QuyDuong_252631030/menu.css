@@ -4,7 +4,7 @@
    File: src/styles/QuyDuong_252631030/menu.css
    ========================================================================== */
 
-@import url('./menu-hero.css');
-@import url('./menu-category-card.css');
 @import url('./menu-showcase.css');
 @import url('./menu-responsive.css');
+@import url('./modules/menu-footer-layout.css');
+@import url('./modules/menu-card-toppings.css');

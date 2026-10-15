@@ -1,0 +1,39 @@
+/* ==========================================================================
+   MENU CARD TOPPINGS & BADGES (Định dạng hiển thị tùy chọn Topping)
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/modules/menu-card-toppings.css
+   ========================================================================== */
+
+/* Thẻ món ăn có Topping có hiệu ứng tương tác trực quan */
+.product-card[data-toppings] {
+  cursor: pointer;
+}
+
+/* Tùy chọn Topping checkbox và hiệu ứng active khi chọn */
+.popup-topping-item input[type="checkbox"] {
+  accent-color: #d61827;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.popup-topping-item:has(input:checked) {
+  background: #ffebe5;
+  font-weight: 600;
+  color: #d61827;
+}
+
+/* Scrollbar tinh tế cho danh sách topping */
+.popup-toppings-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.popup-toppings-list::-webkit-scrollbar-thumb {
+  background: #ffb7a2;
+  border-radius: 4px;
+}
+
+.popup-toppings-list::-webkit-scrollbar-thumb:hover {
+  background: #d61827;
+}
+

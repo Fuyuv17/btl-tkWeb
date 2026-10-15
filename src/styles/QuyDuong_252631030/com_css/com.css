@@ -3,12 +3,38 @@
    Author: Quy Duong (MSV: 252631030)
    File: src/styles/QuyDuong_252631030/com.css/com.css (< 100 lines)
    ========================================================================== */
-/* van la wrapper nhung width = 90%*/
-.wrapper{
-    width: 100%;
-    max-width: 1400px;
-    align-items: stretch;
-    padding: 0 20px 48px;
+/* Triệt tiêu margin mặc định của browser trên thẻ html & body */
+html,
+body {
+  background: url("/src/assets/images/TruongQuyDuong_252631030/bg-top.png");
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow-x: hidden;
+}
+
+
+/* Footer tràn ra sát mép cửa sổ trình duyệt */
+.footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Kỹ thuật phá vỡ mọi container cha nếu footer bị lồng bên trong wrapper */
+.wrapper .footer,
+.master-wrapper-page .footer {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
 }
 /* Breadcrumb điều hướng */
 .category-breadcrumb {

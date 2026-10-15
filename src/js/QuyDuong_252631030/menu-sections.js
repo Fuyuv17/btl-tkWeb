@@ -53,6 +53,9 @@ function createProductCardElement(product) {
   card.className = "product-card";
   card.dataset.price = product.price;
   card.dataset.productId = product.id;
+  if (product.toppingOptions && Array.isArray(product.toppingOptions)) {
+    card.dataset.toppings = JSON.stringify(product.toppingOptions);
+  }
 
   // 1. Ảnh món ăn
   const imageFrame = document.createElement("div");

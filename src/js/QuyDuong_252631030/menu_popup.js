@@ -130,13 +130,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await getProductsData();
       let toppingOptions = null;
 
-      if (data) {
+      if (typeof findProductToppings === "function") {
+        toppingOptions = findProductToppings(productId, data);
+      } else if (data) {
         // Tìm kiếm trong category com, combo, v.v..
         for (const catKey of Object.keys(data)) {
           if (data[catKey] && data[catKey].products && data[catKey].products[productId]) {
             toppingOptions = data[catKey].products[productId].toppingOptions;
             break;
           }
+        }
+        // Kiểm tra trong bestSeller & suggestions
+        if (!toppingOptions && Array.isArray(data.bestSeller)) {
+          const match = data.bestSeller.find(p => p.id === productId);
+          if (match && match.toppingOptions) toppingOptions = match.toppingOptions;
+        }
+        if (!toppingOptions && Array.isArray(data.suggestions)) {
+          const match = data.suggestions.find(p => p.id === productId);
+          if (match && match.toppingOptions) toppingOptions = match.toppingOptions;
         }
       }
 

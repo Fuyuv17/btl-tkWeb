@@ -605,7 +605,13 @@
       "description": "Sườn nướng thơm lừng, đậm đà hương vị Sài Gòn.",
       "price": 45000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg",
-      "badge": "Bán chạy"
+      "badge": "Bán chạy",
+      "toppingOptions": [
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Thêm cơm", "price": 5000 },
+        { "name": "Thêm sườn", "price": 25000 },
+        { "name": "Thêm hành lá", "price": 2000 }
+      ]
     },
     {
       "id": "com-rang-hai-san",
@@ -613,7 +619,13 @@
       "description": "Cơm rang tôm, mực, trứng, rau củ thơm ngon.",
       "price": 40000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Thêm tôm hải sản", "price": 15000 },
+        { "name": "Thêm cơm rang", "price": 5000 },
+        { "name": "Thêm kim chi", "price": 5000 }
+      ]
     },
     {
       "id": "com-ga",
@@ -621,7 +633,13 @@
       "description": "Cơm gà mềm ngọt, da vàng óng hấp dẫn.",
       "price": 42000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Thêm đùi gà", "price": 25000 },
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Thêm cơm", "price": 5000 },
+        { "name": "Xốt cay ngọt", "price": 5000 }
+      ]
     },
     {
       "id": "com-suon",
@@ -629,7 +647,13 @@
       "description": "Sườn nướng đậm vị, ăn là ghiền.",
       "price": 47000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/4_mieng_ga_ron.jpg",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Thêm sườn nướng", "price": 25000 },
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Thêm cơm", "price": 5000 },
+        { "name": "Mỡ hành", "price": 2000 }
+      ]
     },
     {
       "id": "bun-bo-hue",
@@ -637,7 +661,13 @@
       "description": "Nước dùng đậm đà, thịt bò mềm chuẩn vị Huế.",
       "price": 50000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/spagetti_01.png",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Thêm thịt bò", "price": 20000 },
+        { "name": "Thêm chả lụa", "price": 10000 },
+        { "name": "Thêm bún", "price": 5000 },
+        { "name": "Trứng chần", "price": 8000 }
+      ]
     },
     {
       "id": "cha-gio",
@@ -645,7 +675,13 @@
       "description": "Giòn rụm, nhân thịt đậm đà thơm phức.",
       "price": 35000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/chips_01.png",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Thêm 2 cuốn chả giò", "price": 12000 },
+        { "name": "Xốt tương xí muội", "price": 5000 },
+        { "name": "Xốt Mayonnaise", "price": 5000 },
+        { "name": "Thêm rau thơm dưa leo", "price": 3000 }
+      ]
     }
   ],
   "suggestions": [
@@ -656,7 +692,13 @@
       "description": "Đầy đủ dinh dưỡng, no lâu, giải khát đã khát.",
       "price": 60000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png",
-      "badge": "Combo"
+      "badge": "Combo",
+      "toppingOptions": [
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Nâng cấp nước ngọt lớn", "price": 6000 },
+        { "name": "Thêm sườn nướng", "price": 25000 },
+        { "name": "Canh rong biển", "price": 8000 }
+      ]
     },
     {
       "id": "bun-bo-hue-dac-biet",
@@ -664,7 +706,14 @@
       "description": "Thịt bò nhiều, nước dùng ngọt thanh đậm đà.",
       "price": 55000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/spagetti_02.png",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Thêm thịt bò bắp", "price": 20000 },
+        { "name": "Thêm chả cua", "price": 12000 },
+        { "name": "Thêm gân bò", "price": 15000 },
+        { "name": "Thêm bún", "price": 5000 },
+        { "name": "Trứng chần", "price": 8000 }
+      ]
     },
     {
       "id": "com-rang-tom",
@@ -672,7 +721,13 @@
       "description": "Tôm tươi, hạt cơm tơi xốp, vàng ươm.",
       "price": 45000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Thêm tôm tươi", "price": 15000 },
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Thêm cơm rang", "price": 5000 },
+        { "name": "Xúc xích", "price": 10000 }
+      ]
     },
     {
       "id": "khoai-tay-lac-pho-mai",
@@ -680,7 +735,13 @@
       "description": "Giòn tan, béo ngậy, món ăn vặt cực cuốn.",
       "price": 20000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/chips_01.png",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Thêm bột phô mai", "price": 5000 },
+        { "name": "Xốt phô mai béo", "price": 7000 },
+        { "name": "Xúc xích lắc phô mai", "price": 10000 },
+        { "name": "Nâng cấp size lớn", "price": 10000 }
+      ]
     },
     {
       "id": "tra-sua-tran-chau",
@@ -688,7 +749,14 @@
       "description": "Thơm béo, mát lạnh, giải nhiệt sảng khoái.",
       "price": 25000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/drinks_01.png",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Trân châu đường đen", "price": 5000 },
+        { "name": "Trân châu trắng", "price": 5000 },
+        { "name": "Thạch phô mai", "price": 7000 },
+        { "name": "Pudding trứng", "price": 7000 },
+        { "name": "Kem cheese", "price": 8000 }
+      ]
     },
     {
       "id": "com-ga-nuong",
@@ -696,7 +764,13 @@
       "description": "Thơm ngon, đậm vị, da giòn thịt ngọt.",
       "price": 48000,
       "image": "/src/assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg",
-      "badge": ""
+      "badge": "",
+      "toppingOptions": [
+        { "name": "Trứng ốp la", "price": 7000 },
+        { "name": "Thêm cơm", "price": 5000 },
+        { "name": "Thêm đùi gà nướng", "price": 25000 },
+        { "name": "Xốt cay ngọt", "price": 5000 }
+      ]
     }
   ]
 }
