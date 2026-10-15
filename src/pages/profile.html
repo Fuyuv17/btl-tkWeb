@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý tài khoản | Ăn Ngon - Jollibee</title>
+
+  <!-- CSS dùng chung từ dự án -->
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/main-content.css" />
+  <link rel="stylesheet" href="../styles/auth_popup.css" />
+
+  <!-- CSS chuyên biệt cho trang Quản lý tài khoản / Profile -->
+  <link rel="stylesheet" href="../styles/profile.css" />
+
+  <!-- Scripts -->
+  <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../js/auth_popup.js" defer></script>
+  <script src="../js/profile.js" defer></script>
+</head>
+
+<body>
+  <div class="master-wrapper-page">
+
+    <!-- ==================== BEGIN HEADER ==================== -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html" title="Trang chủ Ăn Ngon">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+
+        <div class="header-actions">
+          <form class="header-search" role="search" onsubmit="return false;">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm" />
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+
+          <div class="cart-icon">
+            <a href="giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="Giỏ hàng" />
+            </a>
+          </div>
+
+          <div class="heart-icon">
+            <a href="favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="Yêu thích" />
+            </a>
+          </div>
+
+          <div class="login-icon">
+            <a class="icon-circle" href="profile.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer menu cho mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
+        <div class="mobile-drawer-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="profile.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thanh điều hướng Desktop -->
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items menu-category-tab">
+            <a href="menu.html">Menu</a>
+            <div class="menu-category-dropdown">
+              <ul class="menu-category-list" aria-label="Danh mục món ăn">
+                <li><a class="menu-category-item" href="menu.html#combo"><span class="menu-category-name">Combo</span></a></li>
+                <li><a class="menu-category-item" href="menu.html#com"><span class="menu-category-name">Cơm</span></a></li>
+                <li><a class="menu-category-item" href="menu.html#mi-bun"><span class="menu-category-name">Mì / Bún</span></a></li>
+                <li><a class="menu-category-item" href="menu.html#do-an-vat"><span class="menu-category-name">Đồ ăn vặt</span></a></li>
+                <li><a class="menu-category-item" href="douong.html"><span class="menu-category-name">Đồ uống</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- ==================== END HEADER ==================== -->
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="wrapper-page-content profile-page-content">
+      <div class="profile-layout">
+
+        <!-- ==================== 1. SIDEBAR MENU BÊN TRÁI ==================== -->
+        <aside class="profile-sidebar">
+          <h2 class="profile-sidebar-title">TÀI KHOẢN CỦA TÔI</h2>
+          <ul class="profile-nav-list">
+            <li class="profile-nav-item active" data-tab="dashboard">
+              <a href="javascript:void(0)" class="profile-nav-link">QUẢN LÝ TÀI KHOẢN</a>
+            </li>
+            <li class="profile-nav-item" data-tab="orders">
+              <a href="javascript:void(0)" class="profile-nav-link">ĐƠN HÀNG CỦA TÔI</a>
+            </li>
+            <li class="profile-nav-item" data-tab="address">
+              <a href="javascript:void(0)" class="profile-nav-link">ĐỊA CHỈ GIAO HÀNG</a>
+            </li>
+            <li class="profile-nav-item" data-tab="info">
+              <a href="javascript:void(0)" class="profile-nav-link">THÔNG TIN TÀI KHOẢN</a>
+            </li>
+            <li class="profile-nav-item" data-tab="promotions">
+              <a href="javascript:void(0)" class="profile-nav-link">DANH SÁCH ƯU ĐÃI</a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- ==================== 2. KHU VỰC NỘI DUNG CHÍNH ==================== -->
+        <section class="profile-main-section">
+
+          <!-- ----------------------------------------------------
+               TAB 1: QUẢN LÝ TÀI KHOẢN (CHUẨN HÌNH ẢNH MẪU CỦA BẠN)
+               ---------------------------------------------------- -->
+          <div id="tab-dashboard" class="profile-tab-pane active">
+            <h1 class="profile-page-heading">QUẢN LÝ TÀI KHOẢN</h1>
+            <p class="profile-welcome-text">
+              Xin chào, <span id="profile-display-name">Dương Minh</span>. Với trang này, bạn sẽ quản lý được tất cả thông tin tài khoản của mình.
+            </p>
+
+            <!-- Khung 1: THÔNG TIN TÀI KHOẢN -->
+            <div class="profile-card">
+              <div class="profile-card-header">
+                <h3 class="profile-card-title">THÔNG TIN TÀI KHOẢN</h3>
+              </div>
+              <div class="profile-card-body profile-card-grid-2">
+                <!-- Cột trái: Thông tin liên hệ -->
+                <div class="profile-info-col">
+                  <h4 class="profile-col-title">THÔNG TIN LIÊN HỆ</h4>
+                  <p class="profile-user-name" id="card-contact-name">Dương Minh</p>
+                  <p class="profile-user-email" id="card-contact-email">duongminhdzt@gmail.com</p>
+                  <div class="profile-links-row">
+                    <button type="button" class="profile-action-link" id="link-edit-contact">Chỉnh sửa</button>
+                    <span class="profile-link-sep">|</span>
+                    <button type="button" class="profile-action-link" id="link-change-password">Thay đổi mật khẩu</button>
+                  </div>
+                </div>
+
+                <!-- Cột phải: Đăng ký nhận tin -->
+                <div class="profile-info-col profile-border-left">
+                  <h4 class="profile-col-title">ĐĂNG KÝ NHẬN TIN</h4>
+                  <p class="profile-newsletter-status" id="card-newsletter-status">
+                    Bạn đã đăng ký nhận "Bản Tin Chung".
+                  </p>
+                  <div class="profile-links-row">
+                    <button type="button" class="profile-action-link" id="link-edit-newsletter">Chỉnh sửa</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Khung 2: ĐỊA CHỈ GIAO HÀNG -->
+            <div class="profile-card">
+              <div class="profile-card-header">
+                <h3 class="profile-card-title">ĐỊA CHỈ GIAO HÀNG</h3>
+                <button type="button" class="profile-header-link" id="link-manage-address">Quản lý địa chỉ</button>
+              </div>
+              <div class="profile-card-body">
+                <h4 class="profile-col-title">ĐỊA CHỈ GIAO HÀNG MẶC ĐỊNH</h4>
+                <p class="profile-address-text" id="card-default-address">
+                  123 Đường Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội
+                </p>
+                <div class="profile-links-row">
+                  <button type="button" class="profile-action-link" id="link-edit-address">Chỉnh sửa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------
+               TAB 2: ĐƠN HÀNG CỦA TÔI
+               ---------------------------------------------------- -->
+          <div id="tab-orders" class="profile-tab-pane">
+            <h1 class="profile-page-heading">ĐƠN HÀNG CỦA TÔI</h1>
+            <p class="profile-welcome-text">Theo dõi lịch sử đơn hàng và tình trạng giao món ăn của bạn.</p>
+
+            <div class="profile-card">
+              <div class="profile-card-header">
+                <h3 class="profile-card-title">DANH SÁCH ĐƠN HÀNG GẦN ĐÂY</h3>
+              </div>
+              <div class="profile-card-body">
+                <div class="profile-order-item">
+                  <div>
+                    <div class="order-code">#DH-20261015-88</div>
+                    <div style="font-size:13.5px;color:#555;margin-top:4px;">1x Trà sữa trân châu, 1x Gà giòn vui vẻ</div>
+                    <div style="font-size:12px;color:#888;margin-top:2px;">15/10/2026 - 19:30</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <span class="order-status">Đang giao hàng</span>
+                    <div style="font-weight:800;color:#d81616;margin-top:6px;">89.000 đ</div>
+                  </div>
+                </div>
+
+                <div class="profile-order-item" style="margin-bottom:0;">
+                  <div>
+                    <div class="order-code">#DH-20261012-42</div>
+                    <div style="font-size:13.5px;color:#555;margin-top:4px;">2x Trà đào cam sả, 1x Mì Ý sốt bò bằm</div>
+                    <div style="font-size:12px;color:#888;margin-top:2px;">12/10/2026 - 12:15</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <span class="order-status" style="background:#f6ffed;color:#52c41a;">Đã hoàn thành</span>
+                    <div style="font-weight:800;color:#d81616;margin-top:6px;">115.000 đ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------
+               TAB 3: ĐỊA CHỈ GIAO HÀNG
+               ---------------------------------------------------- -->
+          <div id="tab-address" class="profile-tab-pane">
+            <h1 class="profile-page-heading">ĐỊA CHỈ GIAO HÀNG</h1>
+            <p class="profile-welcome-text">Quản lý và cập nhật địa chỉ nhận đồ ăn của bạn.</p>
+
+            <div class="profile-card">
+              <div class="profile-card-header">
+                <h3 class="profile-card-title">SỔ ĐỊA CHỈ</h3>
+              </div>
+              <div class="profile-card-body">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #eee;padding-bottom:16px;margin-bottom:16px;">
+                  <div>
+                    <div style="font-weight:700;color:#111;margin-bottom:4px;">Địa chỉ nhà riêng (Mặc định)</div>
+                    <div style="font-size:14px;color:#555;line-height:1.5;">123 Đường Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội</div>
+                    <div style="font-size:13px;color:#777;margin-top:4px;">Số điện thoại: 0987654321</div>
+                  </div>
+                  <button type="button" class="profile-action-link" onclick="document.getElementById('link-edit-address').click()">Chỉnh sửa</button>
+                </div>
+                <button type="button" class="profile-btn-save" style="margin-top:0;" onclick="document.getElementById('link-edit-address').click()">+ Thêm địa chỉ mới</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------
+               TAB 4: THÔNG TIN TÀI KHOẢN (FORM CHỈNH SỬA ĐẦY ĐỦ)
+               ---------------------------------------------------- -->
+          <div id="tab-info" class="profile-tab-pane">
+            <h1 class="profile-page-heading">THÔNG TIN TÀI KHOẢN</h1>
+            <p class="profile-welcome-text">Xem và cập nhật thông tin cá nhân của bạn.</p>
+
+            <div class="profile-card">
+              <div class="profile-card-header">
+                <h3 class="profile-card-title">CHỈNH SỬA THÔNG TIN CÁ NHÂN</h3>
+              </div>
+              <div class="profile-card-body">
+                <form id="profile-full-form">
+                  <div class="profile-form-grid">
+                    <div class="profile-form-group">
+                      <label class="profile-form-label">Họ *</label>
+                      <input type="text" id="info-ho" class="profile-form-input" required />
+                    </div>
+                    <div class="profile-form-group">
+                      <label class="profile-form-label">Tên *</label>
+                      <input type="text" id="info-ten" class="profile-form-input" required />
+                    </div>
+
+                    <div class="profile-form-group">
+                      <label class="profile-form-label">Số điện thoại *</label>
+                      <input type="tel" id="info-phone" class="profile-form-input" required />
+                    </div>
+                    <div class="profile-form-group">
+                      <label class="profile-form-label">E-mail *</label>
+                      <input type="email" id="info-email" class="profile-form-input" required />
+                    </div>
+
+                    <div class="profile-form-group">
+                      <label class="profile-form-label">Ngày sinh</label>
+                      <input type="date" id="info-birthday" class="profile-form-input" />
+                    </div>
+                    <div class="profile-form-group">
+                      <label class="profile-form-label">Giới tính</label>
+                      <select id="info-gender" class="profile-form-select">
+                        <option value="male">Nam</option>
+                        <option value="female">Nữ</option>
+                        <option value="other">Khác</option>
+                      </select>
+                    </div>
+
+                    <div class="profile-form-group full-width">
+                      <label class="profile-form-label">Tỉnh / Thành phố</label>
+                      <select id="info-province" class="profile-form-select">
+                        <option value="HN">Hà Nội</option>
+                        <option value="HCM">TP. Hồ Chí Minh</option>
+                        <option value="DN">Đà Nẵng</option>
+                        <option value="HP">Hải Phòng</option>
+                        <option value="CT">Cần Thơ</option>
+                        <option value="BD">Bình Dương</option>
+                        <option value="other">Tỉnh thành khác</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="profile-btn-save">LƯU THAY ĐỔI</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- ----------------------------------------------------
+               TAB 5: DANH SÁCH ƯU ĐÃI
+               ---------------------------------------------------- -->
+          <div id="tab-promotions" class="profile-tab-pane">
+            <h1 class="profile-page-heading">DANH SÁCH ƯU ĐÃI</h1>
+            <p class="profile-welcome-text">Mã giảm giá và quyền lợi dành riêng cho tài khoản của bạn.</p>
+
+            <div class="profile-vouchers-grid">
+              <div class="voucher-card">
+                <span class="voucher-code">JOLLINEW</span>
+                <div class="voucher-title">Giảm 25.000đ cho đơn đầu tiên</div>
+                <p style="font-size:13px;color:#555;margin:0 0 8px;">Áp dụng cho đơn hàng từ 99.000đ khi đặt món trực tuyến.</p>
+                <div style="font-size:11.5px;color:#888;">Hạn dùng: 31/12/2026</div>
+              </div>
+
+              <div class="voucher-card">
+                <span class="voucher-code">FREESHIP</span>
+                <div class="voucher-title">Miễn phí giao hàng 0Đ</div>
+                <p style="font-size:13px;color:#555;margin:0 0 8px;">Miễn phí ship tối đa 30.000đ cho đơn hàng đồ uống và combo.</p>
+                <div style="font-size:11.5px;color:#888;">Hạn dùng: 30/11/2026</div>
+              </div>
+
+              <div class="voucher-card">
+                <span class="voucher-code">TRATRAICAY</span>
+                <div class="voucher-title">Tặng 1 Trà Đào Cam Sả</div>
+                <p style="font-size:13px;color:#555;margin:0 0 8px;">Áp dụng khi mua 2 ly trà sữa trân châu bất kỳ.</p>
+                <div style="font-size:11.5px;color:#888;">Hạn dùng: 15/11/2026</div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+    <!-- ==================== END MAIN CONTENT ==================== -->
+
+    <!-- ==================== MODAL POPUP EDIT NHANH ==================== -->
+    <div id="profile-action-modal" class="profile-modal-backdrop">
+      <div class="profile-modal-box">
+        <div class="profile-modal-header">
+          <h3 id="profile-modal-title" class="profile-modal-title">Cập nhật thông tin</h3>
+          <button type="button" id="profile-modal-close" class="profile-modal-close">&times;</button>
+        </div>
+        <div id="profile-modal-body" class="profile-modal-body">
+          <!-- Nội dung động được chèn qua profile.js -->
+        </div>
+        <div class="profile-modal-footer">
+          <button type="button" id="profile-modal-cancel" class="profile-btn-cancel">Hủy</button>
+          <button type="button" id="profile-modal-submit" class="profile-btn-submit">Lưu thay đổi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Ăn Ngon</h3>
+          <p>Mang đến những bữa ăn và thức uống thơm ngon, vui vẻ cho mọi gia đình.</p>
+        </div>
+
+        <div>
+          <h3>Liên kết nhanh</h3>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="menu.html">Thực đơn</a>
+          <a href="douong.html">Đồ uống</a>
+          <a href="khuyenmai.html">Khuyến mãi</a>
+        </div>
+
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+          <p>Email: hotro@anngon.vn</p>
+          <p>Địa chỉ: Hà Nội, Việt Nam</p>
+        </div>
+      </div>
+
+      <div class="copyright">&copy; 2026 Food Website - Jollibee Style. All rights reserved.</div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
+
