@@ -573,5 +573,55 @@
         ]
       }
     }
-  }
+  },
+  "bestSellerProducts": [
+    {
+      "id": "fried-chicken",
+      "name": "Gà rán giòn vui vẻ",
+      "description": "Gà rán vàng giòn, thơm ngon cho bữa ăn thêm trọn vị.",
+      "price": 69000,
+      "image": "4_mieng_ga_ron.jpg",
+      "badge": "Bán chạy"
+    },
+    {
+      "id": "chicken-rice",
+      "name": "Cơm gà sốt",
+      "description": "Cơm nóng dùng kèm gà mềm và nước sốt đậm đà.",
+      "price": 59000,
+      "image": "comga_nuoc.jpg",
+      "badge": "Yêu thích"
+    },
+    {
+      "id": "spaghetti",
+      "name": "Mì Ý sốt bò bằm",
+      "description": "Mì Ý dai ngon cùng sốt cà chua bò bằm hấp dẫn.",
+      "price": 49000,
+      "image": "spagetti_01.png",
+      "badge": "Bán chạy"
+    },
+    {
+      "id": "chicken-burger",
+      "name": "Burger gà giòn",
+      "description": "Burger gà giòn ăn kèm khoai tây chiên và nước uống.",
+      "price": 79000,
+      "image": "burger_chip_coca01.jpg",
+      "badge": "Combo"
+    },
+    {
+      "id": "sauced-chicken",
+      "name": "Gà rán xốt cay",
+      "description": "Gà rán phủ xốt cay mặn ngọt, đậm vị khó quên.",
+      "price": 72000,
+      "image": "ga_ran_xot.png",
+      "badge": "Món ngon"
+    },
+    {
+      "id": "ice-cream",
+      "name": "Kem vani",
+      "description": "Kem vani mát lạnh, lựa chọn ngọt ngào sau bữa ăn.",
+      "price": 19000,
+      "image": "ice_creame_01.png",
+      "badge": ""
+    }
+  ]
 }
