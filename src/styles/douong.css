@@ -1,0 +1,735 @@
+/* ========================================================
+   STYLESHEET CHO TRANG ĐỒ UỐNG (DOUONG.HTML)
+   Phong cách chuẩn theo thiết kế mockup & index.html
+   ======================================================== */
+
+:root {
+  --red: #FF3737;
+  --red-hover: #e02424;
+  --background: #fff8f0;
+  --badge-green: #00b862;
+  --badge-orange: #fa8c16;
+  --badge-purple: #8a2be2;
+  --badge-coral: #ff4d4f;
+  --text-main: #2b2b2b;
+  --text-muted: #666666;
+}
+
+/* --------------------------------------------------------
+   0. ĐỒNG BỘ HEADER VÀ MENU ACTIVE TAB
+   -------------------------------------------------------- */
+.top-menu-desktop li.active > a {
+  background-color: #ffffff !important;
+  color: var(--red) !important;
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.top-menu-desktop li.active .menu-category-dropdown a {
+  background-color: transparent !important;
+  color: #333333 !important;
+}
+
+.top-menu-desktop li.active .menu-category-dropdown a:hover {
+  background-color: #fff1eb !important;
+  color: var(--red) !important;
+}
+
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-search input {
+  padding-left: 36px;
+  border: 1px solid #ffcccc;
+  border-radius: 20px;
+  outline: none;
+  height: 36px;
+  width: 220px;
+  font-size: 13px;
+  transition: all 0.25s ease;
+  background: #ffffff;
+}
+
+.header-search input:focus {
+  width: 260px;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+.header-search .search-icon {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------
+   1. TOP CATEGORY NAVIGATION BAR (Thanh 5 danh mục chính)
+   -------------------------------------------------------- */
+.category-nav-bar {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 12px 20px;
+  margin: 18px 0 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.category-nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  color: #333333;
+  cursor: pointer;
+}
+
+.category-nav-card:hover {
+  background: #fff3ee;
+  transform: translateY(-2px);
+}
+
+.category-nav-card.active {
+  background: #ffebe5;
+  box-shadow: inset 0 0 0 1px rgba(255, 55, 55, 0.15);
+}
+
+.category-nav-img-wrap {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.category-nav-img-wrap img {
+  max-height: 48px;
+  max-width: 75px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.category-nav-card:hover .category-nav-img-wrap img {
+  transform: scale(1.08);
+}
+
+.category-nav-name {
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+.category-nav-card.active .category-nav-name {
+  color: var(--red);
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------
+   2. HERO BANNER CAROUSEL
+   -------------------------------------------------------- */
+.drink-carousel-container {
+  width: 100%;
+  margin: 0 0 18px;
+}
+
+.drink-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.drink-banner-slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 848 / 142;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fbf1dd;
+}
+
+.drink-banner-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+/* Nút điều hướng banner */
+.banner-ctr-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 36px;
+  height: 36px;
+  background-color: var(--red);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.banner-ctr-btn:hover {
+  background-color: var(--red-hover);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.banner-ctr-btn.prev {
+  left: 14px;
+}
+
+.banner-ctr-btn.next {
+  right: 14px;
+}
+
+.banner-ctr-btn img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------
+   3. SERVICE BENEFITS BAR (Khối cam kết dịch vụ)
+   -------------------------------------------------------- */
+.drink-service-benefits {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  min-height: 70px;
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 127, 80, 0.1);
+  box-sizing: border-box;
+}
+
+.drink-service-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 4px 8px;
+  border-right: 1px solid rgba(255, 127, 80, 0.22);
+}
+
+.drink-service-item:last-child {
+  border-right: 0;
+}
+
+.drink-service-icon {
+  display: grid;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--red);
+  font-size: 18px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.drink-service-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.drink-service-text strong {
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.drink-service-text small {
+  overflow: hidden;
+  color: #666666;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------
+   4. SUBCATEGORY FILTER PILLS (Phân loại đồ uống)
+   -------------------------------------------------------- */
+.drink-filter-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.drink-subcategories {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  scrollbar-width: thin;
+}
+
+.subcat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid #ebebeb;
+  background: #ffffff;
+  color: #444444;
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.22s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  user-select: none;
+}
+
+.subcat-pill:hover {
+  border-color: #ffd0c7;
+  color: var(--red);
+  background: #fffbf9;
+  transform: translateY(-1px);
+}
+
+.subcat-pill.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 55, 55, 0.3);
+}
+
+.subcat-pill .subcat-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------
+   5. BEST SELLER SECTION & PRODUCT GRID
+   -------------------------------------------------------- */
+.drink-section {
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.drink-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.drink-title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.drink-fire-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  align-self: center;
+}
+
+.drink-section-title {
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--red);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.drink-section-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin: 0;
+}
+
+.btn-view-all-drinks {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid #ffb8ad;
+  background: #ffffff;
+  color: var(--red);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-view-all-drinks:hover {
+  background: var(--red);
+  color: #ffffff;
+  border-color: var(--red);
+  transform: translateX(2px);
+}
+
+/* Grid 6 cột hiển thị đúng như trong ảnh mockup */
+.drink-product-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------
+   6. PRODUCT CARD & BADGES
+   -------------------------------------------------------- */
+.drink-product-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid rgba(255, 127, 80, 0.15);
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(50, 30, 15, 0.05);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  animation: cardFadeIn 0.3s ease;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drink-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(255, 55, 55, 0.12);
+  border-color: rgba(255, 55, 55, 0.3);
+}
+
+.drink-product-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fdfdfd;
+}
+
+.drink-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.28s ease;
+}
+
+.drink-product-card:hover .drink-product-image img {
+  transform: scale(1.06);
+}
+
+/* Huy hiệu nổi đặc biệt (Badges) */
+.badge-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22);
+  z-index: 2;
+  pointer-events: none;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.badge-tag.badge-bestseller,
+.badge-tag.badge-hot {
+  background-color: var(--red);
+}
+
+.badge-tag.badge-favorite {
+  background-color: var(--badge-coral);
+}
+
+.badge-tag.badge-new {
+  background-color: var(--badge-green);
+}
+
+.badge-tag.badge-combo {
+  background-color: var(--badge-orange);
+}
+
+.badge-tag.badge-special {
+  background-color: var(--badge-purple);
+}
+
+/* Thông tin sản phẩm */
+.drink-product-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 8px 4px 4px;
+}
+
+.drink-product-title {
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 4px;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drink-product-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin: 0 0 8px;
+  min-height: 30px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.drink-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.drink-price {
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--red);
+}
+
+.drink-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Nút yêu thích */
+.drink-fav-btn::before,
+.drink-fav-btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+.drink-fav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ffd0c7;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.drink-fav-btn:hover {
+  background: #ffece6;
+  border-color: var(--red);
+  transform: scale(1.08);
+}
+
+.drink-fav-btn img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.drink-fav-btn .fav-filled {
+  display: none;
+}
+
+.drink-fav-btn.active {
+  background: #ffece6;
+  border-color: var(--red);
+}
+
+.drink-fav-btn.active .fav-outline {
+  display: none;
+}
+
+.drink-fav-btn.active .fav-filled {
+  display: block;
+}
+
+/* Nút Đặt hàng */
+.drink-order-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--red);
+  color: #ffffff;
+  font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.drink-order-btn:hover {
+  background-color: var(--red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(255, 55, 55, 0.35);
+}
+
+.drink-order-btn .order-icon {
+  font-size: 12px;
+}
+
+/* --------------------------------------------------------
+   7. TOAST THÔNG BÁO VÀ TIỆN ÍCH
+   -------------------------------------------------------- */
+.drink-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-muted);
+}
+
+.drink-empty-state span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* --------------------------------------------------------
+   8. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .drink-product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .category-nav-bar {
+    grid-template-columns: repeat(5, 1fr);
+    padding: 10px 8px;
+    gap: 6px;
+  }
+  .category-nav-name {
+    font-size: 11px;
+  }
+  .drink-service-benefits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .drink-service-item:nth-child(3) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-nav-bar {
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px 12px;
+    scrollbar-width: thin;
+  }
+  .category-nav-card {
+    flex: 0 0 auto;
+    min-width: 90px;
+  }
+  .drink-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .drink-service-benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .drink-service-item {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 127, 80, 0.15);
+    padding: 6px 0;
+    justify-content: flex-start;
+  }
+  .drink-service-item:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .drink-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .drink-section-title {
+    font-size: 20px;
+  }
+  .drink-banner-slide {
+    aspect-ratio: 16 / 9;
+  }
+}
+
