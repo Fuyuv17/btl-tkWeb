@@ -1,0 +1,23 @@
+/* ==========================================================================
+   COM CATEGORY PAGE STYLES
+   Author: Quy Duong (MSV: 252631030)
+   File: src/styles/QuyDuong_252631030/com.css/com.css (< 100 lines)
+   ========================================================================== */
+/* Triệt tiêu margin mặc định của browser trên thẻ html & body */
+@media (max-width: 992px) {
+  .com-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .com-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .com-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
