@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đồ uống | Ăn Ngon - Jollibee</title>
+
+  <!-- CSS dùng chung từ project theo phong cách index.html -->
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/carousel_banner.css" />
+  <link rel="stylesheet" href="../styles/QuyDuong_252631030/menu_popup.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/main-content.css" />
+
+  <!-- CSS chuyên biệt cho trang Đồ uống -->
+  <link rel="stylesheet" href="../styles/douong.css" />
+  <link rel="stylesheet" href="../styles/DuongVanMinh/login.css" />
+
+  <!-- Scripts -->
+  <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../js/douong.js" defer></script>
+  <script src="../js/QuyDuong_252631030/menu_popup.js" defer></script>
+</head>
+
+<body>
+  <div class="master-wrapper-page">
+
+    <!-- ==================== BEGIN HEADER ==================== -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html" title="Trang chủ Ăn Ngon">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+
+        <div class="header-actions">
+          <form class="header-search" role="search" onsubmit="return false;">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm" />
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+
+          <div class="cart-icon">
+            <a href="giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="Giỏ hàng" />
+            </a>
+          </div>
+
+          <div class="heart-icon">
+            <a href="favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="Yêu thích" />
+            </a>
+          </div>
+
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Drawer menu cho mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
+        <div class="mobile-drawer-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items active"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar cho Desktop -->
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items menu-category-tab active">
+            <a href="menu.html">Menu</a>
+            <div class="menu-category-dropdown">
+              <ul class="menu-category-list" aria-label="Danh mục món ăn">
+                <li>
+                  <a class="menu-category-item" href="menu.html#combo">
+                    <span class="menu-category-image">
+                      <img src="../assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="" />
+                    </span>
+                    <span class="menu-category-name">Combo</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="menu-category-item" href="menu.html#com">
+                    <span class="menu-category-image">
+                      <img src="../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="" />
+                    </span>
+                    <span class="menu-category-name">Cơm</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="menu-category-item" href="menu.html#mi-bun">
+                    <span class="menu-category-image">
+                      <img src="../assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="" />
+                    </span>
+                    <span class="menu-category-name">Mì / Bún</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="menu-category-item" href="menu.html#do-an-vat">
+                    <span class="menu-category-image">
+                      <img src="../assets/images/TruongQuyDuong_252631030/chips_01.png" alt="" />
+                    </span>
+                    <span class="menu-category-name">Đồ ăn vặt</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="menu-category-item" href="douong.html">
+                    <span class="menu-category-image">
+                      <img src="../assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="" />
+                    </span>
+                    <span class="menu-category-name">Đồ uống</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- ==================== END HEADER ==================== -->
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="wrapper-page-content">
+
+      <!-- 1. THANH ĐIỀU HƯỚNG 5 DANH MỤC THỰC ĐƠN CHÍNH (THEO MOCKUP) -->
+      <nav class="category-nav-bar" aria-label="Danh mục thực đơn chính">
+        <a href="menu.html#combo" class="category-nav-card" title="Xem Combo">
+          <div class="category-nav-img-wrap">
+            <img src="../assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="Combo" />
+          </div>
+          <span class="category-nav-name">Combo</span>
+        </a>
+
+        <a href="menu.html#com" class="category-nav-card" title="Xem Cơm">
+          <div class="category-nav-img-wrap">
+            <img src="../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Cơm" />
+          </div>
+          <span class="category-nav-name">Cơm</span>
+        </a>
+
+        <a href="menu.html#mi-bun" class="category-nav-card" title="Xem Mì / Bún">
+          <div class="category-nav-img-wrap">
+            <img src="../assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="Mì / Bún" />
+          </div>
+          <span class="category-nav-name">Mì / Bún</span>
+        </a>
+
+        <a href="menu.html#do-an-vat" class="category-nav-card" title="Xem Đồ ăn vặt">
+          <div class="category-nav-img-wrap">
+            <img src="../assets/images/TruongQuyDuong_252631030/chips_01.png" alt="Đồ ăn vặt" />
+          </div>
+          <span class="category-nav-name">Đồ ăn vặt</span>
+        </a>
+
+        <!-- ĐỒ UỐNG: Tab đang chọn (Active) -->
+        <a href="douong.html" class="category-nav-card active" title="Đồ uống (Đang xem)">
+          <div class="category-nav-img-wrap">
+            <img src="../assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="Đồ uống" />
+          </div>
+          <span class="category-nav-name">Đồ uống</span>
+        </a>
+      </nav>
+
+      <!-- 4. THANH BỘ LỌC PHÂN LOẠI ĐỒ UỐNG (SUB-CATEGORIES PILLS) -->
+      <section class="drink-filter-wrapper" aria-label="Bộ lọc phân loại đồ uống">
+        <div class="drink-subcategories" role="tablist">
+          <button class="subcat-pill active" data-category="all" role="tab" aria-selected="true">
+            <span>Tất cả</span>
+          </button>
+          <button class="subcat-pill" data-category="tra-sua" role="tab" aria-selected="false">
+            <span>Trà sữa</span>
+          </button>
+          <button class="subcat-pill" data-category="tra-trai-cay" role="tab" aria-selected="false">
+            <span>Trà trái cây</span>
+          </button>
+          <button class="subcat-pill" data-category="ca-phe" role="tab" aria-selected="false">
+            <span>Cà phê</span>
+          </button>
+          <button class="subcat-pill" data-category="nuoc-ep" role="tab" aria-selected="false">
+            <span>Nước ép</span>
+          </button>
+          <button class="subcat-pill" data-category="da-xay" role="tab" aria-selected="false">
+            <span>Đá xay</span>
+          </button>
+          <button class="subcat-pill" data-category="do-uong-khac" role="tab" aria-selected="false">
+            <span>Đồ uống khác</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 5. DANH SÁCH SẢN PHẨM BEST SELLER / ĐỒ UỐNG -->
+      <section class="drink-section" aria-labelledby="section-title">
+        <div class="drink-section-header">
+          <div class="drink-title-group">
+            <img class="drink-fire-icon" src="../assets/images/CaoQuynhAnh_252601009/fire.gif" alt="Hot" />
+            <h2 id="section-title" class="drink-section-title">Best Seller</h2>
+            <p id="section-subtitle" class="drink-section-subtitle">Những thức uống được yêu thích nhất tại Ăn Ngon!</p>
+          </div>
+          <button type="button" class="btn-view-all-drinks" id="btn-view-all">Xem tất cả &rarr;</button>
+        </div>
+
+        <!-- Grid 6 thẻ sản phẩm đúng form ảnh mockup -->
+        <div id="drink-products-grid" class="drink-product-grid" aria-live="polite"></div>
+      </section>
+
+    </main>
+    <!-- ==================== END MAIN CONTENT ==================== -->
+
+    <!-- ==================== BEGIN FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Jollibee</h3>
+          <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
+        </div>
+
+        <div>
+          <h3>Liên kết</h3>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="menu.html">Thực đơn</a>
+          <a href="khuyenmai.html">Khuyến mãi</a>
+        </div>
+
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+          <p>Email: example@email.com</p>
+        </div>
+      </div>
+
+      <div class="copyright">&copy; 2026 Food Website</div>
+    </footer>
+    <!-- ==================== END FOOTER ==================== -->
+
+  </div>
+</body>
+
+</html>

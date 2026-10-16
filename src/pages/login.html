@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập | Ăn Ngon - Jollibee</title>
+
+  <!-- CSS chung của dự án -->
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/DuongVanMinh/login.css" />
+
+  <!-- Scripts -->
+  <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../js/DuongVanMinh/login.js" defer></script>
+</head>
+
+<body>
+  <div class="master-wrapper-page">
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html" title="Trang chủ Ăn Ngon">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+
+        <div class="header-actions">
+          <form class="header-search" role="search" onsubmit="return false;">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm" />
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+
+          <div class="cart-icon">
+            <a href="giohang.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="Giỏ hàng" />
+            </a>
+          </div>
+
+          <div class="heart-icon">
+            <a href="favorites.html" class="icon-circle" title="Yêu thích">
+              <img src="../assets/images/CaoQuynhAnh_252601009/heart-outline.svg" alt="Yêu thích" />
+            </a>
+          </div>
+
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile drawer -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
+        <div class="mobile-drawer-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="favorites.html">Yêu thích</a></li>
+          <li class="category-menu-items"><a href="giohang.html">Giỏ hàng</a></li>
+        </ul>
+      </div>
+
+      <!-- Desktop nav -->
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items menu-category-tab"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ==================== GIAO DIỆN ĐĂNG NHẬP ==================== -->
+    <main class="wrapper-page-content" style="align-items: center;">
+      <div class="register-page-wrapper">
+        <h1 class="register-page-title">ĐĂNG NHẬP TÀI KHOẢN</h1>
+
+        <form id="standalone-login-form" autocomplete="on">
+          <div class="register-form-grid">
+            <div class="reg-input-group">
+              <input type="text" id="page-login-account" class="reg-input" placeholder="Email / Số điện thoại *" autocomplete="username" required />
+            </div>
+
+            <div class="reg-input-group">
+              <input type="password" id="page-login-password" class="reg-input" placeholder="Mật khẩu *" autocomplete="current-password" required />
+            </div>
+
+            <div class="reg-action-row">
+              <button type="submit" class="reg-submit-btn">ĐĂNG NHẬP</button>
+              <span class="reg-login-prompt">
+                Bạn chưa có tài khoản? <a href="register.html">Đăng ký ngay</a>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Jollibee</h3>
+          <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
+        </div>
+
+        <div>
+          <h3>Liên kết</h3>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="menu.html">Thực đơn</a>
+          <a href="khuyenmai.html">Khuyến mãi</a>
+        </div>
+
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+          <p>Email: example@email.com</p>
+        </div>
+      </div>
+
+      <div class="copyright">&copy; 2026 Food Website</div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
+

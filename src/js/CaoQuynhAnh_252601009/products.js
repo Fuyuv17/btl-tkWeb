@@ -1,171 +1,99 @@
+// Tải dữ liệu và dựng giao diện Best Seller khi trang đã sẵn sàng.
+const productsScriptUrl = document.currentScript?.src || window.location.href;
+document.addEventListener("DOMContentLoaded", loadBestSellerProducts);
 
-const bestSellerProducts = [
-    {
-        id: "fried-chicken",
-        name: "Gà rán giòn vui vẻ",
-        description: "Gà rán vàng giòn, thơm ngon cho bữa ăn thêm trọn vị.",
-        price: 69000,
-        image: "4_mieng_ga_ron.jpg",
-        badge: "Bán chạy",
-    },
-    {
-        id: "chicken-rice",
-        name: "Cơm gà sốt",
-        description: "Cơm nóng dùng kèm gà mềm và nước sốt đậm đà.",
-        price: 59000,
-        image: "comga_nuoc.jpg",
-        badge: "Yêu thích",
-    },
-    {
-        id: "spaghetti",
-        name: "Mì Ý sốt bò bằm",
-        description: "Mì Ý dai ngon cùng sốt cà chua bò bằm hấp dẫn.",
-        price: 49000,
-        image: "spagetti_01.png",
-        badge: "Bán chạy",
-    },
-    {
-        id: "chicken-burger",
-        name: "Burger gà giòn",
-        description: "Burger gà giòn ăn kèm khoai tây chiên và nước uống.",
-        price: 79000,
-        image: "burger_chip_coca01.jpg",
-        badge: "Combo",
-    },
-    {
-        id: "sauced-chicken",
-        name: "Gà rán xốt cay",
-        description: "Gà rán phủ xốt cay mặn ngọt, đậm vị khó quên.",
-        price: 72000,
-        image: "ga_ran_xot.png",
-        badge: "Món ngon",
-    },
-    {
-        id: "ice-cream",
-        name: "Kem vani",
-        description: "Kem vani mát lạnh, lựa chọn ngọt ngào sau bữa ăn.",
-        price: 19000,
-        image: "ice_creame_01.png",
-        badge: "",
-    },
-];
+async function loadBestSellerProducts() {
+	const productList = document.getElementById("best-seller-products");
+	if (!productList) return;
 
-document.addEventListener("DOMContentLoaded", () => {
-    const productList = document.getElementById("best-seller-products");
+	const dataUrl = new URL("../../data/data.json", productsScriptUrl);
+	const imageDirectory = new URL("../../assets/images/TruongQuyDuong_252631030/", productsScriptUrl);
+	const iconDirectory = new URL("../../assets/images/CaoQuynhAnh_252601009/", productsScriptUrl);
+	const formatPrice = (price) => `${new Intl.NumberFormat("vi-VN").format(price)} ₫`;
 
-    if (!productList) return;
+	productList.setAttribute("aria-busy", "true");
+	productList.textContent = "Đang tải sản phẩm...";
 
-    const imageDirectory = "src/assets/images/TruongQuyDuong_252631030/";
+	try {
+		const response = await fetch(dataUrl);
+		if (!response.ok) {
+			throw new Error(`Không thể tải dữ liệu sản phẩm (${response.status}).`);
+		}
 
-    const formatPrice = (price) =>
-        `${new Intl.NumberFormat("vi-VN").format(price)} ₫`;
+		const data = await response.json();
+		if (!Array.isArray(data.bestSellerProducts)) {
+			throw new Error("Danh sách bestSellerProducts không hợp lệ.");
+		}
 
-    // Thêm sản phẩm vào giỏ hàng
-    
-function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+		const cards = data.bestSellerProducts.map((product) => {
+			const card = document.createElement("article");
+			card.className = "product-card";
+			card.dataset.price = product.price;
+			card.dataset.productId = product.id;
 
-    const productId = product.id;
-    const existingProduct = cart.find(
-        (item) => item.productId === productId
-    );
+			const imageFrame = document.createElement("div");
+			imageFrame.className = "product-image";
 
-    if (existingProduct) {
-        existingProduct.quantity += 1;
-    } else {
-        cart.push({
-            productId: productId,
-            quantity: 1
-        });
-    }
+			const image = document.createElement("img");
+			image.src = new URL(product.image, imageDirectory).href;
+			image.alt = product.name;
+			image.loading = "lazy";
+			imageFrame.append(image);
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+			if (product.badge) {
+				const badge = document.createElement("span");
+				badge.className = "badge";
+				badge.textContent = product.badge;
+				imageFrame.append(badge);
+			}
 
-    alert(`Đã thêm "${product.name}" vào giỏ hàng!`);
+			const info = document.createElement("div");
+			info.className = "product-info";
+
+			const title = document.createElement("h2");
+			title.textContent = product.name;
+
+			const description = document.createElement("p");
+			description.textContent = product.description;
+
+			const footer = document.createElement("div");
+			footer.className = "product-card-footer";
+
+			const price = document.createElement("span");
+			price.className = "price";
+			price.textContent = formatPrice(product.price);
+
+			const actions = document.createElement("div");
+			actions.className = "product-actions";
+
+			const favoriteButton = document.createElement("button");
+			favoriteButton.className = "favorite-btn";
+			favoriteButton.type = "button";
+			favoriteButton.setAttribute("aria-label", `Yêu thích ${product.name}`);
+			favoriteButton.innerHTML = `
+				<img class="favorite-outline" src="${new URL("heart-outline.svg", iconDirectory).href}" alt="" />
+				<img class="favorite-filled" src="${new URL("heart.svg", iconDirectory).href}" alt="" />
+			`;
+			favoriteButton.addEventListener("click", (event) => event.stopPropagation());
+
+			const orderButton = document.createElement("button");
+			orderButton.className = "add-btn";
+			orderButton.type = "button";
+			orderButton.textContent = "Đặt hàng";
+			orderButton.setAttribute("aria-label", `Đặt hàng ${product.name}`);
+
+			actions.append(favoriteButton, orderButton);
+			footer.append(price, actions);
+			info.append(title, description, footer);
+			card.append(imageFrame, info);
+			return card;
+		});
+
+		productList.replaceChildren(...cards);
+	} catch (error) {
+		console.error("Lỗi tải sản phẩm:", error);
+		productList.textContent = "Không thể tải danh sách sản phẩm. Vui lòng thử lại sau.";
+	} finally {
+		productList.setAttribute("aria-busy", "false");
+	}
 }
-
-
-    bestSellerProducts.forEach((product) => {
-        const card = document.createElement("article");
-        card.className = "product-card";
-        card.dataset.price = product.price;
-        card.dataset.productId = product.id;
-
-        const imageFrame = document.createElement("div");
-        imageFrame.className = "product-image";
-
-        const image = document.createElement("img");
-        image.src = imageDirectory + product.image;
-        image.alt = product.name;
-        image.loading = "lazy";
-        imageFrame.append(image);
-
-        if (product.badge) {
-            const badge = document.createElement("span");
-            badge.className = "badge";
-            badge.textContent = product.badge;
-            imageFrame.append(badge);
-        }
-
-        const info = document.createElement("div");
-        info.className = "product-info";
-
-        const title = document.createElement("h2");
-        title.textContent = product.name;
-
-        const description = document.createElement("p");
-        description.textContent = product.description;
-
-        const footer = document.createElement("div");
-        footer.className = "product-card-footer";
-
-        const price = document.createElement("span");
-        price.className = "price";
-        price.textContent = formatPrice(product.price);
-
-        const actions = document.createElement("div");
-        actions.className = "product-actions";
-
-        const favoriteButton = document.createElement("button");
-        favoriteButton.className = "favorite-btn";
-        favoriteButton.type = "button";
-        favoriteButton.setAttribute(
-            "aria-label",
-            `Yêu thích ${product.name}`
-        );
-
-        favoriteButton.innerHTML = `
-            <img class="favorite-outline"
-                 src="src/assets/images/CaoQuynhAnh_252601009/heart-outline.svg"
-                 alt="" />
-            <img class="favorite-filled"
-                 src="src/assets/images/CaoQuynhAnh_252601009/heart.svg"
-                 alt="" />
-        `;
-
-        favoriteButton.addEventListener("click", (event) => {
-            event.stopPropagation();
-        });
-
-        const orderButton = document.createElement("button");
-        orderButton.className = "add-btn";
-        orderButton.type = "button";
-        orderButton.textContent = "Đặt hàng";
-        orderButton.setAttribute(
-            "aria-label",
-            `Đặt hàng ${product.name}`
-        );
-
-        // Xử lý khi bấm nút Đặt hàng
-        orderButton.addEventListener("click", () => {
-            addToCart(product);
-        });
-
-        actions.append(favoriteButton, orderButton);
-        footer.append(price, actions);
-        info.append(title, description, footer);
-        card.append(imageFrame, info);
-
-        productList.append(card);
-    });
-});
