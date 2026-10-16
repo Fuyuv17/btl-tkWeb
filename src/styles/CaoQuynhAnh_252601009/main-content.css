@@ -12,7 +12,7 @@
     font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
 }
 
-.best-seller {
+.head-category {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -100,7 +100,7 @@
     padding: 0;
 }
 
-.best-seller {
+.head-category {
     display: flex;
     align-self: stretch;
     gap: 10px;
@@ -109,12 +109,12 @@
     text-transform: none;
 }
 
-.best-seller > div {
+.head-category > div {
     font-size: 30px;
     line-height: 1.15;
 }
 
-.best-seller p {
+.head-category p {
     align-self: center;
     margin-left: 3px;
     color: #555;
@@ -226,7 +226,7 @@
     width: 100%;
 }
 
-.favorite-btn {
+.cart-add-btn {
     display: grid;
     flex: 0 0 36px;
     width: 36px;
@@ -240,28 +240,22 @@
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.favorite-btn img {
-    display: none;
-}
-
-.favorite-btn::before {
+.cart-add-btn::before {
     content: "";
     display: block;
-    width: 20px;
-    height: 20px;
-    background-color: #FF3737;
-    -webkit-mask: url("../../assets/images/CaoQuynhAnh_252601009/heart-outline.svg") center / contain no-repeat;
-    mask: url("../../assets/images/CaoQuynhAnh_252601009/heart-outline.svg") center / contain no-repeat;
+    width: 22px;
+    height: 22px;
+    background: url("../../assets/images/CaoQuynhAnh_252601009/cart.svg") center / contain no-repeat;
 }
 
-.favorite-btn:hover {
+.cart-add-btn:hover {
     background: #fff1f1;
     transform: scale(1.06);
 }
 
-.favorite-btn:hover::before {
-    -webkit-mask-image: url("../../assets/images/CaoQuynhAnh_252601009/heart.svg");
-    mask-image: url("../../assets/images/CaoQuynhAnh_252601009/heart.svg");
+.cart-add-btn:hover::before {
+    background-image: url("../../assets/images/CaoQuynhAnh_252601009/cart-fill.svg");
+    background-size: 54px 31px;
 }
 
 .product-actions .add-btn {
@@ -285,18 +279,6 @@
     font-weight: 700;
     cursor: pointer;
     transition: filter 0.2s ease, transform 0.2s ease;
-}
-
-.add-btn::before {
-    content: "";
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin-right: 7px;
-    margin-bottom: 3px;
-    background: url("../../assets/images/CaoQuynhAnh_252601009/cart.svg") center / contain no-repeat;
-    filter: brightness(0) invert(1);
-    vertical-align: middle;
 }
 
 .add-btn:hover {
@@ -330,15 +312,15 @@
         grid-column: 1 / -1;
     }
 
-    .best-seller {
+    .head-category {
         flex-wrap: wrap;
     }
 
-    .best-seller > div {
+    .head-category > div {
         font-size: 25px;
     }
 
-    .best-seller p {
+    .head-category p {
         flex-basis: 100%;
         margin: 0 0 0 44px;
     }

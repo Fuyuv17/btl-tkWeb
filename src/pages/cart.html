@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollibee - Món mới món ngon</title>
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/carousel_banner.css" />
+  <link rel="stylesheet" href="../styles/QuyDuong_252631030/menu_popup.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/main-content.css" />
+  <link rel="stylesheet" href="../styles/ChuSyThanh/cart.css" />
+  <link rel="stylesheet" href="../styles/QuyDuong_252631030/products.css" />
+  <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../js/ChuSyThanh/cart.js" defer></script>
+</head>
+
+<body>
+  <div class="master-wrapper-page">
+    <!-- This is begin of header -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <div class="header-actions">
+          <form class="header-search" role="search">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="cart.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="cart icon" />
+            </a>
+          </div>
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="login icon" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Tab for mobile -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
+          &times;
+        </button>
+        <div class="mobile-drawer-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items">
+            <a href="../../index.html">Trang chủ</a>
+          </li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="cart.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- This is the end of header -->
+    <main class="cart-container">
+        <h1>Giỏ hàng của bạn</h1>
+      <ul id="cart-list" class="cart-list"></ul>
+
+        <!-- ================================= -->
+        <!-- TỔNG TIỀN -->
+        <!-- ================================= -->
+
+        <div id="cart-summary" class="cart-summary">
+
+            <!-- TẠM TÍNH -->
+
+            <div class="summary-row">
+                <span>Tạm tính</span>
+                <strong id="subtotal">0 ₫</strong>
+            </div>
+
+            <!-- PHÍ GIAO HÀNG -->
+
+            <div class="summary-row">
+                <span>Phí giao hàng</span>
+                <strong>0 ₫</strong>
+            </div>
+            <hr>
+            <!-- TỔNG -->
+            <div class="summary-total">
+                <span>Tổng cộng </span>
+                <strong id="total" class="total-price">Tổng tiền: 0đ</strong>
+            </div>
+
+            <!-- ĐẶT HÀNG -->
+
+            <button id="checkout-btn" class="checkout-btn payment-button">
+                Đặt hàng
+            </button>
+        </div>
+    </main>
+
+    <div id="checkout-modal" class="checkout-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <div class="checkout-dialog">
+        <button type="button" class="close-btn" aria-label="Đóng">&times;</button>
+        <h2 id="checkout-title">Thông tin nhận hàng</h2>
+        <div class="payment-methods">
+          <button type="button" id="cash-btn" class="active">Tiền mặt</button>
+          <button type="button" id="bank-btn">Chuyển khoản</button>
+        </div>
+        <div id="qr-section" class="checkout-qr" style="display: none;">
+          <img src="../assets/images/CaoQuynhAnh_252601009/qr.jpg" alt="Mã QR thanh toán" />
+          <span>Quét mã QR để chuyển khoản</span>
+        </div>
+        <form id="checkout-form">
+          <label for="receiver-name">Họ tên</label>
+          <input id="receiver-name" name="receiver-name" type="text" required />
+          <label for="receiver-phone">Số điện thoại</label>
+          <input id="receiver-phone" name="receiver-phone" type="tel" required />
+          <label for="receiver-address">Địa chỉ</label>
+          <input id="receiver-address" name="receiver-address" type="text" required />
+          <button type="submit" class="checkout-btn">Xác nhận đặt hàng</button>
+        </form>
+      </div>
+    </div>
+
+
+
+    <!-- ================================= -->
+    <!-- FOOTER -->
+    <!-- ================================= -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Jollibee</h3>
+          <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
+        </div>
+
+        <div>
+          <h3>Liên kết</h3>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="menu.html">Thực đơn</a>
+          <a href="khuyenmai.html">Khuyến mãi</a>
+        </div>
+
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+
+          <p>Email: example@email.com</p>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 Food Website</div>
+    </footer>
+    <!-- This is the end of footer -->
+  </div>
+</body>
+
+</html>

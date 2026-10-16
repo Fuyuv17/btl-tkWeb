@@ -7,6 +7,77 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.header-search').forEach((searchForm) => {
+    const searchInput = searchForm.querySelector('input[type="search"]');
+    if (!searchInput) return;
+
+    const clearButton = document.createElement('button');
+    clearButton.type = 'button';
+    clearButton.className = 'search-clear-btn';
+    clearButton.setAttribute('aria-label', 'Xóa nội dung tìm kiếm');
+    clearButton.hidden = true;
+
+    const clearIcon = document.createElement('img');
+    const headerScript = document.querySelector('script[src*="header_footer.js"]');
+    clearIcon.src = new URL('../../assets/images/CaoQuynhAnh_252601009/x.svg', headerScript?.src || window.location.href).href;
+    clearIcon.alt = '';
+    clearButton.appendChild(clearIcon);
+    searchInput.insertAdjacentElement('afterend', clearButton);
+
+    const updateClearButton = () => {
+      clearButton.hidden = searchInput.value.length === 0;
+    };
+    searchInput.addEventListener('input', updateClearButton);
+    clearButton.addEventListener('click', () => {
+      searchInput.value = '';
+      updateClearButton();
+      searchInput.focus();
+      searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    updateClearButton();
+  });
+
+  const authContainers = document.querySelectorAll('.login-icon');
+  let currentUser = null;
+
+  try {
+    currentUser = JSON.parse(localStorage.getItem('CurrentUser') || 'null');
+  } catch (error) {
+    localStorage.removeItem('CurrentUser');
+  }
+
+  if (currentUser) {
+    const userName = currentUser.fullName || currentUser.fullname ||
+      [currentUser.ho, currentUser.ten].filter(Boolean).join(' ') || currentUser.email || 'bạn';
+
+    authContainers.forEach((container) => {
+      const session = document.createElement('div');
+      session.className = 'user-session';
+
+      const greeting = document.createElement('span');
+      greeting.className = 'user-greeting';
+      greeting.append('Xin chào, ');
+
+      const name = document.createElement('span');
+      name.className = 'user-name';
+      name.textContent = userName;
+      greeting.appendChild(name);
+
+      const logoutButton = document.createElement('button');
+      logoutButton.className = 'user-logout';
+      logoutButton.type = 'button';
+      logoutButton.textContent = 'Đăng xuất';
+      logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('CurrentUser');
+        localStorage.removeItem('btl_current_user');
+        window.location.reload();
+      });
+
+      session.append(greeting, logoutButton);
+      container.replaceChildren(session);
+    });
+  }
+
   /* ========================================================
      1. XỬ LÝ TOGGLE MENU MOBILE (DRAWER BÊN PHẢI)
   ======================================================== */

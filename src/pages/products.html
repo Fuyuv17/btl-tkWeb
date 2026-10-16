@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi tiết sản phẩm | Ăn Ngon</title>
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/main-content.css" />
+  <link rel="stylesheet" href="../styles/QuyDuong_252631030/products.css" />
+  <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../js/QuyDuong_252631030/products.js" defer></script>
+</head>
+<body>
+  <div class="master-wrapper-page">
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html" title="Trang chủ Ăn Ngon">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" />
+          </a>
+        </div>
+        <div class="header-actions">
+          <form class="header-search" role="search" onsubmit="return false;">
+            <span aria-hidden="true"><img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="" /></span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="cart.html" class="icon-circle" title="Giỏ hàng"><img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="Giỏ hàng" /></a>
+          </div>
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản"><img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" /></a>
+            <a class="register" href="register.html">Đăng kí</a><span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="menu-for-mobile"><button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu"><span></span><span></span><span></span></button></div>
+      </div>
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
+        <div class="mobile-drawer-logo"><a href="../../index.html"><img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Ăn Ngon" /></a></div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="cart.html">Giỏ hàng</a></li>
+        </ul>
+      </div>
+      <nav class="header-navbar-for-desktop"><ul class="top-menu-desktop">
+        <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+        <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+        <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+        <li class="category-menu-items"><a href="tintuc.html">Tin tức</a></li>
+      </ul></nav>
+    </header>
+
+    <main class="product-detail-page">
+      <a class="product-back-link" href="menu.html">← Quay lại thực đơn</a>
+      <section class="product-detail-card" id="product-detail" aria-live="polite">
+        <div class="product-detail-visual">
+          <img id="product-image" class="product-detail-image" src="" alt="" />
+          <span id="product-badge" class="product-detail-badge" hidden></span>
+        </div>
+        <div class="product-detail-info">
+          <p id="product-category" class="product-category-label"></p>
+          <h1 id="product-name">Đang tải sản phẩm...</h1>
+          <p id="product-description" class="product-description"></p>
+          <p id="product-price" class="product-detail-price"></p>
+
+          <div class="product-quantity-row">
+            <span>Số lượng</span>
+            <div class="product-quantity-control">
+              <button type="button" id="quantity-decrease" aria-label="Giảm số lượng">−</button>
+              <output id="product-quantity" aria-live="polite">1</output>
+              <button type="button" id="quantity-increase" aria-label="Tăng số lượng">+</button>
+            </div>
+          </div>
+
+          <fieldset class="product-toppings">
+            <legend>Tùy chọn thêm topping</legend>
+            <div id="topping-options" class="topping-options"></div>
+          </fieldset>
+
+          <label class="product-note-label" for="product-note">Ghi chú cho món</label>
+          <textarea id="product-note" rows="3" maxlength="250"></textarea>
+
+          <p class="product-total-row">Thành tiền <strong id="product-total"></strong></p>
+          <div class="product-detail-actions">
+            <button type="button" id="add-to-cart" class="product-detail-cart-btn">Thêm vào giỏ</button>
+            <button type="button" id="place-order" class="product-detail-order-btn">Đặt hàng</button>
+          </div>
+          <p id="product-message" class="product-message" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+    <div class="checkout-modal" id="product-checkout-modal" hidden>
+      <section class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="product-checkout-title">
+        <button class="checkout-close" type="button" aria-label="Đóng">×</button>
+        <h2 id="product-checkout-title">Thông tin đặt hàng</h2>
+        <div class="checkout-product-summary">
+          <img id="checkout-product-image" src="" alt="" />
+          <div>
+            <strong id="checkout-product-name"></strong>
+            <p id="checkout-product-options"></p>
+            <strong id="checkout-product-total"></strong>
+          </div>
+        </div>
+        <form id="product-checkout-form" class="checkout-form">
+          <label for="product-receiver-name">Tên người nhận</label>
+          <input id="product-receiver-name" name="receiverName" type="text" autocomplete="name" required />
+          <label for="product-receiver-phone">Số điện thoại</label>
+          <input id="product-receiver-phone" name="receiverPhone" type="tel" autocomplete="tel" required />
+          <label for="product-receiver-address">Địa chỉ giao hàng</label>
+          <textarea id="product-receiver-address" name="receiverAddress" rows="2" autocomplete="street-address" required></textarea>
+          <fieldset class="checkout-payment-options">
+            <legend>Phương thức thanh toán</legend>
+            <label><input type="radio" name="product-payment-method" value="cash" checked /> Tiền mặt</label>
+            <label><input type="radio" name="product-payment-method" value="transfer" /> Chuyển khoản</label>
+          </fieldset>
+          <div class="checkout-qr" id="product-checkout-qr" hidden>
+            <img src="../assets/images/CaoQuynhAnh_252601009/qr.jpg" alt="Mã QR thanh toán" />
+            <span>Quét mã QR để chuyển khoản</span>
+          </div>
+          <button type="submit" class="checkout-submit">Xác nhận đặt hàng</button>
+        </form>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div><h3>Jollibee</h3><p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p></div>
+        <div><h3>Liên kết</h3><a href="../../index.html">Trang chủ</a><a href="menu.html">Thực đơn</a><a href="khuyenmai.html">Khuyến mãi</a></div>
+        <div><h3>Liên hệ</h3><p>Hotline: 1900 1533</p><p>Email: example@email.com</p></div>
+      </div>
+      <div class="copyright">© 2026 Food Website</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,4 +1,45 @@
 {
+  "bestseller": {
+    "name": "Best Seller",
+    "products": {
+      "com-ga-xoi-mo": {
+        "id": "com-ga-xoi-mo",
+        "name": "Cơm gà xối mỡ",
+        "price": 45000,
+        "image": "comga_nuoc.jpg"
+      },
+      "combo-com-ga-nuoc": {
+        "id": "combo-com-ga-nuoc",
+        "name": "Combo cơm gà + nước",
+        "price": 59000,
+        "image": "ga_nuoc_chip_01.png"
+      },
+      "mi-xao-bo": {
+        "id": "mi-xao-bo",
+        "name": "Mì xào bò",
+        "price": 49000,
+        "image": "spagetti_01.png"
+      },
+      "khoai-tay-chien": {
+        "id": "khoai-tay-chien",
+        "name": "Khoai tây chiên",
+        "price": 25000,
+        "image": "chips_01.png"
+      },
+      "tra-sua-truyen-thong": {
+        "id": "tra-sua-truyen-thong",
+        "name": "Trà sữa truyền thống",
+        "price": 30000,
+        "image": "drinks_01.png"
+      },
+      "combo-doi": {
+        "id": "combo-doi",
+        "name": "Combo 2 người",
+        "price": 109000,
+        "image": "burger_chip_coca01.jpg"
+      }
+    }
+  },
   "com": {
     "name": "Cơm",
     "products": {

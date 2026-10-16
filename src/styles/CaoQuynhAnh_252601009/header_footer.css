@@ -72,7 +72,7 @@ header.header-scrolled {
     z-index: 10;
 }
 
-.cart-icon,.login-icon, .heart-icon {
+.cart-icon,.login-icon {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -121,6 +121,65 @@ header.header-scrolled {
 
 .register:hover, .login:hover {
   text-decoration: underline;
+}
+
+.user-session {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    color: #fff;
+    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.user-greeting {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    max-width: 240px;
+    overflow: hidden;
+    color: #fff;
+    text-overflow: ellipsis;
+}
+
+.user-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-logout {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    z-index: 20;
+    min-width: 112px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid rgba(255, 55, 55, 0.18);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+    color: var(--red, #FF3737);
+    font: inherit;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.16s ease, visibility 0.16s ease, transform 0.16s ease;
+}
+
+.user-session:hover .user-logout,
+.user-session:focus-within .user-logout {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-logout:hover {
+    background: #fff8f0;
 }
 
 .icons {
@@ -271,12 +330,41 @@ header {
 .header-search input {
     font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
     min-width: 0;
-    width: 100%;
+    flex: 1;
+    width: auto;
     border: 0;
     outline: 0;
     background: transparent;
     color: #333;
     text-align: left;
+}
+
+.header-search input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.search-clear-btn {
+    display: grid;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-clear-btn[hidden] {
+    display: none;
+}
+
+.search-clear-btn img {
+    display: block;
+    width: 16px;
+    height: 16px;
 }
 
 .header-search input::placeholder {
@@ -289,109 +377,7 @@ header {
     height: 34px;
 }
 
-.menu-category-tab {
-    position: static;
-}
 
-.menu-category-dropdown {
-    position: fixed;
-    top: 66px;
-    left: 5vw;
-    z-index: 20;
-    width: 90vw;
-    padding: 12px 20px;
-    border-radius: 0 0 18px 18px;
-    background: #ffffff;
-    box-shadow: 0 10px 24px rgba(80, 30, 40, 0.12);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-6px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
-}
-
-/* Bridge the header-to-panel gap so the hover state stays active while moving down. */
-.menu-category-dropdown::before {
-    position: absolute;
-    top: -12px;
-    right: 0;
-    left: 0;
-    height: 12px;
-    content: "";
-}
-
-.menu-category-tab:hover .menu-category-dropdown,
-.menu-category-tab:focus-within .menu-category-dropdown {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-.menu-category-list {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 12px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-}
-
-.menu-category-list li {
-    min-width: 0;
-}
-
-.top-menu-desktop .menu-category-item {
-    display: flex;
-    min-height: 116px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    padding: 2px 8px 6px;
-    border: 1px solid transparent;
-    border-radius: 14px;
-    color: #171717;
-    text-decoration: none;
-    background: transparent;
-    transition: color 0.18s ease;
-}
-
-.menu-category-image {
-    display: grid;
-    width: 100%;
-    height: 78px;
-    place-items: center;
-}
-
-.menu-category-image img {
-    display: block;
-    max-width: 100%;
-    max-height: 76px;
-    object-fit: contain;
-    transition: transform 0.2s ease;
-}
-
-.menu-category-name {
-    font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
-    font-size: 14px;
-    font-weight: 800;
-    text-align: center;
-    transition: color 0.18s ease;
-}
-
-.top-menu-desktop .menu-category-item:hover,
-.top-menu-desktop .menu-category-item:focus-visible {
-    color: #FF3737;
-    background: transparent;
-    outline: none;
-}
-
-.top-menu-desktop .menu-category-item:hover .menu-category-image img,
-.top-menu-desktop .menu-category-item:focus-visible .menu-category-image img {
-    transform: scale(1.14);
-}
 
 /* =========================
    MAIN
@@ -503,9 +489,6 @@ header {
         display: none !important;
     }
 
-    .menu-category-dropdown {
-        display: none;
-    }
 
     /* Search stays visible; cart, favorites and account links live in the drawer. */
     .header-actions,
@@ -521,7 +504,6 @@ header {
     }
 
     .header-actions .cart-icon,
-    .header-actions .heart-icon,
     .header-actions .login-icon {
         display: none !important;
     }
@@ -557,7 +539,8 @@ header {
     .header-search input {
         font-family: 'Chiron GoRound TC', 'Courier New', Courier, monospace;
         min-width: 0;
-        width: 100%;
+        flex: 1;
+        width: auto;
         border: 0;
         outline: 0;
         background: transparent;
@@ -744,6 +727,32 @@ header {
     .mobile-drawer-auth .register:hover,
     .mobile-drawer-auth .login:hover {
         text-decoration: underline;
+    }
+
+    .mobile-drawer-auth .user-session {
+        min-height: 40px;
+        color: #fff;
+    }
+
+    .mobile-drawer-auth .user-greeting {
+        max-width: 230px;
+    }
+
+    @media (hover: none) {
+        .user-session {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .user-logout {
+            position: static;
+            min-height: 34px;
+            margin-top: 4px;
+            margin-left: 0;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+        }
     }
 
     .header-location {
