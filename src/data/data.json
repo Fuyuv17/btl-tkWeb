@@ -31,12 +31,12 @@
       },
       "combo-com-tho-dui-ga-tra-dao": {
         "id": "combo-com-tho-dui-ga-tra-dao",
-        "name": "Combo Cơm thố đùi gà + Trà hồng vải",
+        "name": "Combo Cơm thố đùi gà + Cafe Latte",
         "price": 65000,
         "image": "com-tho-dui-ga.jpg",
         "src": "com-tho-dui-ga.jpg",
         "badge": "Giảm 10%",
-        "description": "Cơm thố đùi gà thơm béo ăn kèm ly trà hồng vải thanh mát (Giá gốc: 73.000đ - Tiết kiệm 10%)."
+        "description": "Cơm thố đùi gà thơm béo ăn kèm ly Cafe Latte béo ngậy đậm vị (Giá gốc: 73.000đ - Tiết kiệm 10%)."
       },
       "tra-sua-tran-chau-duong-den": {
         "id": "tra-sua-tran-chau-duong-den",
@@ -63,13 +63,13 @@
     "products": {
       "combo-com-tho-dui-ga-tra-dao": {
         "id": "combo-com-tho-dui-ga-tra-dao",
-        "name": "Combo Cơm thố đùi gà + Trà hồng vải",
+        "name": "Combo Cơm thố đùi gà + Cafe Latte",
         "price": 65000,
         "originalPrice": 73000,
         "image": "com-tho-dui-ga.jpg",
         "src": "com-tho-dui-ga.jpg",
         "badge": "Giảm 10%",
-        "description": "Cơm thố đùi gà thơm béo ăn kèm ly trà hồng vải thanh mát (Giá gốc: 73.000đ - Tiết kiệm 10%).",
+        "description": "Cơm thố đùi gà thơm béo ăn kèm ly Cafe Latte béo ngậy đậm vị (Giá gốc: 73.000đ - Tiết kiệm 10%).",
         "toppingOptions": [
           { "name": "Thêm cơm", "price": 8000 },
           { "name": "Thêm gà 5m", "price": 15000 },
@@ -144,8 +144,8 @@
         "name": "Combo Đôi Bạn Thân (2 người)",
         "price": 135000,
         "originalPrice": 151000,
-        "image": "burger_chip_coca01.jpg",
-        "src": "burger_chip_coca01.jpg",
+        "image": "combo-doi-ban-than.png",
+        "src": "combo-doi-ban-than.png",
         "badge": "Giảm 10%",
         "description": "Bữa ăn tuyệt vời cho 2 người: 1 Cơm trộn gà nướng, 1 Bún trộn thịt nướng, 2 Ly trà nho và 1 Snack phô mai (Giá gốc: 151.000đ - Tiết kiệm 10%).",
         "toppingOptions": [
@@ -483,13 +483,13 @@
           { "name": "Lô hội", "price": 3000 }
         ]
       },
-      "tra-hong-vai": {
-        "id": "tra-hong-vai",
-        "name": "Trà hồng vải",
+      "cafe-latte": {
+        "id": "cafe-latte",
+        "name": "Cafe Latte",
         "price": 28000,
-        "image": "Tra-Hong-Vai.jpg",
-        "src": "Tra-Hong-Vai.jpg",
-        "description": "Hương vị trà hồng đậm đà kết hợp quả vải thiều mọng nước ngọt thanh giải nhiệt sảng khoái.",
+        "image": "cafe-latte.jpg",
+        "src": "cafe-latte.jpg",
+        "description": "Cà phê Latte thơm béo ngậy vị sữa tươi hòa quyện cùng vị đậm đà tinh tế của cà phê espresso nguyên chất.",
         "sizeOptions": [
           { "name": "Size M", "price": 0 },
           { "name": "Size L", "price": 6000 }

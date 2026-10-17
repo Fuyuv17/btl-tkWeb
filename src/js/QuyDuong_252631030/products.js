@@ -6,6 +6,9 @@ const checkoutPhonePattern = /^(?!00)[0-9]{10,11}$/;
 const categoryOrder = ["combo", "com", "mi-bun", "do-an-vat", "nuoc-uong"];
 
 const imageFolderMap = {
+  // CaoQuynhAnh_252601009
+  "combo-doi-ban-than.png": "CaoQuynhAnh_252601009",
+
   // ChuSyThanh
   "bun-bo.jpg": "ChuSyThanh",
   "bun-ca.jpg": "ChuSyThanh",
@@ -60,6 +63,7 @@ const imageFolderMap = {
   "super-sundae-xoai.jpg": "DuongVanMinh",
   "tra-chanh-lo-hoi.jpg": "DuongVanMinh",
   "Tra-Hong-Vai.jpg": "DuongVanMinh",
+  "cafe-latte.jpg": "DuongVanMinh",
   "tra-nho.jpg": "DuongVanMinh",
   "tra-sua-tran-chau-duong-den.jpg": "DuongVanMinh",
 };

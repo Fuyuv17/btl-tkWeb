@@ -375,3 +375,36 @@
   }
 }
 
+/* ===== Nút Xem tất cả tin tức ở Trang chủ ===== */
+.tintuc-view-more {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 10px;
+}
+
+.tintuc-view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 170px;
+  padding: 12px 28px;
+  border: 1.5px solid var(--red);
+  border-radius: 28px;
+  background: #fff;
+  color: var(--red);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(255, 55, 55, 0.1);
+}
+
+.tintuc-view-all-btn:hover {
+  background: var(--red);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 55, 55, 0.24);
+}
+

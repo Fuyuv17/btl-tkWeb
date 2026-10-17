@@ -9,9 +9,11 @@
   <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/carousel_banner.css" />
   <link rel="stylesheet" href="src/styles/QuyDuong_252631030/products.css" />
   <link rel="stylesheet" href="src/styles/CaoQuynhAnh_252601009/main-content.css" />
+  <link rel="stylesheet" href="src/styles/PhamQuangThanh/tintuc.css" />
   <script src="src/js/CaoQuynhAnh_252601009/carousel_banner.js" defer></script>
   <script src="src/js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
   <script src="src/js/QuyDuong_252631030/products.js" defer></script>
+  <script src="src/js/PhamQuangThanh/tintuc.js" defer></script>
 </head>
 
 <body>
@@ -20,8 +22,9 @@
     <header>
       <div class="higher-header">
         <div class="header-logo">
-          <a href="">
-            <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="page logo" />
+          <a href="index.html">
+            <img src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Foody" />
+            <span class="header-brand-name">Foody</span>
           </a>
         </div>
         <div class="header-actions">
@@ -71,7 +74,6 @@
             <a href="index.html">Trang chủ</a>
           </li>
           <li class="category-menu-items"><a href="src/pages/menu.html">Menu</a></li>
-          <li class="category-menu-items"><a href="src/pages/khuyenmai.html">Khuyến mãi</a></li>
           <li class="category-menu-items"><a href="src/pages/tintuc.html">Tin tức</a></li>
           <li class="category-menu-items"><a href="src/pages/cart.html">Giỏ hàng</a></li>
         </ul>
@@ -90,7 +92,6 @@
         <ul class="top-menu-desktop">
           <li class="category-menu-items"><a href="index.html">Trang chủ</a></li>
           <li class="category-menu-items"><a href="src/pages/menu.html">Menu</a></li>
-          <li class="category-menu-items"><a href="src/pages/khuyenmai.html">Khuyến mãi</a></li>
           <li class="category-menu-items"><a href="src/pages/tintuc.html">Tin tức</a></li>
         </ul>
       </div>
@@ -132,6 +133,85 @@
         </div>
         <div id="head-category-products" class="product-grid" aria-live="polite"></div>
 
+        <!-- Section Tin tức nổi bật -->
+        <section class="tintuc-section" style="margin-top: 50px;">
+          <div class="tintuc-section-heading">
+            <span class="heading-icon">📰</span>
+            <div>
+              <h2>Tin Tức Nổi Bật</h2>
+              <p>Khám phá các chương trình ưu đãi mới nhất và câu chuyện ẩm thực thú vị!</p>
+            </div>
+          </div>
+
+          <div class="tintuc-grid">
+            <!-- Tin 1 -->
+            <article class="tintuc-card normalnews bignew" tabindex="0" role="article" aria-label="Combo chào tân sinh viên">
+              <div class="tintuc-card-image item-image">
+                <img src="src/assets/images/CaoQuynhAnh_252601009/banner1.jpg" alt="Combo chào tân sinh viên" loading="lazy" />
+                <span class="tintuc-badge badge-promo">Ưu đãi hot</span>
+              </div>
+              <div class="tintuc-card-body">
+                <div class="tintuc-meta">
+                  <span class="tintuc-date">📅 15/10/2026</span>
+                  <span class="tintuc-tag">Ưu đãi</span>
+                </div>
+                <h3 class="tintuc-card-title item-tittle">Combo chào tân sinh viên</h3>
+                <p class="tintuc-card-desc">Chào đón năm học mới với combo cực no gồm gà rán giòn rụm, khoai tây chiên giòn và nước ngọt mát lạnh chỉ từ 49.000đ.</p>
+                <div class="tintuc-card-footer">
+                  <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                  <span class="read-time">3 phút đọc</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tin 2 -->
+            <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Happy Hour – Giờ vàng ưu đãi">
+              <div class="tintuc-card-image item-image">
+                <img src="src/assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Happy Hour – Giờ vàng ưu đãi" loading="lazy" />
+                <span class="tintuc-badge badge-promo">Giờ vàng</span>
+              </div>
+              <div class="tintuc-card-body">
+                <div class="tintuc-meta">
+                  <span class="tintuc-date">📅 14/10/2026</span>
+                  <span class="tintuc-tag">Happy Hour</span>
+                </div>
+                <h3 class="tintuc-card-title item-tittle">Happy Hour – Ưu đãi giờ vàng</h3>
+                <p class="tintuc-card-desc">Khung giờ vàng từ 14h00 – 17h00 từ Thứ 2 đến Thứ 6 hàng tuần, giảm ngay 25% cho tất cả các loại đồ uống và món ăn vặt.</p>
+                <div class="tintuc-card-footer">
+                  <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                  <span class="read-time">2 phút đọc</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tin 3 -->
+            <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Deal cuối tuần – Ăn ngon giá tốt">
+              <div class="tintuc-card-image item-image">
+                <img src="src/assets/images/CaoQuynhAnh_252601009/banner3.jpg" alt="Deal cuối tuần – Ăn ngon giá tốt" loading="lazy" />
+                <span class="tintuc-badge badge-promo">Cuối tuần</span>
+              </div>
+              <div class="tintuc-card-body">
+                <div class="tintuc-meta">
+                  <span class="tintuc-date">📅 12/10/2026</span>
+                  <span class="tintuc-tag">Tiết kiệm</span>
+                </div>
+                <h3 class="tintuc-card-title item-tittle">Deal cuối tuần – Ăn ngon giá tốt</h3>
+                <p class="tintuc-card-desc">Xả stress cuối tuần cùng gia đình với ưu đãi mua 1 tặng 1 mì Ý thơm ngon hoặc giảm 50% miếng gà thứ hai khi đặt hàng.</p>
+                <div class="tintuc-card-footer">
+                  <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                  <span class="read-time">3 phút đọc</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="tintuc-view-more">
+            <a href="src/pages/tintuc.html" class="tintuc-view-all-btn">
+              Xem tất cả tin tức &rarr;
+            </a>
+          </div>
+        </section>
+
       </div>
     </div>
     <!-- Modal thanh toan dat hang -->
@@ -171,28 +251,33 @@
     <!-- This is begin of footer -->
     <footer class="footer">
       <div class="footer-container">
-        <div>
-          <h3>Jollibee</h3>
-          <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-wrapper">
+            <img class="footer-logo" src="src/assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Foody" />
+            <h3>Foody</h3>
+          </a>
+          <p class="footer-slogan">Món ngon chuẩn vị, giá chuẩn sinh viên – Tiếp năng lượng cho từng giờ lên lớp!</p>
         </div>
 
         <div>
           <h3>Liên kết</h3>
           <a href="index.html">Trang chủ</a>
           <a href="src/pages/menu.html">Thực đơn</a>
-          <a href="src/pages/khuyenmai.html">Khuyến mãi</a>
           <a href="src/pages/tintuc.html">Tin tức</a>
+          <a href="src/pages/cart.html">Giỏ hàng</a>
         </div>
 
         <div>
           <h3>Liên hệ</h3>
-          <p>Hotline: 1900 1533</p>
-
-          <p>Email: example@email.com</p>
+          <p><strong>Địa chỉ:</strong> Số 3, phường Láng Thượng, quận Đống Đa, Hà Nội, Việt Nam</p>
+          <p><strong>Đại diện nhóm trưởng:</strong> Cao Quỳnh Anh - ĐT: 0868.415.093</p>
+          <p><strong>Email:</strong> quynhanhcaov17@gmail.com</p>
         </div>
       </div>
 
-      <div class="copyright">© 2026 Food Website</div>
+      <div class="copyright">
+        © 2025 Nhóm BTL Thiết Kế Web Lớp QT01 CNTTVA1 K65, Trường Đại Học Giao Thông Vận Tải
+      </div>
     </footer>
     <!-- This is the end of footer -->
 </body>
