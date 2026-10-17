@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollibee - Tin tức & Khuyến mãi</title>
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/header_footer.css" />
+  <link rel="stylesheet" href="../styles/CaoQuynhAnh_252601009/main-content.css" />
+  <link rel="stylesheet" href="../styles/PhamQuangThanh/tintuc.css" />
+  <script src="../js/CaoQuynhAnh_252601009/header_footer.js" defer></script>
+  <script src="../js/PhamQuangThanh/tintuc.js" defer></script>
+</head>
+
+<body>
+  <div class="master-wrapper-page">
+    <!-- Header -->
+    <header>
+      <div class="higher-header">
+        <div class="header-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Jollibee" />
+          </a>
+        </div>
+        <div class="header-actions">
+          <form class="header-search" role="search">
+            <span aria-hidden="true">
+              <img class="search-icon" src="../assets/images/CaoQuynhAnh_252601009/search.svg" alt="Tìm kiếm">
+            </span>
+            <input type="search" aria-label="Tìm món ăn" placeholder="Tìm món ăn, combo, ..." />
+          </form>
+          <div class="cart-icon">
+            <a href="cart.html" class="icon-circle" title="Giỏ hàng">
+              <img src="../assets/images/CaoQuynhAnh_252601009/cart.svg" alt="Giỏ hàng" />
+            </a>
+          </div>
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+        <div class="menu-for-mobile">
+          <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile drawer menu -->
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">&times;</button>
+        <div class="mobile-drawer-logo">
+          <a href="../../index.html">
+            <img src="../assets/images/CaoQuynhAnh_252601009/logo.jpg" alt="Logo Jollibee" />
+          </a>
+        </div>
+        <ul class="mobile-menu-list">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items active"><a href="tintuc.html">Tin tức</a></li>
+          <li class="category-menu-items"><a href="cart.html">Giỏ hàng</a></li>
+        </ul>
+        <div class="mobile-drawer-auth">
+          <div class="login-icon">
+            <a class="icon-circle" href="login.html" title="Tài khoản">
+              <img src="../assets/images/CaoQuynhAnh_252601009/login-icon.svg" alt="Tài khoản" />
+            </a>
+            <a class="register" href="register.html">Đăng kí</a>
+            <span class="icons">/</span>
+            <a class="login" href="login.html">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop navbar -->
+      <div class="header-navbar-for-desktop">
+        <ul class="top-menu-desktop">
+          <li class="category-menu-items"><a href="../../index.html">Trang chủ</a></li>
+          <li class="category-menu-items"><a href="menu.html">Menu</a></li>
+          <li class="category-menu-items"><a href="khuyenmai.html">Khuyến mãi</a></li>
+          <li class="category-menu-items active"><a href="tintuc.html">Tin tức</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="tintuc-page-content">
+      <!-- Banner chào mừng trang tin tức -->
+      <section class="tintuc-hero">
+        <h1>Tin Tức &amp; Sự Kiện</h1>
+        <p>Cập nhật những ưu đãi hấp dẫn, món mới bùng nổ hương vị và cẩm nang bí quyết ăn ngon mỗi ngày cùng chúng tôi!</p>
+      </section>
+
+      <!-- Thanh điều hướng chuyên mục (Tabs) -->
+      <nav class="tintuc-category-tabs" aria-label="Danh mục tin tức">
+        <a href="#salenews" id="go-to-sale" class="tintuc-tab-link is-active">
+          <span>🎁</span> Khuyến mãi
+        </a>
+        <a href="#explorenews" id="go-to-explore" class="tintuc-tab-link">
+          <span>🍗</span> Món mới
+        </a>
+        <a href="#tricknews" id="go-to-trick" class="tintuc-tab-link">
+          <span>💡</span> Bí quyết ăn ngon
+        </a>
+      </nav>
+
+      <!-- ============================================== -->
+      <!-- CHUYÊN MỤC 1: KHUYẾN MÃI                      -->
+      <!-- ============================================== -->
+      <section id="salenews" class="tintuc-section">
+        <div class="tintuc-section-heading">
+          <span class="heading-icon">🎁</span>
+          <div>
+            <h2>Khuyến Mãi</h2>
+            <p>Hàng ngàn chương trình ưu đãi hấp dẫn, giờ vàng giá tốt và quà tặng độc quyền đang chờ đón bạn.</p>
+          </div>
+        </div>
+
+        <div class="tintuc-grid">
+          <!-- Tin 1 -->
+          <article class="tintuc-card normalnews bignew" tabindex="0" role="article" aria-label="Combo chào tân sinh viên">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/CaoQuynhAnh_252601009/banner1.jpg" alt="Combo chào tân sinh viên" loading="lazy" />
+              <span class="tintuc-badge badge-promo">Ưu đãi sinh viên</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 15/10/2026</span>
+                <span class="tintuc-tag">Ưu đãi hot</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Combo chào tân sinh viên</h3>
+              <p class="tintuc-card-desc">Chào đón năm học mới với combo cực no gồm gà rán giòn rụm, khoai tây chiên giòn và nước ngọt mát lạnh chỉ từ 49.000đ dành riêng cho các bạn học sinh - sinh viên.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 2 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Happy Hour – Ưu đãi giờ vàng">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/CaoQuynhAnh_252601009/banner2.jpg" alt="Happy Hour – Ưu đãi giờ vàng" loading="lazy" />
+              <span class="tintuc-badge badge-promo">Giờ vàng</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 14/10/2026</span>
+                <span class="tintuc-tag">Happy Hour</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Happy Hour – Ưu đãi giờ vàng</h3>
+              <p class="tintuc-card-desc">Khung giờ vàng từ 14h00 – 17h00 từ Thứ 2 đến Thứ 6 hàng tuần, giảm ngay 25% cho tất cả các loại đồ uống, tráng miệng và món ăn vặt giòn tan.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">2 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 3 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Deal cuối tuần – Ăn ngon giá tốt">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/CaoQuynhAnh_252601009/banner3.jpg" alt="Deal cuối tuần – Ăn ngon giá tốt" loading="lazy" />
+              <span class="tintuc-badge badge-promo">Cuối tuần</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 12/10/2026</span>
+                <span class="tintuc-tag">Tiết kiệm</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Deal cuối tuần – Ăn ngon giá tốt</h3>
+              <p class="tintuc-card-desc">Xả stress cuối tuần cùng gia đình với ưu đãi mua 1 tặng 1 mì Ý sốt bò bằm thơm béo hoặc giảm 50% miếng gà thứ hai khi đặt hàng trực tiếp.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 4 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Ưu đãi dành cho khách hàng mới">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/burger_chip_coca01.jpg" alt="Ưu đãi dành cho khách hàng mới" loading="lazy" />
+              <span class="tintuc-badge badge-promo">Khách mới</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 10/10/2026</span>
+                <span class="tintuc-tag">Thành viên</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Ưu đãi dành cho khách hàng mới</h3>
+              <p class="tintuc-card-desc">Đăng ký tài khoản thành viên ngay hôm nay nhận ngay voucher giảm giá 30.000đ cho đơn hàng đầu tiên cùng mã miễn phí giao hàng tận nhà.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">2 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 5 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Tích điểm đổi quà dành cho khách hàng thân thiết">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/ga_nuoc_chip_01.png" alt="Tích điểm đổi quà dành cho khách hàng thân thiết" loading="lazy" />
+              <span class="tintuc-badge badge-promo">Thành viên VIP</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 08/10/2026</span>
+                <span class="tintuc-tag">Tích điểm</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Tích điểm đổi quà dành cho khách hàng thân thiết</h3>
+              <p class="tintuc-card-desc">Tích lũy 1 điểm cho mỗi 10.000đ chi tiêu. Đổi ngay những phần quà bất ngờ, từ món ăn kèm miễn phí đến những combo gà rán thịnh soạn cho gia đình.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 6 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Combo nhóm – Ăn ngon cùng bạn bè">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/6_mieng_ga_ron.jpg" alt="Combo nhóm – Ăn ngon cùng bạn bè" loading="lazy" />
+              <span class="tintuc-badge badge-promo">Combo nhóm</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 05/10/2026</span>
+                <span class="tintuc-tag">Tụ tập bạn bè</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Combo nhóm – Ăn ngon cùng bạn bè</h3>
+              <p class="tintuc-card-desc">Tụ tập bạn bè với combo siêu to khổng lồ gồm 6 miếng gà giòn thơm cay, mì Ý sốt bò bằm, burger và khoai tây lắc phô mai, tiết kiệm tới 35%.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- CHUYÊN MỤC 2: MÓN MỚI                         -->
+      <!-- ============================================== -->
+      <section id="explorenews" class="tintuc-section">
+        <div class="tintuc-section-heading">
+          <span class="heading-icon">🍗</span>
+          <div>
+            <h2>Món Mới</h2>
+            <p>Khám phá bộ sưu tập những món ăn đột phá hương vị vừa cập bến thực đơn Ăn Ngon.</p>
+          </div>
+        </div>
+
+        <div class="tintuc-grid">
+          <!-- Tin 1 -->
+          <article class="tintuc-card normalnews bignew" tabindex="0" role="article" aria-label="Cơm gà sốt đặc biệt – Hương vị mới mỗi ngày">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/comga_nuoc_02.jpg" alt="Cơm gà sốt đặc biệt" loading="lazy" />
+              <span class="tintuc-badge badge-new">Món mới</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 16/10/2026</span>
+                <span class="tintuc-tag">Cơm gà</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Cơm gà sốt đặc biệt – Hương vị mới mỗi ngày</h3>
+              <p class="tintuc-card-desc">Sự kết hợp hoàn hảo giữa hạt cơm dẻo thơm, thịt gà vàng giòn ươm và lớp nước sốt chua ngọt cay đậm đà đánh thức mọi giác quan trong bữa trưa.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 2 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Mì trộn cay Hàn Quốc chính thức lên kệ">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/spagetti_01.png" alt="Mì trộn cay Hàn Quốc" loading="lazy" />
+              <span class="tintuc-badge badge-new">Bùng nổ vị cay</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 13/10/2026</span>
+                <span class="tintuc-tag">Mì Ý cay</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Mì trộn cay Hàn Quốc chính thức lên kệ</h3>
+              <p class="tintuc-card-desc">Dành riêng cho những ai đam mê vị cay nồng quyến rũ, từng sợi mì dai vàng quyện đều cùng sốt Gochujang đặc trưng cùng topping gà viên giòn bùi.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">2 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 3 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Bún bò đậm đà – Đổi vị cho bữa trưa">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/spagetti_02.png" alt="Bún bò đậm đà" loading="lazy" />
+              <span class="tintuc-badge badge-new">Đổi vị mới lạ</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 11/10/2026</span>
+                <span class="tintuc-tag">Hương vị quê nhà</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Bún bò đậm đà – Đổi vị cho bữa trưa</h3>
+              <p class="tintuc-card-desc">Nước dùng hầm xương ngọt thanh quyện cùng hương thơm dịu nhẹ của sả cây, thịt bắp bò mềm ngọt giúp bạn nạp năng lượng tràn trề cho cả ngày làm việc.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 4 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Bộ sưu tập đồ ăn vặt dành cho tín đồ ăn ngon">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/chips_01.png" alt="Đồ ăn vặt" loading="lazy" />
+              <span class="tintuc-badge badge-new">Ăn vặt cực mê</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 09/10/2026</span>
+                <span class="tintuc-tag">Ăn kèm</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Bộ sưu tập đồ ăn vặt dành cho tín đồ ăn ngon</h3>
+              <p class="tintuc-card-desc">Khoai tây lắc phô mai béo ngậy, thanh cua chiên xù và bánh phô mai que kéo sợi cực đã – lựa chọn nhâm nhi số một cho các buổi chuyện trò rôm rả.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">2 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 5 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Trà đào cam sả – Thức uống giải nhiệt mới">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/drinks_01.png" alt="Trà đào cam sả" loading="lazy" />
+              <span class="tintuc-badge badge-new">Giải nhiệt</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 07/10/2026</span>
+                <span class="tintuc-tag">Đồ uống</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Trà đào cam sả – Thức uống giải nhiệt mới</h3>
+              <p class="tintuc-card-desc">Vị trà thanh mát hòa quyện cùng vị ngọt mát của miếng đào giòn sần sật và tinh dầu cam sả thơm dịu, xua tan ngay sự mỏi mệt sau giờ làm việc căng thẳng.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">2 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 6 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Khám phá những món ngon được yêu thích nhất">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/ga_ran_xot.png" alt="Món ngon yêu thích" loading="lazy" />
+              <span class="tintuc-badge badge-new">Top yêu thích</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 03/10/2026</span>
+                <span class="tintuc-tag">Bestseller</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Khám phá những món ngon được yêu thích nhất</h3>
+              <p class="tintuc-card-desc">Cùng điểm danh các món ăn làm nên tên tuổi của nhà hàng, được hàng nghìn thực khách khen ngợi và luôn giữ vị trí đứng đầu bảng xếp hạng order.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================== -->
+      <!-- CHUYÊN MỤC 3: BÍ QUYẾT ĂN NGON                -->
+      <!-- ============================================== -->
+      <section id="tricknews" class="tintuc-section">
+        <div class="tintuc-section-heading">
+          <span class="heading-icon">💡</span>
+          <div>
+            <h2>Bí Quyết Ăn Ngon</h2>
+            <p>Mẹo nhỏ và cẩm nang lựa chọn khẩu phần dinh dưỡng hợp lý, ngon miệng và tiết kiệm chi phí.</p>
+          </div>
+        </div>
+
+        <div class="tintuc-grid">
+          <!-- Tin 1 -->
+          <article class="tintuc-card normalnews bignew" tabindex="0" role="article" aria-label="Bí quyết chọn combo ngon mà vẫn tiết kiệm">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/4_mieng_ga_ron.jpg" alt="Bí quyết chọn combo" loading="lazy" />
+              <span class="tintuc-badge badge-tips">Cẩm nang</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 15/10/2026</span>
+                <span class="tintuc-tag">Mẹo hay</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Bí quyết chọn combo ngon mà vẫn tiết kiệm</h3>
+              <p class="tintuc-card-desc">Hướng dẫn cách chọn món chính kèm tráng miệng và đồ uống theo nhóm hoặc cá nhân sao cho khẩu phần luôn cân đối, ngon miệng mà hầu bao vẫn rủng rỉnh.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">4 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 2 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Gợi ý thực đơn bữa trưa cho sinh viên">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/TruongQuyDuong_252631030/comga_nuoc.jpg" alt="Thực đơn bữa trưa" loading="lazy" />
+              <span class="tintuc-badge badge-tips">Bữa trưa</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 12/10/2026</span>
+                <span class="tintuc-tag">Dinh dưỡng</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Gợi ý thực đơn bữa trưa cho sinh viên</h3>
+              <p class="tintuc-card-desc">Lên kế hoạch ăn trưa đủ chất đạm, tinh bột và vitamin giúp duy trì sự tỉnh táo suốt những tiết học kéo dài mà thời gian gọi món chưa đến 5 phút.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">3 phút đọc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tin 3 -->
+          <article class="tintuc-card normalnews" tabindex="0" role="article" aria-label="Cơm, mì hay bún – Hôm nay ăn gì?">
+            <div class="tintuc-card-image item-image">
+              <img src="../assets/images/CaoQuynhAnh_252601009/banner.jpg" alt="Hôm nay ăn gì?" loading="lazy" />
+              <span class="tintuc-badge badge-tips">Gợi ý món</span>
+            </div>
+            <div class="tintuc-card-body">
+              <div class="tintuc-meta">
+                <span class="tintuc-date">📅 09/10/2026</span>
+                <span class="tintuc-tag">Hỏi đáp</span>
+              </div>
+              <h3 class="tintuc-card-title item-tittle">Cơm, mì hay bún – Hôm nay ăn gì?</h3>
+              <p class="tintuc-card-desc">Đánh bay sự phân vân khi đứng trước thực đơn phong phú với bảng phân loại món ăn theo sở thích, tâm trạng và thời tiết để có ngay một bữa ăn ưng ý nhất.</p>
+              <div class="tintuc-card-footer">
+                <span class="read-more-btn">Xem chi tiết &rarr;</span>
+                <span class="read-time">4 phút đọc</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div>
+          <h3>Jollibee</h3>
+          <p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p>
+        </div>
+
+        <div>
+          <h3>Liên kết</h3>
+          <a href="../../index.html">Trang chủ</a>
+          <a href="menu.html">Thực đơn</a>
+          <a href="khuyenmai.html">Khuyến mãi</a>
+          <a href="tintuc.html">Tin tức</a>
+        </div>
+
+        <div>
+          <h3>Liên hệ</h3>
+          <p>Hotline: 1900 1533</p>
+          <p>Email: example@email.com</p>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 Food Website</div>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -204,6 +204,46 @@
     font-size: 14px;
 }
 
+.option-pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.option-pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: 1px solid #f0e8e1;
+    border-radius: 20px;
+    background: #fffdfb;
+    color: #444;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-pill:hover {
+    border-color: rgba(255, 55, 55, 0.4);
+    background: #fff8f5;
+}
+
+.option-pill:has(input:checked) {
+    border-color: var(--red, #FF3737);
+    background: var(--red, #FF3737);
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(255, 55, 55, 0.22);
+}
+
+.option-pill input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .product-note-label {
     display: block;
 }

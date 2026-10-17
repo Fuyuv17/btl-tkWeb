@@ -4,20 +4,84 @@ const productImagesUrl = new URL("../../assets/images/TruongQuyDuong_252631030/"
 const cartStorageKey = "shoppingCart";
 const checkoutPhonePattern = /^(?!00)[0-9]{10,11}$/;
 const categoryOrder = ["combo", "com", "mi-bun", "do-an-vat", "nuoc-uong"];
+
+const imageFolderMap = {
+  // ChuSyThanh
+  "bun-bo.jpg": "ChuSyThanh",
+  "bun-ca.jpg": "ChuSyThanh",
+  "bun-ga.jpg": "ChuSyThanh",
+  "bun-moc.jpg": "ChuSyThanh",
+  "bun-tron-ga-xe.jpg": "ChuSyThanh",
+  "bun-tron-thit-nuong.jpg": "ChuSyThanh",
+  "mi-tron-nem-chua-ran.jpg": "ChuSyThanh",
+  "mi-tron-rau-cu.jpg": "ChuSyThanh",
+  "mi-tron-thap-cam.jpg": "ChuSyThanh",
+  "mi-tron-vien-chien.jpg": "ChuSyThanh",
+
+  // TruongQuyDuong_252631030
+  "com-bo-chao-nong.jpg": "TruongQuyDuong_252631030",
+  "com-bo-cha-nong.jpg": "TruongQuyDuong_252631030",
+  "com-rang-dua-bo.jpg": "TruongQuyDuong_252631030",
+  "com-rang-thap-cam.jpg": "TruongQuyDuong_252631030",
+  "com-tho-dui-ga.jpg": "TruongQuyDuong_252631030",
+  "com-tron-ga-nuong.jpg": "TruongQuyDuong_252631030",
+  "com-tron-trung-rau.jpg": "TruongQuyDuong_252631030",
+  "4_mieng_ga_ron.jpg": "TruongQuyDuong_252631030",
+  "6_mieng_ga_ron.jpg": "TruongQuyDuong_252631030",
+  "burger_chip_coca01.jpg": "TruongQuyDuong_252631030",
+  "chips_01.png": "TruongQuyDuong_252631030",
+  "comga_nuoc.jpg": "TruongQuyDuong_252631030",
+  "comga_nuoc_02.jpg": "TruongQuyDuong_252631030",
+  "drinks_01.png": "TruongQuyDuong_252631030",
+  "ga_coca.png": "TruongQuyDuong_252631030",
+  "ga_nuoc_chip_01.png": "TruongQuyDuong_252631030",
+  "ga_ran_xot.png": "TruongQuyDuong_252631030",
+  "ice_creame_01.png": "TruongQuyDuong_252631030",
+  "spagetti_01.png": "TruongQuyDuong_252631030",
+  "spagetti_02.png": "TruongQuyDuong_252631030",
+
+  // PhamQuangThanh
+  "kimbap-chien.jpg": "PhamQuangThanh",
+  "kimbap.jpg": "PhamQuangThanh",
+  "snack-bap-ngot.svg": "PhamQuangThanh",
+  "snack-bi-do.svg": "PhamQuangThanh",
+  "snack-crap-me.svg": "PhamQuangThanh",
+  "snack-pho-mai.svg": "PhamQuangThanh",
+  "snack-tom-cay.svg": "PhamQuangThanh",
+
+  // DuongVanMinh
+  "chanh-leo-bach-huong.jpg": "DuongVanMinh",
+  "duong-chi-cam-lo.jpg": "DuongVanMinh",
+  "nuoc-chanh-tuoi-lanh.jpg": "DuongVanMinh",
+  "super-sundae-dao-hong.jpg": "DuongVanMinh",
+  "super-sundae-dau-tay.jpg": "DuongVanMinh",
+  "super-sundae-khoai-mon.jpg": "DuongVanMinh",
+  "super-sundae-tran-chau.jpg": "DuongVanMinh",
+  "super-sundae-xoai.jpg": "DuongVanMinh",
+  "tra-chanh-lo-hoi.jpg": "DuongVanMinh",
+  "Tra-Hong-Vai.jpg": "DuongVanMinh",
+  "tra-nho.jpg": "DuongVanMinh",
+  "tra-sua-tran-chau-duong-den.jpg": "DuongVanMinh",
+};
+
 const categoryFallbackImages = {
-  combo: "ga_nuoc_chip_01.png",
-  com: "comga_nuoc.jpg",
-  "mi-bun": "spagetti_01.png",
-  "do-an-vat": "chips_01.png",
-  "nuoc-uong": "drinks_01.png",
+  combo: "com-tho-dui-ga.jpg",
+  com: "com-tho-dui-ga.jpg",
+  "mi-bun": "mi-tron-thap-cam.jpg",
+  "do-an-vat": "snack-pho-mai.svg",
+  "nuoc-uong": "tra-sua-tran-chau-duong-den.jpg",
 };
 
 function formatPrice(value) {
   return `${Number(value || 0).toLocaleString("vi-VN")}đ`;
 }
 
-function getProductImage(product, fallbackImage = "ga_nuoc_chip_01.png") {
-  return new URL(product.image || fallbackImage, productImagesUrl).href;
+function getProductImage(product, fallbackImage = "com-tho-dui-ga.jpg") {
+  const imageName = (product && (product.image || product.src)) || fallbackImage;
+  if (imageName && imageFolderMap[imageName]) {
+    return new URL(`../../assets/images/${imageFolderMap[imageName]}/${imageName}`, productsScriptUrl).href;
+  }
+  return new URL(imageName || fallbackImage, productImagesUrl).href;
 }
 
 function readCart() {
@@ -30,7 +94,17 @@ function readCart() {
 }
 
 function addToCart(product, options = {}) {
-  const { quantity = 1, toppings = [], note = "", image = getProductImage(product, options.fallbackImage) } = options;
+  const {
+    quantity = 1,
+    toppings = [],
+    size = "",
+    sugar = "",
+    ice = "",
+    basePrice = Number(product.price || 0),
+    note = "",
+    image = getProductImage(product, options.fallbackImage),
+  } = options;
+
   if (!localStorage.getItem("CurrentUser")) {
     alert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng!");
     window.location.href = new URL("../../pages/login.html", productsScriptUrl).href;
@@ -42,9 +116,12 @@ function addToCart(product, options = {}) {
     id: product.id,
     name: product.name,
     image,
-    price: formatPrice(Number(product.price) + toppingsTotal),
-    basePrice: Number(product.price),
+    price: formatPrice(basePrice + toppingsTotal),
+    basePrice,
     quantity,
+    size,
+    sugar,
+    ice,
     toppings,
     note,
     storage: "",
@@ -54,6 +131,9 @@ function addToCart(product, options = {}) {
   const cart = readCart();
   const existing = cart.find((item) =>
     item.id === cartItem.id &&
+    (item.size || "") === (cartItem.size || "") &&
+    (item.sugar || "") === (cartItem.sugar || "") &&
+    (item.ice || "") === (cartItem.ice || "") &&
     JSON.stringify(item.toppings || []) === JSON.stringify(cartItem.toppings) &&
     (item.note || "") === cartItem.note
   );
@@ -75,6 +155,10 @@ function openCheckoutModal(product, options = {}) {
   const {
     quantity = 1,
     toppings = [],
+    size = "",
+    sugar = "",
+    ice = "",
+    basePrice = Number(product.price || 0),
     note = "",
     image = getProductImage(product, options.fallbackImage),
   } = options;
@@ -117,7 +201,8 @@ function openCheckoutModal(product, options = {}) {
 
   // Cập nhật tóm tắt đơn hàng
   const toppingsTotal = toppings.reduce((sum, topping) => sum + Number(topping.price || 0), 0);
-  const totalPrice = (Number(product.price || 0) + toppingsTotal) * quantity;
+  const unitPrice = basePrice + toppingsTotal;
+  const totalPrice = unitPrice * quantity;
 
   const summaryImg = document.getElementById("checkout-product-image");
   if (summaryImg) {
@@ -128,9 +213,13 @@ function openCheckoutModal(product, options = {}) {
   if (summaryName) summaryName.textContent = `${product.name} × ${quantity}`;
   const summaryOptions = document.getElementById("checkout-product-options");
   if (summaryOptions) {
-    summaryOptions.textContent = toppings.length
-      ? `Topping: ${toppings.map((topping) => topping.name).join(", ")}`
-      : (note ? `Ghi chú: ${note}` : "Không chọn topping");
+    const details = [];
+    if (size) details.push(`Size: ${size}`);
+    if (sugar) details.push(`Đường: ${sugar}`);
+    if (ice) details.push(`Đá: ${ice}`);
+    if (toppings.length) details.push(`Topping: ${toppings.map((t) => t.name).join(", ")}`);
+    if (note) details.push(`Ghi chú: ${note}`);
+    summaryOptions.textContent = details.length ? details.join(" | ") : "Không có tùy chọn thêm";
   }
   const summaryTotal = document.getElementById("checkout-product-total");
   if (summaryTotal) summaryTotal.textContent = formatPrice(totalPrice);
@@ -174,9 +263,12 @@ function openCheckoutModal(product, options = {}) {
       id: product.id,
       name: product.name,
       image,
-      price: formatPrice(Number(product.price || 0) + toppingsTotal),
-      basePrice: Number(product.price || 0),
+      price: formatPrice(unitPrice),
+      basePrice,
       quantity,
+      size,
+      sugar,
+      ice,
       toppings,
       note,
       storage: "",
@@ -283,7 +375,7 @@ function createProductCard(productId, product, fallbackImage, showActions = true
 
     orderButton.addEventListener("click", (event) => {
       event.stopPropagation();
-      openCheckoutModal(resolvedProduct, { fallbackImage, image: getProductImage(resolvedProduct, fallbackImage) });
+      openProductDetails(resolvedProduct.id || productId);
     });
 
     actions.append(cartButton, orderButton);
@@ -445,7 +537,94 @@ function renderProductDetails(database) {
     badge.hidden = false;
   }
 
+  const sizeFieldset = document.getElementById("product-size-fieldset");
+  const sizeContainer = document.getElementById("size-options");
+  const sugarFieldset = document.getElementById("product-sugar-fieldset");
+  const sugarContainer = document.getElementById("sugar-options");
+  const iceFieldset = document.getElementById("product-ice-fieldset");
+  const iceContainer = document.getElementById("ice-options");
+
+  // 1. Kích cỡ (Size M / L)
+  const sizeOptions = Array.isArray(product.sizeOptions) ? product.sizeOptions : [];
+  if (sizeFieldset && sizeContainer) {
+    sizeContainer.replaceChildren();
+    if (sizeOptions.length) {
+      sizeFieldset.hidden = false;
+      sizeOptions.forEach((size, index) => {
+        const label = document.createElement("label");
+        label.className = "topping-option";
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "product-size";
+        radio.value = size.name;
+        radio.dataset.price = String(Number(size.price) || 0);
+        if (index === 0) radio.checked = true;
+        radio.addEventListener("change", updateTotal);
+        const name = document.createElement("span");
+        name.className = "topping-option-name";
+        name.textContent = size.name;
+        const price = document.createElement("span");
+        price.className = "topping-option-price";
+        price.textContent = size.price > 0 ? `+${formatPrice(size.price)}` : "+0đ";
+        label.append(radio, name, price);
+        sizeContainer.appendChild(label);
+      });
+    } else {
+      sizeFieldset.hidden = true;
+    }
+  }
+
+  // 2. Mức đường (0-100% chia theo số lẻ: 0%, 30%, 50%, 70%, 100%)
+  const sugarOptions = Array.isArray(product.sugarOptions) ? product.sugarOptions : [];
+  if (sugarFieldset && sugarContainer) {
+    sugarContainer.replaceChildren();
+    if (sugarOptions.length) {
+      sugarFieldset.hidden = false;
+      sugarOptions.forEach((sugar, index) => {
+        const label = document.createElement("label");
+        label.className = "option-pill";
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "product-sugar";
+        radio.value = sugar;
+        if (sugar === "100%" || index === sugarOptions.length - 1) radio.checked = true;
+        const span = document.createElement("span");
+        span.textContent = sugar;
+        label.append(radio, span);
+        sugarContainer.appendChild(label);
+      });
+    } else {
+      sugarFieldset.hidden = true;
+    }
+  }
+
+  // 3. Mức đá (0-100% chia theo số lẻ: 0%, 30%, 50%, 70%, 100%)
+  const iceOptions = Array.isArray(product.iceOptions) ? product.iceOptions : [];
+  if (iceFieldset && iceContainer) {
+    iceContainer.replaceChildren();
+    if (iceOptions.length) {
+      iceFieldset.hidden = false;
+      iceOptions.forEach((ice, index) => {
+        const label = document.createElement("label");
+        label.className = "option-pill";
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "product-ice";
+        radio.value = ice;
+        if (ice === "100%" || index === iceOptions.length - 1) radio.checked = true;
+        const span = document.createElement("span");
+        span.textContent = ice;
+        label.append(radio, span);
+        iceContainer.appendChild(label);
+      });
+    } else {
+      iceFieldset.hidden = true;
+    }
+  }
+
+  // 4. Topping options
   const toppingOptions = Array.isArray(product.toppingOptions) ? product.toppingOptions : [];
+  toppingsContainer.replaceChildren();
   if (!toppingOptions.length) {
     const noToppings = document.createElement("p");
     noToppings.className = "no-toppings-message";
@@ -473,6 +652,21 @@ function renderProductDetails(database) {
     });
   }
 
+  function getSelectedSize() {
+    const checked = sizeContainer ? sizeContainer.querySelector('input[name="product-size"]:checked') : null;
+    return checked ? { name: checked.value, price: Number(checked.dataset.price || 0) } : null;
+  }
+
+  function getSelectedSugar() {
+    const checked = sugarContainer ? sugarContainer.querySelector('input[name="product-sugar"]:checked') : null;
+    return checked ? checked.value : "";
+  }
+
+  function getSelectedIce() {
+    const checked = iceContainer ? iceContainer.querySelector('input[name="product-ice"]:checked') : null;
+    return checked ? checked.value : "";
+  }
+
   function selectedToppings() {
     return Array.from(toppingsContainer.querySelectorAll('input[name="topping"]:checked')).map((input) => ({
       name: input.dataset.name,
@@ -481,10 +675,13 @@ function renderProductDetails(database) {
   }
 
   function updateTotal() {
+    const selectedSize = getSelectedSize();
+    const sizePrice = selectedSize ? selectedSize.price : 0;
     const toppingsTotal = selectedToppings().reduce((sum, topping) => sum + topping.price, 0);
-    document.getElementById("product-price").textContent = formatPrice(product.price);
-    totalOutput.textContent = formatPrice((Number(product.price) + toppingsTotal) * quantity);
-    return (Number(product.price) + toppingsTotal) * quantity;
+    const unitPrice = Number(product.price) + sizePrice + toppingsTotal;
+    document.getElementById("product-price").textContent = formatPrice(Number(product.price) + sizePrice);
+    totalOutput.textContent = formatPrice(unitPrice * quantity);
+    return unitPrice * quantity;
   }
 
   document.getElementById("quantity-decrease").addEventListener("click", () => {
@@ -498,32 +695,29 @@ function renderProductDetails(database) {
     updateTotal();
   });
 
-  function addSelectedProductToCart() {
-    if (!localStorage.getItem("CurrentUser")) {
-      alert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng!");
-      window.location.href = new URL("../../pages/login.html", productsScriptUrl).href;
-      return false;
-    }
-    const toppings = selectedToppings();
-    return addToCart(product, {
+  function getProductOrderPayload() {
+    const selectedSize = getSelectedSize();
+    const sizePrice = selectedSize ? selectedSize.price : 0;
+    return {
       quantity,
-      toppings,
+      toppings: selectedToppings(),
+      size: selectedSize ? selectedSize.name : "",
+      sugar: getSelectedSugar(),
+      ice: getSelectedIce(),
+      basePrice: Number(product.price) + sizePrice,
       note: document.getElementById("product-note").value.trim(),
       image: imageUrl,
-    });
+    };
   }
 
   document.getElementById("add-to-cart").addEventListener("click", () => {
-    if (addSelectedProductToCart()) message.textContent = "Đã thêm sản phẩm vào giỏ hàng.";
+    if (addToCart(product, getProductOrderPayload())) {
+      message.textContent = "Đã thêm sản phẩm vào giỏ hàng.";
+    }
   });
 
   document.getElementById("place-order").addEventListener("click", () => {
-    openCheckoutModal(product, {
-      quantity,
-      toppings: selectedToppings(),
-      note: document.getElementById("product-note").value.trim(),
-      image: imageUrl,
-    });
+    openCheckoutModal(product, getProductOrderPayload());
   });
 
   updateTotal();

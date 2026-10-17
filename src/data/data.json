@@ -2,385 +2,386 @@
   "bestseller": {
     "name": "Best Seller",
     "products": {
-      "com-ga-xoi-mo": {
-        "id": "com-ga-xoi-mo",
-        "name": "Cơm gà xối mỡ",
+      "com-tho-dui-ga": {
+        "id": "com-tho-dui-ga",
+        "name": "Cơm thố đùi gà",
         "price": 45000,
-        "image": "comga_nuoc.jpg"
+        "image": "com-tho-dui-ga.jpg",
+        "src": "com-tho-dui-ga.jpg",
+        "badge": "Bán chạy",
+        "description": "Cơm thố nóng hổi giữ trọn vị ngon, đùi gà góc tư chiên giòn rụm bên ngoài mọng nước bên trong."
       },
-      "combo-com-ga-nuoc": {
-        "id": "combo-com-ga-nuoc",
-        "name": "Combo cơm gà + nước",
-        "price": 59000,
-        "image": "ga_nuoc_chip_01.png"
+      "mi-tron-thap-cam": {
+        "id": "mi-tron-thap-cam",
+        "name": "Mì trộn thập cẩm",
+        "price": 28000,
+        "image": "mi-tron-thap-cam.jpg",
+        "src": "mi-tron-thap-cam.jpg",
+        "badge": "Yêu thích",
+        "description": "Mì trộn đầy đặn với xúc xích, nem chua, chả viên và rau củ, hòa quyện sốt tương cay ngọt."
       },
-      "mi-xao-bo": {
-        "id": "mi-xao-bo",
-        "name": "Mì xào bò",
-        "price": 49000,
-        "image": "spagetti_01.png"
-      },
-      "khoai-tay-chien": {
-        "id": "khoai-tay-chien",
-        "name": "Khoai tây chiên",
-        "price": 25000,
-        "image": "chips_01.png"
-      },
-      "tra-sua-truyen-thong": {
-        "id": "tra-sua-truyen-thong",
-        "name": "Trà sữa truyền thống",
-        "price": 30000,
-        "image": "drinks_01.png"
-      },
-      "combo-doi": {
-        "id": "combo-doi",
-        "name": "Combo 2 người",
-        "price": 109000,
-        "image": "burger_chip_coca01.jpg"
-      }
-    }
-  },
-  "com": {
-    "name": "Cơm",
-    "products": {
-      "com-tam-suon": {
-        "name": "Cơm tấm sườn",
+      "bun-bo": {
+        "id": "bun-bo",
+        "name": "Bún bò",
         "price": 45000,
-        "toppingOptions": [
-          {
-            "name": "Trứng ốp la",
-            "price": 7000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          },
-          {
-            "name": "Thêm sườn",
-            "price": 25000
-          },
-          {
-            "name": "Thêm hành lá",
-            "price": 2000
-          }
-        ]
+        "image": "bun-bo.jpg",
+        "src": "bun-bo.jpg",
+        "badge": "Đậm đà",
+        "description": "Nước dùng bún bò hầm xương dậy mùi thơm của sả cây, thịt bắp bò mềm ngọt đậm đà hương vị truyền thống."
       },
-      "com-rang-thap-cam": {
-        "name": "Cơm rang thập cẩm",
-        "price": 40000,
-        "toppingOptions": [
-          {
-            "name": "Trứng ốp la",
-            "price": 7000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          },
-          {
-            "name": "Xúc xích",
-            "price": 10000
-          },
-          {
-            "name": "Thêm tôm",
-            "price": 15000
-          }
-        ]
+      "combo-com-tho-dui-ga-tra-dao": {
+        "id": "combo-com-tho-dui-ga-tra-dao",
+        "name": "Combo Cơm thố đùi gà + Trà hồng vải",
+        "price": 65000,
+        "image": "com-tho-dui-ga.jpg",
+        "src": "com-tho-dui-ga.jpg",
+        "badge": "Giảm 10%",
+        "description": "Cơm thố đùi gà thơm béo ăn kèm ly trà hồng vải thanh mát (Giá gốc: 73.000đ - Tiết kiệm 10%)."
       },
-      "com-ga-xoi-mo": {
-        "name": "Cơm gà xối mỡ",
-        "price": 45000,
-        "toppingOptions": [
-          {
-            "name": "Thêm đùi gà",
-            "price": 25000
-          },
-          {
-            "name": "Trứng ốp la",
-            "price": 7000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          },
-          {
-            "name": "Thêm dưa chua",
-            "price": 3000
-          }
-        ]
+      "tra-sua-tran-chau-duong-den": {
+        "id": "tra-sua-tran-chau-duong-den",
+        "name": "Trà sữa trân châu đường đen",
+        "price": 32000,
+        "image": "tra-sua-tran-chau-duong-den.jpg",
+        "src": "tra-sua-tran-chau-duong-den.jpg",
+        "badge": "Hot",
+        "description": "Trà sữa béo thơm quyện lớp đường đen sóng sánh cùng trân châu dẻo dai sần sật."
       },
-      "com-suon-bi-cha": {
-        "name": "Cơm sườn bì chả",
-        "price": 55000,
-        "toppingOptions": [
-          {
-            "name": "Thêm sườn",
-            "price": 25000
-          },
-          {
-            "name": "Thêm chả",
-            "price": 10000
-          },
-          {
-            "name": "Thêm bì",
-            "price": 8000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          }
-        ]
-      },
-      "com-bo-luc-lac": {
-        "name": "Cơm bò lúc lắc",
-        "price": 58000,
-        "toppingOptions": [
-          {
-            "name": "Thêm thịt bò",
-            "price": 25000
-          },
-          {
-            "name": "Trứng ốp la",
-            "price": 7000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          },
-          {
-            "name": "Thêm rau",
-            "price": 5000
-          }
-        ]
+      "mi-tron-vien-chien": {
+        "id": "mi-tron-vien-chien",
+        "name": "Mì trộn viên chiên",
+        "price": 18000,
+        "image": "mi-tron-vien-chien.jpg",
+        "src": "mi-tron-vien-chien.jpg",
+        "badge": "Yêu thích",
+        "description": "Sợi mì trộn dai ngon cùng các loại viên chiên giòn thơm, nước sốt chua ngọt đậm đà."
       }
     }
   },
   "combo": {
     "name": "Combo",
     "products": {
-      "combo-com-suon-nuoc": {
-        "name": "Combo cơm sườn + nước",
-        "price": 59000,
+      "combo-com-tho-dui-ga-tra-dao": {
+        "id": "combo-com-tho-dui-ga-tra-dao",
+        "name": "Combo Cơm thố đùi gà + Trà hồng vải",
+        "price": 65000,
+        "originalPrice": 73000,
+        "image": "com-tho-dui-ga.jpg",
+        "src": "com-tho-dui-ga.jpg",
+        "badge": "Giảm 10%",
+        "description": "Cơm thố đùi gà thơm béo ăn kèm ly trà hồng vải thanh mát (Giá gốc: 73.000đ - Tiết kiệm 10%).",
         "toppingOptions": [
-          {
-            "name": "Trứng ốp la",
-            "price": 7000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          },
-          {
-            "name": "Khoai tây chiên",
-            "price": 15000
-          },
-          {
-            "name": "Đổi sang trà đào",
-            "price": 5000
-          }
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm gà 5m", "price": 15000 },
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 }
         ]
       },
-      "combo-com-ga-nuoc": {
-        "name": "Combo cơm gà + nước",
-        "price": 59000,
+      "combo-mi-tron-thap-cam-nuoc-chanh": {
+        "id": "combo-mi-tron-thap-cam-nuoc-chanh",
+        "name": "Combo Mì trộn thập cẩm + Nước chanh lạnh",
+        "price": 41000,
+        "originalPrice": 46000,
+        "image": "mi-tron-thap-cam.jpg",
+        "src": "mi-tron-thap-cam.jpg",
+        "badge": "Giảm 10%",
+        "description": "Mì trộn thập cẩm đẫm topping kèm ly nước chanh tươi sảng khoái (Giá gốc: 46.000đ - Tiết kiệm 10%).",
         "toppingOptions": [
-          {
-            "name": "Thêm đùi gà",
-            "price": 25000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          },
-          {
-            "name": "Khoai tây chiên",
-            "price": 15000
-          },
-          {
-            "name": "Đổi sang trà sữa",
-            "price": 10000
-          }
+          { "name": "Thêm mì", "price": 8000 },
+          { "name": "Rau củ", "price": 5000 },
+          { "name": "xúc xích", "price": 10000 },
+          { "name": "bò viên", "price": 6000 }
         ]
       },
-      "combo-mi-xuc-xich": {
-        "name": "Combo mì xào + xúc xích",
-        "price": 55000,
+      "combo-bun-bo-tra-sua": {
+        "id": "combo-bun-bo-tra-sua",
+        "name": "Combo Bún bò + Trà sữa trân châu đường đen",
+        "price": 69000,
+        "originalPrice": 77000,
+        "image": "bun-bo.jpg",
+        "src": "bun-bo.jpg",
+        "badge": "Giảm 10%",
+        "description": "Tô bún bò nóng hổi thơm nức kết hợp trà sữa trân châu đường đen ngọt ngào (Giá gốc: 77.000đ - Tiết kiệm 10%).",
         "toppingOptions": [
-          {
-            "name": "Trứng ốp la",
-            "price": 7000
-          },
-          {
-            "name": "Xúc xích",
-            "price": 10000
-          },
-          {
-            "name": "Thêm mì",
-            "price": 10000
-          },
-          {
-            "name": "Nước ngọt",
-            "price": 12000
-          }
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm bò 5v", "price": 15000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 }
         ]
       },
-      "combo-doi": {
-        "name": "Combo 2 người",
-        "price": 109000,
+      "combo-com-bo-chao-tra-chanh": {
+        "id": "combo-com-bo-chao-tra-chanh",
+        "name": "Combo Cơm bò chảo nóng + Trà chanh lô hội",
+        "price": 63000,
+        "originalPrice": 70000,
+        "image": "com-bo-chao-nong.jpg",
+        "src": "com-bo-chao-nong.jpg",
+        "badge": "Giảm 10%",
+        "description": "Cơm bò xèo xèo chảo nóng đậm đà kèm trà chanh thanh lọc cơ thể (Giá gốc: 70.000đ - Tiết kiệm 10%).",
         "toppingOptions": [
-          {
-            "name": "Khoai tây chiên",
-            "price": 15000
-          },
-          {
-            "name": "Thêm 1 nước ngọt",
-            "price": 12000
-          },
-          {
-            "name": "Thêm 1 trứng",
-            "price": 7000
-          },
-          {
-            "name": "Thêm cơm",
-            "price": 5000
-          }
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm bò 5m", "price": 15000 },
+          { "name": "Lô hội", "price": 3000 }
         ]
       },
-      "combo-gia-dinh": {
-        "name": "Combo gia đình",
-        "price": 199000,
+      "combo-mi-vien-snack-nuoc-chanh": {
+        "id": "combo-mi-vien-snack-nuoc-chanh",
+        "name": "Combo Mì trộn viên chiên + Snack tôm cay + Nước chanh",
+        "price": 37000,
+        "originalPrice": 41000,
+        "image": "mi-tron-vien-chien.jpg",
+        "src": "mi-tron-vien-chien.jpg",
+        "badge": "Giảm 10%",
+        "description": "Combo ăn vặt no nê: Mì trộn viên chiên, gói snack tôm cay giòn rụm và nước chanh tươi mát (Giá gốc: 41.000đ - Tiết kiệm 10%).",
         "toppingOptions": [
-          {
-            "name": "Thêm phần cơm",
-            "price": 15000
-          },
-          {
-            "name": "Thêm phần gà",
-            "price": 25000
-          },
-          {
-            "name": "Khoai tây chiên",
-            "price": 15000
-          },
-          {
-            "name": "Thêm 1 nước ngọt",
-            "price": 12000
-          }
+          { "name": "Thêm mì", "price": 8000 },
+          { "name": "viên xù phô mai 2v", "price": 6000 },
+          { "name": "xúc xích", "price": 10000 }
+        ]
+      },
+      "combo-doi-ban-than": {
+        "id": "combo-doi-ban-than",
+        "name": "Combo Đôi Bạn Thân (2 người)",
+        "price": 135000,
+        "originalPrice": 151000,
+        "image": "burger_chip_coca01.jpg",
+        "src": "burger_chip_coca01.jpg",
+        "badge": "Giảm 10%",
+        "description": "Bữa ăn tuyệt vời cho 2 người: 1 Cơm trộn gà nướng, 1 Bún trộn thịt nướng, 2 Ly trà nho và 1 Snack phô mai (Giá gốc: 151.000đ - Tiết kiệm 10%).",
+        "toppingOptions": [
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm gà 5m", "price": 15000 },
+          { "name": "Thêm thịt 5m", "price": 15000 }
+        ]
+      }
+    }
+  },
+  "com": {
+    "name": "Cơm",
+    "products": {
+      "com-tron-ga-nuong": {
+        "id": "com-tron-ga-nuong",
+        "name": "Cơm trộn gà nướng",
+        "price": 45000,
+        "image": "com-tron-ga-nuong.jpg",
+        "src": "com-tron-ga-nuong.jpg",
+        "description": "Hạt cơm mềm thơm trộn cùng thịt gà nướng vàng ươm, nước sốt chuẩn vị thơm lừng.",
+        "toppingOptions": [
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm gà 5m", "price": 15000 }
+        ]
+      },
+      "com-tho-dui-ga": {
+        "id": "com-tho-dui-ga",
+        "name": "Cơm thố đùi gà",
+        "price": 45000,
+        "image": "com-tho-dui-ga.jpg",
+        "src": "com-tho-dui-ga.jpg",
+        "description": "Cơm thố nóng hổi giữ trọn vị ngon, đùi gà góc tư chiên giòn rụm bên ngoài mọng nước bên trong.",
+        "toppingOptions": [
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm gà 5m", "price": 15000 }
+        ]
+      },
+      "com-tron-trung-rau": {
+        "id": "com-tron-trung-rau",
+        "name": "Cơm trộn trứng rau",
+        "price": 45000,
+        "image": "com-tron-trung-rau.jpg",
+        "src": "com-tron-trung-rau.jpg",
+        "description": "Món ăn thanh đạm, hài hòa dinh dưỡng với các loại rau củ tươi xanh cùng trứng ốp la béo ngậy.",
+        "toppingOptions": [
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm trứng", "price": 5000 }
+        ]
+      },
+      "com-bo-chao-nong": {
+        "id": "com-bo-chao-nong",
+        "name": "Cơm bò chảo nóng",
+        "price": 45000,
+        "image": "com-bo-chao-nong.jpg",
+        "src": "com-bo-chao-nong.jpg",
+        "description": "Thịt bò xào mềm thơm phục vụ trên chảo gang xèo xèo, quyện cùng sốt tiêu đen hấp dẫn.",
+        "toppingOptions": [
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm bò 5m", "price": 15000 }
+        ]
+      },
+      "com-rang-thap-cam": {
+        "id": "com-rang-thap-cam",
+        "name": "Cơm rang thập cẩm",
+        "price": 45000,
+        "image": "com-rang-thap-cam.jpg",
+        "src": "com-rang-thap-cam.jpg",
+        "description": "Cơm chiên hạt tơi vàng óng quyện xúc xích, lạp xưởng, rau củ và trứng chiên giòn thơm.",
+        "toppingOptions": [
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm xúc xích", "price": 5000 },
+          { "name": "rau củ", "price": 5000 },
+          { "name": "trứng ốp", "price": 5000 }
+        ]
+      },
+      "com-rang-dua-bo": {
+        "id": "com-rang-dua-bo",
+        "name": "Cơm rang dưa bò",
+        "price": 45000,
+        "image": "com-rang-dua-bo.jpg",
+        "src": "com-rang-dua-bo.jpg",
+        "description": "Món cơm rang kinh điển với vị chua giòn của dưa cải muối và thịt bò mềm thơm đậm đà.",
+        "toppingOptions": [
+          { "name": "Thêm cơm", "price": 8000 },
+          { "name": "Thêm bò 5m", "price": 15000 },
+          { "name": "dưa", "price": 3000 }
         ]
       }
     }
   },
   "mi-bun": {
-    "name": "Mì/Bún",
+    "name": "Mì / Bún",
     "products": {
-      "bun-bo-hue": {
-        "name": "Bún bò Huế",
-        "price": 50000,
+      "mi-tron-vien-chien": {
+        "id": "mi-tron-vien-chien",
+        "name": "Mì trộn viên chiên",
+        "price": 18000,
+        "image": "mi-tron-vien-chien.jpg",
+        "src": "mi-tron-vien-chien.jpg",
+        "description": "Sợi mì trộn dai ngon cùng các loại viên chiên giòn thơm, nước sốt chua ngọt đậm đà.",
         "toppingOptions": [
-          {
-            "name": "Thêm thịt bò",
-            "price": 20000
-          },
-          {
-            "name": "Chả cua",
-            "price": 12000
-          },
-          {
-            "name": "Giò heo",
-            "price": 20000
-          },
-          {
-            "name": "Thêm bún",
-            "price": 10000
-          }
+          { "name": "Thêm mì", "price": 8000 },
+          { "name": "Rau củ", "price": 5000 },
+          { "name": "Cá viên 5v", "price": 6000 },
+          { "name": "Tôm viên 5v", "price": 6000 },
+          { "name": "Viên xù phô mai 2v", "price": 6000 },
+          { "name": "Bò viên", "price": 6000 },
+          { "name": "Tôm surimi 2v", "price": 6000 },
+          { "name": "Xúc xích", "price": 10000 }
         ]
       },
-      "bun-thit-nuong": {
-        "name": "Bún thịt nướng",
-        "price": 42000,
+      "mi-tron-rau-cu": {
+        "id": "mi-tron-rau-cu",
+        "name": "Mì trộn rau củ",
+        "price": 18000,
+        "image": "mi-tron-rau-cu.jpg",
+        "src": "mi-tron-rau-cu.jpg",
+        "description": "Mì trộn thanh nhẹ cùng các loại rau củ luộc tươi giòn, bổ dưỡng và giải ngấy hiệu quả.",
         "toppingOptions": [
-          {
-            "name": "Chả giò",
-            "price": 10000
-          },
-          {
-            "name": "Thêm thịt nướng",
-            "price": 20000
-          },
-          {
-            "name": "Thêm bún",
-            "price": 8000
-          },
-          {
-            "name": "Thêm rau",
-            "price": 5000
-          }
+          { "name": "Thêm mì", "price": 8000 },
+          { "name": "Rau củ", "price": 5000 },
+          { "name": "Cá viên 5v", "price": 6000 },
+          { "name": "Tôm viên 5v", "price": 6000 },
+          { "name": "Viên xù phô mai 2v", "price": 6000 },
+          { "name": "Bò viên", "price": 6000 },
+          { "name": "Tôm surimi 2v", "price": 6000 },
+          { "name": "Xúc xích", "price": 10000 }
         ]
       },
-      "mi-xao-bo": {
-        "name": "Mì xào bò",
-        "price": 49000,
+      "mi-tron-nem-chua-ran": {
+        "id": "mi-tron-nem-chua-ran",
+        "name": "Mì trộn nem chua",
+        "price": 23000,
+        "image": "mi-tron-nem-chua-ran.jpg",
+        "src": "mi-tron-nem-chua-ran.jpg",
+        "description": "Mì trộn kèm nem chua rán giòn thơm vàng rụm, hương vị béo ngậy cực kỳ kích thích vị giác.",
         "toppingOptions": [
-          {
-            "name": "Thêm thịt bò",
-            "price": 20000
-          },
-          {
-            "name": "Trứng ốp la",
-            "price": 7000
-          },
-          {
-            "name": "Thêm mì",
-            "price": 10000
-          },
-          {
-            "name": "Thêm rau",
-            "price": 5000
-          }
+          { "name": "Thêm mì", "price": 8000 },
+          { "name": "Rau củ", "price": 5000 },
+          { "name": "Cá viên 5v", "price": 6000 },
+          { "name": "Tôm viên 5v", "price": 6000 },
+          { "name": "Viên xù phô mai 2v", "price": 6000 },
+          { "name": "Bò viên", "price": 6000 },
+          { "name": "Tôm surimi 2v", "price": 6000 },
+          { "name": "Xúc xích", "price": 10000 }
         ]
       },
-      "mi-tron-ga": {
-        "name": "Mì trộn gà",
+      "mi-tron-thap-cam": {
+        "id": "mi-tron-thap-cam",
+        "name": "Mì trộn thập cẩm",
+        "price": 28000,
+        "image": "mi-tron-thap-cam.jpg",
+        "src": "mi-tron-thap-cam.jpg",
+        "description": "Mì trộn đầy đặn với xúc xích, nem chua, chả viên và rau củ, hòa quyện sốt tương cay ngọt.",
+        "toppingOptions": [
+          { "name": "Thêm mì", "price": 8000 },
+          { "name": "Rau củ", "price": 5000 },
+          { "name": "Cá viên 5v", "price": 6000 },
+          { "name": "Tôm viên 5v", "price": 6000 },
+          { "name": "Viên xù phô mai 2v", "price": 6000 },
+          { "name": "Bò viên", "price": 6000 },
+          { "name": "Tôm surimi 2v", "price": 6000 },
+          { "name": "Xúc xích", "price": 10000 }
+        ]
+      },
+      "bun-ca": {
+        "id": "bun-ca",
+        "name": "Bún cá",
         "price": 45000,
+        "image": "bun-ca.jpg",
+        "src": "bun-ca.jpg",
+        "description": "Tô bún cá nóng hổi với những miếng cá chiên vàng giòn, nước dùng chua thanh ngọt dịu vị cà chua và thì là.",
         "toppingOptions": [
-          {
-            "name": "Thêm thịt gà",
-            "price": 18000
-          },
-          {
-            "name": "Trứng lòng đào",
-            "price": 8000
-          },
-          {
-            "name": "Xúc xích",
-            "price": 10000
-          },
-          {
-            "name": "Thêm mì",
-            "price": 10000
-          }
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm cá 5m", "price": 15000 }
         ]
       },
-      "bun-cha-ha-noi": {
-        "name": "Bún chả Hà Nội",
-        "price": 48000,
+      "bun-ga": {
+        "id": "bun-ga",
+        "name": "Bún gà",
+        "price": 45000,
+        "image": "bun-ga.jpg",
+        "src": "bun-ga.jpg",
+        "description": "Thịt gà ta mềm thơm da vàng óng, nước dùng hầm gà thanh ngọt tự nhiên kèm lá chanh thái sợi.",
         "toppingOptions": [
-          {
-            "name": "Thêm chả nướng",
-            "price": 20000
-          },
-          {
-            "name": "Nem rán",
-            "price": 10000
-          },
-          {
-            "name": "Thêm bún",
-            "price": 8000
-          },
-          {
-            "name": "Thêm rau",
-            "price": 5000
-          }
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm gà 5m", "price": 15000 }
+        ]
+      },
+      "bun-moc": {
+        "id": "bun-moc",
+        "name": "Bún mọc",
+        "price": 45000,
+        "image": "bun-moc.jpg",
+        "src": "bun-moc.jpg",
+        "description": "Từng viên mọc nấm hương giòn sần sật, sườn non ninh nhừ và măng tươi chua thanh dễ ăn.",
+        "toppingOptions": [
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm mọc 5v", "price": 15000 }
+        ]
+      },
+      "bun-bo": {
+        "id": "bun-bo",
+        "name": "Bún bò",
+        "price": 45000,
+        "image": "bun-bo.jpg",
+        "src": "bun-bo.jpg",
+        "description": "Nước dùng bún bò hầm xương dậy mùi thơm của sả cây, thịt bắp bò mềm ngọt đậm đà hương vị truyền thống.",
+        "toppingOptions": [
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm bò 5v", "price": 15000 }
+        ]
+      },
+      "bun-tron-thit-nuong": {
+        "id": "bun-tron-thit-nuong",
+        "name": "Bún trộn thịt nướng",
+        "price": 45000,
+        "image": "bun-tron-thit-nuong.jpg",
+        "src": "bun-tron-thit-nuong.jpg",
+        "description": "Thịt nướng than hoa thơm lừng, ăn cùng bún tươi, đậu phộng rang bùi bùi và nước mắm chua ngọt.",
+        "toppingOptions": [
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm thịt 5m", "price": 15000 }
+        ]
+      },
+      "bun-tron-ga-xe": {
+        "id": "bun-tron-ga-xe",
+        "name": "Bún trộn gà xé",
+        "price": 45000,
+        "image": "bun-tron-ga-xe.jpg",
+        "src": "bun-tron-ga-xe.jpg",
+        "description": "Gà xé phay bóp rau răm chua ngọt, bún tươi trộn đều cùng hành phi thơm nức mũi và nước sốt đặc biệt.",
+        "toppingOptions": [
+          { "name": "Thêm bún", "price": 8000 },
+          { "name": "Thêm gà 5m", "price": 15000 }
         ]
       }
     }
@@ -388,114 +389,73 @@
   "do-an-vat": {
     "name": "Đồ ăn vặt",
     "products": {
-      "khoai-tay-chien": {
-        "name": "Khoai tây chiên",
-        "price": 25000,
-        "toppingOptions": [
-          {
-            "name": "Phô mai bột",
-            "price": 5000
-          },
-          {
-            "name": "Sốt phô mai",
-            "price": 7000
-          },
-          {
-            "name": "Sốt mayonnaise",
-            "price": 3000
-          },
-          {
-            "name": "Thêm phần khoai",
-            "price": 15000
-          }
-        ]
+      "snack-bap-ngot": {
+        "id": "snack-bap-ngot",
+        "name": "Snack bắp ngọt",
+        "price": 5000,
+        "image": "snack-bap-ngot.svg",
+        "src": "snack-bap-ngot.svg",
+        "description": "Snack vị bắp ngọt giòn xốp, thơm mùi bơ bắp tự nhiên, nhâm nhi vui miệng.",
+        "toppingOptions": []
       },
-      "ca-vien-chien": {
-        "name": "Cá viên chiên",
+      "snack-bi-do": {
+        "id": "snack-bi-do",
+        "name": "Snack bí đỏ",
+        "price": 5000,
+        "image": "snack-bi-do.svg",
+        "src": "snack-bi-do.svg",
+        "description": "Bánh snack bí đỏ chiên giòn rụm, vị ngọt thanh bùi bùi rất thích hợp cho giờ giải lao.",
+        "toppingOptions": []
+      },
+      "snack-crap-me": {
+        "id": "snack-crap-me",
+        "name": "Snack cua me",
+        "price": 5000,
+        "image": "snack-crap-me.svg",
+        "src": "snack-crap-me.svg",
+        "description": "Snack cua vị me chua chua cay cay đậm đà, giòn tan kích thích vị giác.",
+        "toppingOptions": []
+      },
+      "snack-pho-mai": {
+        "id": "snack-pho-mai",
+        "name": "Snack phô mai",
+        "price": 5000,
+        "image": "snack-pho-mai.svg",
+        "src": "snack-pho-mai.svg",
+        "description": "Snack lắc phô mai thơm ngậy, vị mằn mặn béo béo được các bạn trẻ yêu thích.",
+        "toppingOptions": []
+      },
+      "snack-tom-cay": {
+        "id": "snack-tom-cay",
+        "name": "Snack tôm cay",
+        "price": 5000,
+        "image": "snack-tom-cay.svg",
+        "src": "snack-tom-cay.svg",
+        "description": "Snack tôm thơm nồng vị ớt cay cay quyến rũ, cắn vào giòn tan đã miệng.",
+        "toppingOptions": []
+      },
+      "kimbap": {
+        "id": "kimbap",
+        "name": "Kimbap truyền thống",
         "price": 30000,
+        "image": "kimbap.jpg",
+        "src": "kimbap.jpg",
+        "description": "Cơm cuộn rong biển Hàn Quốc với xúc xích, thanh cua, dưa leo và củ cải vàng thanh mát.",
         "toppingOptions": [
-          {
-            "name": "Sốt cay",
-            "price": 3000
-          },
-          {
-            "name": "Sốt mayonnaise",
-            "price": 3000
-          },
-          {
-            "name": "Thêm 5 cá viên",
-            "price": 12000
-          },
-          {
-            "name": "Thêm xúc xích",
-            "price": 10000
-          }
+          { "name": "Thêm sốt mayonnaise"},
+          { "name": "Thêm sốt tương ớt"}
         ]
       },
-      "ga-vien-chien": {
-        "name": "Gà viên chiên",
+      "kimbap-chien": {
+        "id": "kimbap-chien",
+        "name": "Kimbap chiên xù",
         "price": 35000,
+        "image": "kimbap-chien.jpg",
+        "src": "kimbap-chien.jpg",
+        "description": "Kimbap lăn bột chiên xù vàng ươm, lớp vỏ ngoài giòn rụm bên trong dẻo mềm béo ngậy.",
         "toppingOptions": [
-          {
-            "name": "Sốt BBQ",
-            "price": 5000
-          },
-          {
-            "name": "Sốt phô mai",
-            "price": 7000
-          },
-          {
-            "name": "Thêm 5 gà viên",
-            "price": 20000
-          },
-          {
-            "name": "Khoai tây chiên",
-            "price": 15000
-          }
-        ]
-      },
-      "xuc-xich-chien": {
-        "name": "Xúc xích chiên",
-        "price": 20000,
-        "toppingOptions": [
-          {
-            "name": "Thêm xúc xích",
-            "price": 10000
-          },
-          {
-            "name": "Sốt cay",
-            "price": 3000
-          },
-          {
-            "name": "Sốt phô mai",
-            "price": 7000
-          },
-          {
-            "name": "Khoai tây chiên",
-            "price": 15000
-          }
-        ]
-      },
-      "banh-trang-tron": {
-        "name": "Bánh tráng trộn",
-        "price": 25000,
-        "toppingOptions": [
-          {
-            "name": "Trứng cút",
-            "price": 5000
-          },
-          {
-            "name": "Khô bò",
-            "price": 10000
-          },
-          {
-            "name": "Khô gà",
-            "price": 10000
-          },
-          {
-            "name": "Thêm xoài",
-            "price": 5000
-          }
+          { "name": "Thêm sốt mayonnaise"},
+          { "name": "Thêm tương ớt phô mai"}
         ]
       }
     }
@@ -503,114 +463,239 @@
   "nuoc-uong": {
     "name": "Nước uống",
     "products": {
-      "tra-sua-truyen-thong": {
-        "name": "Trà sữa truyền thống",
-        "price": 30000,
+      "tra-sua-tran-chau-duong-den": {
+        "id": "tra-sua-tran-chau-duong-den",
+        "name": "Trà sữa trân châu đường đen",
+        "price": 32000,
+        "image": "tra-sua-tran-chau-duong-den.jpg",
+        "src": "tra-sua-tran-chau-duong-den.jpg",
+        "description": "Trà sữa béo thơm quyện lớp đường đen sóng sánh cùng trân châu dẻo dai sần sật.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "sugarOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "iceOptions": ["0%", "30%", "50%", "70%", "100%"],
         "toppingOptions": [
-          {
-            "name": "Trân châu đen",
-            "price": 5000
-          },
-          {
-            "name": "Trân châu trắng",
-            "price": 5000
-          },
-          {
-            "name": "Thạch phô mai",
-            "price": 7000
-          },
-          {
-            "name": "Pudding trứng",
-            "price": 7000
-          }
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
         ]
       },
-      "tra-dao-cam-sa": {
-        "name": "Trà đào cam sả",
-        "price": 35000,
+      "tra-hong-vai": {
+        "id": "tra-hong-vai",
+        "name": "Trà hồng vải",
+        "price": 28000,
+        "image": "Tra-Hong-Vai.jpg",
+        "src": "Tra-Hong-Vai.jpg",
+        "description": "Hương vị trà hồng đậm đà kết hợp quả vải thiều mọng nước ngọt thanh giải nhiệt sảng khoái.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "sugarOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "iceOptions": ["0%", "30%", "50%", "70%", "100%"],
         "toppingOptions": [
-          {
-            "name": "Thêm đào",
-            "price": 8000
-          },
-          {
-            "name": "Thạch trái cây",
-            "price": 5000
-          },
-          {
-            "name": "Trân châu trắng",
-            "price": 5000
-          },
-          {
-            "name": "Thêm cam",
-            "price": 5000
-          }
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
         ]
       },
-      "tra-chanh": {
-        "name": "Trà chanh",
-        "price": 20000,
+      "tra-nho": {
+        "id": "tra-nho",
+        "name": "Trà nho tươi",
+        "price": 28000,
+        "image": "tra-nho.jpg",
+        "src": "tra-nho.jpg",
+        "description": "Trà xanh thanh mát quyện cùng nước ép nho đen thơm lừng, vị chua ngọt cực đã khát.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "sugarOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "iceOptions": ["0%", "30%", "50%", "70%", "100%"],
         "toppingOptions": [
-          {
-            "name": "Thạch nha đam",
-            "price": 5000
-          },
-          {
-            "name": "Trân châu trắng",
-            "price": 5000
-          },
-          {
-            "name": "Thạch trái cây",
-            "price": 5000
-          },
-          {
-            "name": "Thêm chanh",
-            "price": 3000
-          }
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
         ]
       },
-      "nuoc-ep-cam": {
-        "name": "Nước ép cam",
-        "price": 30000,
-        "toppingOptions": [
-          {
-            "name": "Thạch nha đam",
-            "price": 5000
-          },
-          {
-            "name": "Hạt chia",
-            "price": 5000
-          },
-          {
-            "name": "Thêm cam",
-            "price": 8000
-          },
-          {
-            "name": "Thạch trái cây",
-            "price": 5000
-          }
-        ]
-      },
-      "ca-phe-sua-da": {
-        "name": "Cà phê sữa đá",
+      "tra-chanh-lo-hoi": {
+        "id": "tra-chanh-lo-hoi",
+        "name": "Trà chanh lô hội",
         "price": 25000,
+        "image": "tra-chanh-lo-hoi.jpg",
+        "src": "tra-chanh-lo-hoi.jpg",
+        "description": "Trà chanh truyền thống chua dịu kết hợp những miếng thạch lô hội giòn dai thanh mát cơ thể.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "sugarOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "iceOptions": ["0%", "30%", "50%", "70%", "100%"],
         "toppingOptions": [
-          {
-            "name": "Thạch cà phê",
-            "price": 5000
-          },
-          {
-            "name": "Kem sữa",
-            "price": 7000
-          },
-          {
-            "name": "Thêm shot espresso",
-            "price": 10000
-          },
-          {
-            "name": "Trân châu đen",
-            "price": 5000
-          }
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "chanh-leo-bach-huong": {
+        "id": "chanh-leo-bach-huong",
+        "name": "Chanh leo bách hương",
+        "price": 25000,
+        "image": "chanh-leo-bach-huong.jpg",
+        "src": "chanh-leo-bach-huong.jpg",
+        "description": "Chanh dây thơm lừng hòa cùng trà trái cây thanh khiết, thức uống giải nhiệt lý tưởng ngày hè.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "sugarOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "iceOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "duong-chi-cam-lo": {
+        "id": "duong-chi-cam-lo",
+        "name": "Dương chi cam lộ",
+        "price": 35000,
+        "image": "duong-chi-cam-lo.jpg",
+        "src": "duong-chi-cam-lo.jpg",
+        "description": "Thức uống tráng miệng Hồng Kông nức tiếng từ xoài tươi, bưởi hồng, nước cốt dừa và trân châu béo ngậy.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "sugarOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "iceOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "nuoc-chanh-tuoi-lanh": {
+        "id": "nuoc-chanh-tuoi-lanh",
+        "name": "Nước chanh tươi lạnh",
+        "price": 18000,
+        "image": "nuoc-chanh-tuoi-lanh.jpg",
+        "src": "nuoc-chanh-tuoi-lanh.jpg",
+        "description": "Nước cốt chanh tươi ép tự nhiên cùng đá mát lạnh, giải khát tức thì và nạp thêm vitamin C.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "sugarOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "iceOptions": ["0%", "30%", "50%", "70%", "100%"],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "super-sundae-dao-hong": {
+        "id": "super-sundae-dao-hong",
+        "name": "Super Sundae Đào Hồng",
+        "price": 28000,
+        "image": "super-sundae-dao-hong.jpg",
+        "src": "super-sundae-dao-hong.jpg",
+        "isSundae": true,
+        "description": "Kem vani mịn màng phủ đầy sốt đào hồng tươi mát cùng miếng đào giòn ngọt thơm lừng.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "super-sundae-dau-tay": {
+        "id": "super-sundae-dau-tay",
+        "name": "Super Sundae Dâu Tây",
+        "price": 28000,
+        "image": "super-sundae-dau-tay.jpg",
+        "src": "super-sundae-dau-tay.jpg",
+        "isSundae": true,
+        "description": "Vị ngọt dịu chua thanh của sốt dâu tây đỏ mọng hòa cùng kem tươi béo ngậy khó cưỡng.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "super-sundae-khoai-mon": {
+        "id": "super-sundae-khoai-mon",
+        "name": "Super Sundae Khoai Môn",
+        "price": 28000,
+        "image": "super-sundae-khoai-mon.jpg",
+        "src": "super-sundae-khoai-mon.jpg",
+        "isSundae": true,
+        "description": "Kem sundae thơm bùi vị khoai môn béo ngọt màu tím mộng mơ cực kỳ hấp dẫn.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "super-sundae-tran-chau": {
+        "id": "super-sundae-tran-chau",
+        "name": "Super Sundae Trân Châu",
+        "price": 28000,
+        "image": "super-sundae-tran-chau.jpg",
+        "src": "super-sundae-tran-chau.jpg",
+        "isSundae": true,
+        "description": "Kem tươi mát rượi hòa quyện cùng trân châu đen dai dẻo ngập tràn sốt đường đen đậm đà.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
+        ]
+      },
+      "super-sundae-xoai": {
+        "id": "super-sundae-xoai",
+        "name": "Super Sundae Xoài",
+        "price": 28000,
+        "image": "super-sundae-xoai.jpg",
+        "src": "super-sundae-xoai.jpg",
+        "isSundae": true,
+        "description": "Sốt xoài cát chín thơm nức mũi phủ trên lớp kem vani mát lạnh, tráng miệng hoàn hảo.",
+        "sizeOptions": [
+          { "name": "Size M", "price": 0 },
+          { "name": "Size L", "price": 6000 }
+        ],
+        "toppingOptions": [
+          { "name": "Trân châu trắng", "price": 3000 },
+          { "name": "Thạch dừa", "price": 3000 },
+          { "name": "Trân châu đường đen", "price": 3000 },
+          { "name": "Lô hội", "price": 3000 }
         ]
       }
     }

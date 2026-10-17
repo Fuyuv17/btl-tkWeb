@@ -77,12 +77,27 @@
             </div>
           </div>
 
-          <fieldset class="product-toppings">
+          <fieldset class="product-toppings" id="product-size-fieldset" hidden>
+            <legend>Chọn kích cỡ (Size)</legend>
+            <div id="size-options" class="topping-options"></div>
+          </fieldset>
+
+          <fieldset class="product-toppings" id="product-sugar-fieldset" hidden>
+            <legend>Chọn mức đường</legend>
+            <div id="sugar-options" class="option-pill-group"></div>
+          </fieldset>
+
+          <fieldset class="product-toppings" id="product-ice-fieldset" hidden>
+            <legend>Chọn mức đá</legend>
+            <div id="ice-options" class="option-pill-group"></div>
+          </fieldset>
+
+          <fieldset class="product-toppings" id="product-toppings-fieldset">
             <legend>Tùy chọn thêm topping</legend>
             <div id="topping-options" class="topping-options"></div>
           </fieldset>
 
-          <label class="product-note-label" for="product-note">Ghi chú cho món</label>
+          <label class="product-note-label" for="product-note">Ghi chú</label>
           <textarea id="product-note" rows="3" maxlength="250"></textarea>
 
           <p class="product-total-row">Thành tiền <strong id="product-total"></strong></p>
@@ -130,7 +145,7 @@
     <footer class="footer">
       <div class="footer-container">
         <div><h3>Jollibee</h3><p>Mang đến những bữa ăn vui vẻ cho mọi gia đình.</p></div>
-        <div><h3>Liên kết</h3><a href="../../index.html">Trang chủ</a><a href="menu.html">Thực đơn</a><a href="khuyenmai.html">Khuyến mãi</a></div>
+        <div><h3>Liên kết</h3><a href="../../index.html">Trang chủ</a><a href="menu.html">Thực đơn</a><a href="khuyenmai.html">Khuyến mãi</a><a href="tintuc.html">Tin tức</a></div>
         <div><h3>Liên hệ</h3><p>Hotline: 1900 1533</p><p>Email: example@email.com</p></div>
       </div>
       <div class="copyright">© 2026 Food Website</div>

@@ -99,6 +99,21 @@ document.addEventListener("DOMContentLoaded", () => {
         storage.textContent = `Dung lượng: ${item.storage}`;
         details.appendChild(storage);
       }
+      if (item.size) {
+        const sizeP = document.createElement("p");
+        sizeP.textContent = `Kích cỡ: ${item.size}`;
+        details.appendChild(sizeP);
+      }
+      if (item.sugar) {
+        const sugarP = document.createElement("p");
+        sugarP.textContent = `Lượng đường: ${item.sugar}`;
+        details.appendChild(sugarP);
+      }
+      if (item.ice) {
+        const iceP = document.createElement("p");
+        iceP.textContent = `Lượng đá: ${item.ice}`;
+        details.appendChild(iceP);
+      }
       const unitPriceText = document.createElement("p");
       unitPriceText.className = "cart-item-price";
       unitPriceText.textContent = `Đơn giá: ${formatCartPrice(unitPrice)}`;
