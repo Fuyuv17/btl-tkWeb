@@ -9,17 +9,17 @@ const imageFolderMap = {
   // CaoQuynhAnh_252601009
   "combo-doi-ban-than.png": "CaoQuynhAnh_252601009",
 
-  // ChuSyThanh
-  "bun-bo.jpg": "ChuSyThanh",
-  "bun-ca.jpg": "ChuSyThanh",
-  "bun-ga.jpg": "ChuSyThanh",
-  "bun-moc.jpg": "ChuSyThanh",
-  "bun-tron-ga-xe.jpg": "ChuSyThanh",
-  "bun-tron-thit-nuong.jpg": "ChuSyThanh",
-  "mi-tron-nem-chua-ran.jpg": "ChuSyThanh",
-  "mi-tron-rau-cu.jpg": "ChuSyThanh",
-  "mi-tron-thap-cam.jpg": "ChuSyThanh",
-  "mi-tron-vien-chien.jpg": "ChuSyThanh",
+  // ChuSyThanh_252601085
+  "bun-bo.jpg": "ChuSyThanh_252601085",
+  "bun-ca.jpg": "ChuSyThanh_252601085",
+  "bun-ga.jpg": "ChuSyThanh_252601085",
+  "bun-moc.jpg": "ChuSyThanh_252601085",
+  "bun-tron-ga-xe.jpg": "ChuSyThanh_252601085",
+  "bun-tron-thit-nuong.jpg": "ChuSyThanh_252601085",
+  "mi-tron-nem-chua-ran.jpg": "ChuSyThanh_252601085",
+  "mi-tron-rau-cu.jpg": "ChuSyThanh_252601085",
+  "mi-tron-thap-cam.jpg": "ChuSyThanh_252601085",
+  "mi-tron-vien-chien.jpg": "ChuSyThanh_252601085",
 
   // TruongQuyDuong_252631030
   "com-bo-chao-nong.jpg": "TruongQuyDuong_252631030",
@@ -43,29 +43,29 @@ const imageFolderMap = {
   "spagetti_01.png": "TruongQuyDuong_252631030",
   "spagetti_02.png": "TruongQuyDuong_252631030",
 
-  // PhamQuangThanh
-  "kimbap-chien.jpg": "PhamQuangThanh",
-  "kimbap.jpg": "PhamQuangThanh",
-  "snack-bap-ngot.svg": "PhamQuangThanh",
-  "snack-bi-do.svg": "PhamQuangThanh",
-  "snack-crap-me.svg": "PhamQuangThanh",
-  "snack-pho-mai.svg": "PhamQuangThanh",
-  "snack-tom-cay.svg": "PhamQuangThanh",
+  // PhamQuangThanh_252601086
+  "kimbap-chien.jpg": "PhamQuangThanh_252601086",
+  "kimbap.jpg": "PhamQuangThanh_252601086",
+  "snack-bap-ngot.svg": "PhamQuangThanh_252601086",
+  "snack-bi-do.svg": "PhamQuangThanh_252601086",
+  "snack-crap-me.svg": "PhamQuangThanh_252601086",
+  "snack-pho-mai.svg": "PhamQuangThanh_252601086",
+  "snack-tom-cay.svg": "PhamQuangThanh_252601086",
 
-  // DuongVanMinh
-  "chanh-leo-bach-huong.jpg": "DuongVanMinh",
-  "duong-chi-cam-lo.jpg": "DuongVanMinh",
-  "nuoc-chanh-tuoi-lanh.jpg": "DuongVanMinh",
-  "super-sundae-dao-hong.jpg": "DuongVanMinh",
-  "super-sundae-dau-tay.jpg": "DuongVanMinh",
-  "super-sundae-khoai-mon.jpg": "DuongVanMinh",
-  "super-sundae-tran-chau.jpg": "DuongVanMinh",
-  "super-sundae-xoai.jpg": "DuongVanMinh",
-  "tra-chanh-lo-hoi.jpg": "DuongVanMinh",
-  "Tra-Hong-Vai.jpg": "DuongVanMinh",
-  "cafe-latte.jpg": "DuongVanMinh",
-  "tra-nho.jpg": "DuongVanMinh",
-  "tra-sua-tran-chau-duong-den.jpg": "DuongVanMinh",
+  // DuongVanMinh_252601066
+  "chanh-leo-bach-huong.jpg": "DuongVanMinh_252601066",
+  "duong-chi-cam-lo.jpg": "DuongVanMinh_252601066",
+  "nuoc-chanh-tuoi-lanh.jpg": "DuongVanMinh_252601066",
+  "super-sundae-dao-hong.jpg": "DuongVanMinh_252601066",
+  "super-sundae-dau-tay.jpg": "DuongVanMinh_252601066",
+  "super-sundae-khoai-mon.jpg": "DuongVanMinh_252601066",
+  "super-sundae-tran-chau.jpg": "DuongVanMinh_252601066",
+  "super-sundae-xoai.jpg": "DuongVanMinh_252601066",
+  "tra-chanh-lo-hoi.jpg": "DuongVanMinh_252601066",
+  "Tra-Hong-Vai.jpg": "DuongVanMinh_252601066",
+  "cafe-latte.jpg": "DuongVanMinh_252601066",
+  "tra-nho.jpg": "DuongVanMinh_252601066",
+  "tra-sua-tran-chau-duong-den.jpg": "DuongVanMinh_252601066",
 };
 
 const categoryFallbackImages = {

@@ -424,7 +424,7 @@ header {
   padding: 0 20px 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 30px;
 }
 
 .footer-brand {
