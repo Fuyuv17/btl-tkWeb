@@ -21,15 +21,11 @@ function scrollToSection(id) {
   });
 }
 
-// 🔹 Danh sách liên kết nút điều hướng và section mục tiêu
+// 🔹 Danh sách liên kết nút điều hướng và section mục tiêu (Khuyến mãi, Món mới, Bí quyết)
 const navButtons = [
   { btnId: "go-to-sale", sectionId: "salenews" },
   { btnId: "go-to-explore", sectionId: "explorenews" },
   { btnId: "go-to-trick", sectionId: "tricknews" },
-  { btnId: "go-to-apples", sectionId: "applenews" },
-  { btnId: "go-to-review", sectionId: "reviewnews" },
-  { btnId: "go-to-others", sectionId: "othersnews" },
-  { btnId: "go-to-iVideo", sectionId: "iVideonews" },
 ];
 
 // Gán sự kiện cuộn mượt cho các nút điều hướng
@@ -50,34 +46,14 @@ navButtons.forEach(({ btnId, sectionId }) => {
   }
 });
 
-// 🔹 Xử lý thông báo khi click vào tin tức
+// 🔹 Xử lý thông báo khi click vào chi tiết tin tức
 function notifyUnderMaintenance(event) {
   if (event) event.stopPropagation();
   alert("Trang tin tức đang được bảo trì!");
 }
 
-// Gán sự kiện click cho các thành phần thẻ tin tức
-document.querySelectorAll(".item-image").forEach((item) => {
-  item.addEventListener("click", notifyUnderMaintenance);
-});
-
-document.querySelectorAll(".item-tittle, .item-title").forEach((item) => {
-  item.addEventListener("click", notifyUnderMaintenance);
-});
-
-document.querySelectorAll(".bignew").forEach((item) => {
-  item.addEventListener("click", notifyUnderMaintenance);
-});
-
-document.querySelectorAll(".normalnews").forEach((item) => {
-  item.addEventListener("click", notifyUnderMaintenance);
-});
-
-document.querySelectorAll(".read-more-btn").forEach((item) => {
-  item.addEventListener("click", notifyUnderMaintenance);
-});
-
-document.querySelectorAll(".read-more-btn").forEach((item) => {
+// Gán sự kiện click cho các thẻ tin tức và nút đọc thêm
+document.querySelectorAll(".tintuc-card, .read-more-btn").forEach((item) => {
   item.addEventListener("click", notifyUnderMaintenance);
 });
 

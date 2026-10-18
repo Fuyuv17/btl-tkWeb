@@ -110,18 +110,13 @@
     row-gap: 16px;
 }
 
-@media (max-width: 890px) {
-    .menu-category-tabs {
-        top: 60px;
-    }
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 890px) {
     .menu-page-content {
         padding: 18px 12px 42px;
     }
 
     .menu-category-tabs {
+        top: 60px;
         gap: 8px;
         margin-bottom: 22px;
         padding: 9px;
@@ -141,26 +136,5 @@
     .menu-product-section {
         scroll-margin-top: 130px;
         margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 420px) {
-    .menu-section-heading {
-        gap: 8px;
-    }
-
-    .menu-section-heading > img {
-        flex-basis: 30px;
-        width: 30px;
-        height: 30px;
-    }
-
-    .menu-section-heading h1,
-    .menu-section-heading h2 {
-        font-size: 20px;
-    }
-
-    .menu-section-heading p {
-        font-size: 12px;
     }
 }

@@ -424,7 +424,7 @@ header {
   padding: 0 20px 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 30px;
 }
 
 .footer-brand {
@@ -837,7 +837,17 @@ header {
     /* Footer trên mobile: xếp 1 cột gọn gàng */
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 24px;
+        padding: 0 16px 30px;
+    }
+
+    .footer-brand h3 {
+        font-size: 36px;
+    }
+
+    .footer-logo {
+        width: 56px;
+        height: 56px;
     }
 
     .service-item > span {

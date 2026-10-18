@@ -163,7 +163,7 @@
     margin: 0;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 890px) {
     .carousel-container {
         margin: 12px 0;
     }

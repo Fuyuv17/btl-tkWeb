@@ -330,48 +330,65 @@
   font-size: 12px;
 }
 
-/* ===== Responsive: đảm bảo tối ưu hiển thị ===== */
-@media (max-width: 1024px) {
+/* ===== Responsive: đảm bảo tối ưu hiển thị theo chuẩn mobile 890px ===== */
+@media screen and (max-width: 890px) {
+  .tintuc-page-content {
+    padding: 16px 12px 42px;
+  }
+
   .tintuc-category-tabs {
     top: 60px;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 9px;
+  }
+
+  .tintuc-tab-link {
+    min-height: 38px;
+    padding: 0 16px;
+    font-size: 13px;
   }
 
   .tintuc-section {
     scroll-margin-top: 130px;
+    margin-bottom: 32px;
   }
-}
 
-@media (max-width: 900px) {
   .tintuc-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 16px;
+  }
+
+  .tintuc-hero {
+    padding: 24px 14px 20px;
+    margin-bottom: 20px;
   }
 
   .tintuc-hero h1 {
-    font-size: 27px;
+    font-size: 24px;
+  }
+
+  .tintuc-section-heading h2 {
+    font-size: 22px;
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 580px) {
   .tintuc-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   .tintuc-card-image {
     height: 180px;
   }
 
-  .tintuc-hero {
-    padding: 24px 14px 20px;
-  }
-
   .tintuc-hero h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .tintuc-section-heading h2 {
-    font-size: 21px;
+    font-size: 20px;
   }
 }
 
