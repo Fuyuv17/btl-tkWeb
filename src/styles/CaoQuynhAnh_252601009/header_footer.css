@@ -497,6 +497,9 @@ header {
   margin-top: 8px;
 }
 
+.footer-facebook { display: flex; align-items: center; gap: 8px; font: inherit; }
+.footer-facebook-logo { width: 36px; height: 36px; object-fit: contain; }
+
 .footer-apps img {
   width: 150px;
   height: 45px;
