@@ -425,6 +425,15 @@ function initializeCategoryTabs() {
   const tabs = Array.from(document.querySelectorAll(".menu-category-tab-link"));
   if (!tabs.length) return;
 
+  const scrollToCategory = (tab) => {
+    const target = document.querySelector(tab.getAttribute("href"));
+    if (!target) return;
+    const header = document.querySelector("header");
+    const offset = (header?.offsetHeight || 0) + 25;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
   const updateActiveTab = () => {
     const activeHash = window.location.hash || "#best-seller";
     tabs.forEach((tab) => {
@@ -434,6 +443,14 @@ function initializeCategoryTabs() {
       else tab.removeAttribute("aria-current");
     });
   };
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", (event) => {
+      event.preventDefault();
+      history.replaceState(null, "", tab.getAttribute("href"));
+      updateActiveTab();
+      scrollToCategory(tab);
+    });
+  });
   window.addEventListener("hashchange", updateActiveTab);
   updateActiveTab();
 }
