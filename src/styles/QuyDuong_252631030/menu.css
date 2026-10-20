@@ -10,7 +10,7 @@
 
 .menu-category-tabs {
     position: sticky;
-    top: 66px;
+    top: 80px;
     z-index: 8;
     display: flex;
     gap: 10px;

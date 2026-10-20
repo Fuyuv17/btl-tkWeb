@@ -1,5 +1,6 @@
 :root {
     --red: #FF3737;
+  --background: #FFFDFD;
 }
 
 .page-content {
@@ -159,7 +160,7 @@
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
-    background: #fff8f0;
+    background: var();
 }
 
 .product-image img {
