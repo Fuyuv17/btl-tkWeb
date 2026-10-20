@@ -228,35 +228,35 @@
 }
 
 .cart-add-btn {
-    display: grid;
-    flex: 0 0 36px;
-    width: 36px;
-    height: 36px;
-    place-items: center;
-    padding: 0;
+    display: inline-flex;
+    flex: 1;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
     border: 1px solid #FF3737;
-    border-radius: 50%;
+    border-radius: 26px;
     background: #fff;
+    color: #FF3737;
+    font-family: 'Chiron GoRound TC','Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 800;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: transform 0.18s ease, filter 0.18s ease;
 }
 
 .cart-add-btn::before {
-    content: "";
-    display: block;
-    width: 22px;
-    height: 22px;
-    background: url("../../assets/images/CaoQuynhAnh_252601009/cart.svg") center / contain no-repeat;
+    display: none;
 }
 
 .cart-add-btn:hover {
-    background: #fff1f1;
-    transform: scale(1.06);
+    background: #fff;
+    filter: brightness(0.95);
+    transform: translateY(-1px);
 }
 
 .cart-add-btn:hover::before {
-    background-image: url("../../assets/images/CaoQuynhAnh_252601009/cart-fill.svg");
-    background-size: 54px 31px;
+    display: none;
 }
 
 .product-actions .add-btn {
@@ -270,7 +270,9 @@
 }
 
 .add-btn {
-    min-height: 36px;
+    min-height: 48px;
+    flex: 1;
+    padding: 0 16px;
     border: 0;
     border-radius: 22px;
     background: var(--red);

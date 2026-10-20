@@ -360,6 +360,7 @@ function createProductCard(productId, product, fallbackImage, showActions = true
     const cartButton = document.createElement("button");
     cartButton.type = "button";
     cartButton.className = "cart-add-btn";
+    cartButton.textContent = "Thêm vào giỏ";
     cartButton.title = "Thêm vào giỏ hàng";
     cartButton.setAttribute("aria-label", `Thêm ${product.name} vào giỏ hàng`);
 

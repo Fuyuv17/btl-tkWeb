@@ -55,7 +55,7 @@ function moveToSlide(i, animate = true) {
     if (!animate) {
         slides.style.transition = "none";
         // TẮT luôn hiệu ứng làm mờ/thu nhỏ của từng ảnh
-        slidesList.forEach(slide => slide.style.transition = "none"); 
+        slidesList.forEach(slide => slide.style.transition = "none");
     } else {
         slides.style.transition = clickTransition
             ? "transform 0.2s ease-out"
@@ -72,7 +72,7 @@ function moveToSlide(i, animate = true) {
 
     // Ép trình duyệt vẽ lại ngay lập tức (thủ thuật Force Reflow chống nháy)
     if (!animate) {
-        slides.offsetHeight; 
+        slides.offsetHeight;
     }
 }
 
@@ -83,7 +83,7 @@ function moveToSlide(i, animate = true) {
 
 function updateActiveSlide() {
     slidesList.forEach((slide, i) => {
-        slide.classList.toggle("active",i === index);
+        slide.classList.toggle("active", i === index);
     });
 }
 
@@ -292,7 +292,7 @@ window.addEventListener('load', () => {
 
     // Khởi tạo index mặc định là 1 (slide thật đầu tiên)
     index = 1;
-    
+
     // Gọi hàm đưa ảnh vào giữa ngay lập tức mà không có animation
     moveToSlide(index, false);
 
