@@ -423,7 +423,7 @@ header {
   margin: auto;
   padding: 0 20px 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.35fr 1fr 1fr;
   gap: 30px;
 }
 
@@ -453,7 +453,7 @@ header {
 
 .footer-brand h3 {
   margin: 0;
-  font-size: 48px;
+  font-size: 18px;
   line-height: 1;
   font-weight: 900;
   color: #fff;
@@ -488,6 +488,20 @@ header {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 500;
+}
+
+.footer-apps {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.footer-apps img {
+  width: 150px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .copyright {
