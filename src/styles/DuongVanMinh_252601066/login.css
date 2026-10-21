@@ -11,7 +11,7 @@
 
 .register-page-title {
   margin: 0 0 28px;
-  color: var(--red, #DB1A1A);
+  color: var(--red, #FF3737);
   font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;
   font-size: 28px;
   font-weight: 800;
@@ -56,7 +56,7 @@
 
 .reg-input:focus,
 .reg-select:focus {
-  border-color: #DB1A1A;
+  border-color: #FF3737;
   box-shadow: 0 0 0 3px rgba(255, 55, 55, 0.15);
 }
 
@@ -90,7 +90,7 @@
   width: 18px;
   height: 18px;
   margin-top: 2px;
-  accent-color: #DB1A1A;
+  accent-color: #FF3737;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -103,7 +103,7 @@
 
 .reg-checkbox-item a:hover,
 .reg-login-prompt a:hover {
-  color: #DB1A1A;
+  color: #FF3737;
 }
 
 .reg-action-row {
@@ -118,7 +118,7 @@
   padding: 12px 32px;
   border: 0;
   border-radius: 8px;
-  background: #DB1A1A;
+  background: #FF3737;
   box-shadow: 0 4px 12px rgba(255, 55, 55, 0.3);
   color: #ffffff;
   font-family: 'Chiron GoRound TC', 'Segoe UI', sans-serif;

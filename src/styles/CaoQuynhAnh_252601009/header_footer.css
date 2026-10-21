@@ -2,7 +2,7 @@
 
 
 :root {
-  --red: #DB1A1A;
+  --red: #FF3737;
   --background: #ffffff;
 }
 * {
@@ -162,7 +162,7 @@ header.header-scrolled {
     border-radius: 8px;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-    color: var(--red, #DB1A1A);
+    color: var(--red, #FF3737);
     font: inherit;
     cursor: pointer;
     opacity: 0;
