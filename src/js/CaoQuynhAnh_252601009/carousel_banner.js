@@ -1,284 +1,114 @@
-// ===============================
-// LẤY CÁC PHẦN TỬ DOM
-// ===============================
-
-const slides = document.getElementById("slides");
-const dots = document.getElementById("dots");
-const carousel = document.getElementById("carousel");
-
+// === Lấy phần tử DOM chính ===
+const slides = document.getElementById('slides');
+const dots = document.getElementById('dots');
 let slidesList = Array.from(slides.children);
 
-
-// ===============================
-// NHÂN ĐÔI SLIDE ĐẦU VÀ CUỐI
-// ===============================
-
+// === Nhân đôi slide đầu và cuối để tạo hiệu ứng vòng lặp vô tận ===
 const firstClone = slidesList[0].cloneNode(true);
 const lastClone = slidesList[slidesList.length - 1].cloneNode(true);
-
 slides.appendChild(firstClone);
 slides.insertBefore(lastClone, slidesList[0]);
 
+// === Cập nhật các biến điều khiển ===
 slidesList = Array.from(slides.children);
-
 const total = slidesList.length;
-
-
-// ===============================
-// BIẾN ĐIỀU KHIỂN
-// ===============================
-
-let index = 1;
+let index = 1; // bắt đầu ở slide thật đầu tiên
 let timer;
 let isAnimating = false;
-let clickTransition = false;
+let clickTransition = false; // auto = false → 0.5s, click = true → 0.2s
 
-
-// ===============================
-// ĐƯA SLIDE VÀO GIỮA
-// ===============================
-
-function moveToSlide(i, animate = true) {
-    const currentSlide = slidesList[i];
-    if (!currentSlide) return;
-
-    const carouselWidth = carousel.clientWidth;
-    const slideLeft = currentSlide.offsetLeft;
-    const slideWidth = currentSlide.offsetWidth;
-
-    // Tâm của slide và carousel
-    const slideCenter = slideLeft + slideWidth / 2;
-    const carouselCenter = carouselWidth / 2;
-    const translate = carouselCenter - slideCenter;
-
-    // Nếu animate = false (dịch chuyển tức thời)
-    if (!animate) {
-        slides.style.transition = "none";
-        // TẮT luôn hiệu ứng làm mờ/thu nhỏ của từng ảnh
-        slidesList.forEach(slide => slide.style.transition = "none");
-    } else {
-        slides.style.transition = clickTransition
-            ? "transform 0.2s ease-out"
-            : "transform 0.5s ease";
-        // BẬT lại hiệu ứng làm mờ/thu nhỏ cho ảnh
-        slidesList.forEach(slide => slide.style.transition = "all 0.5s ease");
-    }
-
-    slides.style.transform = `translateX(${translate}px)`;
-    index = i;
-
-    updateDots();
-    updateActiveSlide();
-
-    // Ép trình duyệt vẽ lại ngay lập tức (thủ thuật Force Reflow chống nháy)
-    if (!animate) {
-        slides.offsetHeight;
-    }
-}
-
-
-// ===============================
-// ACTIVE SLIDE
-// ===============================
-
-function updateActiveSlide() {
-    slidesList.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-    });
-}
-
-
-// ===============================
-// HIỂN THỊ SLIDE
-// ===============================
-
+// === Hàm hiển thị slide ===
 function showSlide(i) {
+    // ✅ Giới hạn index (chặn tăng vô hạn)
+    if (i >= total) i = 1;
+    if (i < 0) i = total - 2;
 
-    if (i >= total) {
-        i = 1;
-    }
+    slides.style.transition = clickTransition
+        ? 'transform 0.2s ease-out'  // nhanh khi click/ vuốt
+        : 'transform 0.5s ease';     // mượt khi auto
 
-    if (i < 0) {
-        i = total - 2;
-    }
-
-    moveToSlide(i, true);
+    slides.style.transform = `translateX(-${i * 100}%)`;
+    index = i;
+    updateDots();
 }
 
-
-// ===============================
-// NEXT
-// ===============================
-
+// === Chuyển slide kế tiếp / trước ===
 function next() {
-
     if (isAnimating) return;
-
     isAnimating = true;
-
     clickTransition = true;
-
     showSlide(index + 1);
 }
 
-
-// ===============================
-// PREVIOUS
-// ===============================
-
 function prev() {
-
     if (isAnimating) return;
-
     isAnimating = true;
-
     clickTransition = true;
-
     showSlide(index - 1);
 }
 
-
-// ===============================
-// AUTO PLAY
-// ===============================
-
+// === Tự động chuyển slide ===
 function startAuto() {
-
     clearInterval(timer);
-
     timer = setInterval(() => {
-
-        if (isAnimating) return;
-
-        clickTransition = false;
-
-        isAnimating = true;
-
+        clickTransition = false; // auto chạy chậm hơn
         showSlide(index + 1);
-
     }, 4000);
 }
 
-
-// ===============================
-// TẠO DOT
-// ===============================
-
+// === Tạo chấm tròn (dots) ===
 function createDots() {
-
-    const dotCount = total - 2;
-
-    dots.innerHTML = "";
-
+    const dotCount = total - 2; // bỏ 2 clone
+    dots.innerHTML = '';
     for (let i = 0; i < dotCount; i++) {
-
-        const dot = document.createElement("button");
-
-        dot.addEventListener("click", () => {
-
-            if (isAnimating) return;
-
-            isAnimating = true;
-
+        const dot = document.createElement('button');
+        dot.addEventListener('click', () => {
             clickTransition = true;
-
             showSlide(i + 1);
-
             startAuto();
-
         });
-
         dots.appendChild(dot);
     }
 }
 
-
-// ===============================
-// UPDATE DOT
-// ===============================
-
+// === Cập nhật dot đang active ===
 function updateDots() {
-
     const realIndex =
-        index === 0
-            ? total - 3
-            : index === total - 1
-                ? 0
-                : index - 1;
+        index === 0 ? total - 3 :
+            index === total - 1 ? 0 :
+                index - 1;
 
-
-    [...dots.children].forEach((dot, i) => {
-
-        dot.classList.toggle(
-            "active",
-            i === realIndex
-        );
-
-    });
+    [...dots.children].forEach((d, i) =>
+        d.classList.toggle('active', i === realIndex)
+    );
 }
 
+// === Nút điều hướng ===
+document.getElementById('next').onclick = () => { next(); startAuto(); };
+document.getElementById('prev').onclick = () => { prev(); startAuto(); };
 
-// ===============================
-// NÚT NEXT / PREV
-// ===============================
-
-const nextButton = document.getElementById("next");
-const prevButton = document.getElementById("prev");
-
-
-if (nextButton) {
-
-    nextButton.onclick = () => {
-
-        next();
-
-        startAuto();
-
-    };
-
-}
-
-
-if (prevButton) {
-
-    prevButton.onclick = () => {
-
-        prev();
-
-        startAuto();
-
-    };
-
-}
-
-
-// ===============================
-// HOVER → DỪNG AUTO
-// ===============================
-
-carousel.addEventListener("mouseenter", () => {
-
-    clearInterval(timer);
-
-});
-
-
-carousel.addEventListener("mouseleave", () => {
-
-    startAuto();
-
-});
-
+// === Dừng auto khi hover ===
+const carousel = document.getElementById('carousel');
+carousel.addEventListener('mouseenter', () => clearInterval(timer));
+carousel.addEventListener('mouseleave', startAuto);
 
 // === Khi hiệu ứng kết thúc ===
 slides.addEventListener('transitionend', () => {
     // Nếu đang ở clone cuối → quay về slide thật đầu
     if (index === total - 1) {
-        moveToSlide(1, false); // Gọi hàm dịch chuyển im lặng thay vì chèn chuỗi -100%
+        slides.style.transition = 'none';
+        index = 1;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+        setTimeout(() => slides.style.transition = 'transform 0.5s ease', 0);
     }
     // Nếu đang ở clone đầu → quay về slide thật cuối
     else if (index === 0) {
-        moveToSlide(total - 2, false);
+        slides.style.transition = 'none';
+        index = total - 2;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+        setTimeout(() => slides.style.transition = 'transform 0.5s ease', 0);
     }
 
     // 🔓 Mở khoá thao tác
@@ -286,23 +116,62 @@ slides.addEventListener('transitionend', () => {
     clickTransition = false;
 });
 
-// === Reset an toàn khi reload (fix stuck) ===
+// === Vuốt cảm ứng (mobile) ===
+let startX = 0;
+let isSwiping = false;
+
+carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+    clearInterval(timer);
+});
+
+carousel.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    const diff = e.touches[0].clientX - startX;
+    slides.style.transition = 'none';
+    slides.style.transform = `translateX(${diff - index * 100}%)`;
+});
+
+carousel.addEventListener('touchend', (e) => {
+    if (!isSwiping) return;
+    const diff = e.changedTouches[0].clientX - startX;
+
+    clickTransition = true;
+    slides.style.transition = 'transform 0.2s ease-out';
+
+    if (diff > 50) prev();
+    else if (diff < -50) next();
+    else showSlide(index);
+
+    isSwiping = false;
+    startAuto();
+});
+
+// === Reset an toàn khi reload (fix stuck -500%, -600%) ===
 window.addEventListener('load', () => {
     createDots();
 
-    // Khởi tạo index mặc định là 1 (slide thật đầu tiên)
-    index = 1;
+    // Xóa transition để tránh nháy
+    slides.style.transition = 'none';
 
-    // Gọi hàm đưa ảnh vào giữa ngay lập tức mà không có animation
-    moveToSlide(index, false);
+    // Kiểm tra nếu đang ở clone cuối hoặc vượt quá giới hạn
+    const currentTransform = slides.style.transform;
+    if (currentTransform.includes('-500%') || currentTransform.includes('-600%') || index >= total - 1) {
+        index = 1;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    } else if (index === 0) {
+        index = total - 2;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    } else {
+        index = 1;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
 
     // Khởi động auto sau khi DOM ổn định
     setTimeout(() => {
+        slides.style.transition = 'transform 0.5s ease';
+        showSlide(index);
         startAuto();
     }, 150);
-});
-
-// === BỔ SUNG QUAN TRỌNG: Cập nhật lại vị trí khi phóng to/thu nhỏ trình duyệt ===
-window.addEventListener('resize', () => {
-    moveToSlide(index, false);
 });

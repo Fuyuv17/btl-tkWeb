@@ -45,8 +45,8 @@
 .menu-category-tab-link.is-active,
 .menu-category-tab-link:hover,
 .menu-category-tab-link:focus-visible {
-    border-color: var(--red, #FF3737);
-    background: var(--red, #FF3737);
+    border-color: var(--red, #DB1A1A);
+    background: var(--red, #DB1A1A);
     color: #fff;
 }
 
@@ -78,7 +78,7 @@
 .menu-section-heading h1,
 .menu-section-heading h2 {
     margin: 0;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 26px;
     font-weight: 800;
     line-height: 1.2;
@@ -102,7 +102,7 @@
     left: 0;
     width: 4px;
     border-radius: 3px;
-    background: var(--red, #FF3737);
+    background: var(--red, #DB1A1A);
     content: "";
 }
 

@@ -17,7 +17,7 @@
 }
 
 .product-back-link:hover {
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
 }
 
 .product-detail-card {
@@ -57,7 +57,7 @@
     left: 16px;
     padding: 6px 12px;
     border-radius: 20px;
-    background: var(--red, #FF3737);
+    background: var(--red, #DB1A1A);
     color: #fff;
     font-size: 12px;
     font-weight: 800;
@@ -71,7 +71,7 @@
 
 .product-category-label {
     margin-bottom: 8px;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -94,7 +94,7 @@
 
 .product-detail-price {
     margin: 0 0 22px;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 28px;
     font-weight: 900;
 }
@@ -129,13 +129,13 @@
     border: 0;
     border-radius: 50%;
     background: #fff;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 22px;
     cursor: pointer;
 }
 
 .product-quantity-control button:hover {
-    background: var(--red, #FF3737);
+    background: var(--red, #DB1A1A);
     color: #fff;
 }
 
@@ -185,7 +185,7 @@
 .topping-option input {
     width: 17px;
     height: 17px;
-    accent-color: var(--red, #FF3737);
+    accent-color: var(--red, #DB1A1A);
 }
 
 .topping-option-name {
@@ -194,7 +194,7 @@
 }
 
 .topping-option-price {
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 13px;
     font-weight: 700;
 }
@@ -232,8 +232,8 @@
 }
 
 .option-pill:has(input:checked) {
-    border-color: var(--red, #FF3737);
-    background: var(--red, #FF3737);
+    border-color: var(--red, #DB1A1A);
+    background: var(--red, #DB1A1A);
     color: #fff;
     box-shadow: 0 3px 8px rgba(255, 55, 55, 0.22);
 }
@@ -264,7 +264,7 @@
 }
 
 #product-note:focus {
-    border-color: var(--red, #FF3737);
+    border-color: var(--red, #DB1A1A);
     box-shadow: 0 0 0 3px rgba(255, 55, 55, 0.12);
 }
 
@@ -279,7 +279,7 @@
 }
 
 .product-total-row strong {
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 23px;
 }
 
@@ -307,13 +307,13 @@
 }
 
 .product-detail-cart-btn {
-    border: 1px solid var(--red, #FF3737) !important;
+    border: 1px solid var(--red, #DB1A1A) !important;
     background: #fff !important;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
 }
 
 .product-detail-order-btn {
-    background: var(--red, #FF3737);
+    background: var(--red, #DB1A1A);
     color: #fff;
 }
 
@@ -328,7 +328,7 @@
 .product-load-error {
     grid-column: 1 / -1;
     padding: 36px 20px;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 18px;
     text-align: center;
 }
@@ -369,7 +369,7 @@
 
 .checkout-dialog h2 {
     margin: 0 42px 20px 0;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
     font-size: 24px;
     font-weight: 800;
 }
@@ -396,7 +396,7 @@
 
 .checkout-dialog .checkout-close:hover,
 .checkout-dialog .close-btn:hover {
-    background: var(--red, #FF3737);
+    background: var(--red, #DB1A1A);
     color: #fff;
 }
 
@@ -427,7 +427,7 @@
 }
 
 .checkout-product-summary strong:last-child {
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
 }
 
 .checkout-form,
@@ -471,7 +471,7 @@
 .checkout-form textarea:focus,
 #checkout-form input:focus,
 #checkout-form textarea:focus {
-    border-color: var(--red, #FF3737);
+    border-color: var(--red, #DB1A1A);
     box-shadow: 0 0 0 3px rgba(255, 55, 55, 0.1);
 }
 
@@ -515,13 +515,13 @@
 .checkout-payment-options input {
     width: 16px;
     height: 16px;
-    accent-color: var(--red, #FF3737);
+    accent-color: var(--red, #DB1A1A);
 }
 
 .payment-methods button.active {
-    border-color: var(--red, #FF3737);
+    border-color: var(--red, #DB1A1A);
     background: #fff5f0;
-    color: var(--red, #FF3737);
+    color: var(--red, #DB1A1A);
 }
 
 .checkout-qr {
@@ -558,7 +558,7 @@
     margin-top: 10px;
     border: 0;
     border-radius: 25px;
-    background: var(--red, #FF3737);
+    background: var(--red, #DB1A1A);
     color: #fff;
     font-family: inherit;
     font-size: 15px;

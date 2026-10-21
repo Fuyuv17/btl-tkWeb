@@ -1,6 +1,6 @@
 /* Trang giỏ hàng - đồng bộ bảng màu và bo góc của giao diện chính */
 :root {
-	--cart-red: #FF3737;
+	--cart-red: #DB1A1A;
 	--cart-text: #252525;
 	--cart-muted: #666;
 	--cart-border: rgba(255, 127, 80, 0.2);
