@@ -745,6 +745,7 @@ function renderProductDetails(database) {
   updateTotal();
 }
 
+// Khởi tạo khi DOM đã sẵn sàng trang chủ
 document.addEventListener("DOMContentLoaded", async () => {
   initializeMenuCarousel();
   initializeCategoryTabs();
