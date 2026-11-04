@@ -93,32 +93,32 @@
       <div class="register-page-wrapper">
         <h1 class="register-page-title">ĐĂNG KÝ TÀI KHOẢN</h1>
 
-        <form id="standalone-register-form">
+        <form id="standalone-register-form" method="get">
           <div class="register-form-grid">
             
             <!-- Họ & Tên -->
             <div class="reg-row">
               <div class="reg-input-group">
-                <input type="text" id="page-reg-ho" class="reg-input" placeholder="Họ *" required />
+                <input type="text" id="page-reg-ho" name="first_name" class="reg-input" placeholder="Họ *" required />
               </div>
               <div class="reg-input-group">
-                <input type="text" id="page-reg-ten" class="reg-input" placeholder="Tên *" required />
+                <input type="text" id="page-reg-ten" name="last_name" class="reg-input" placeholder="Tên *" required />
               </div>
             </div>
 
             <!-- Số điện thoại -->
             <div class="reg-input-group">
-              <input type="tel" id="page-reg-phone" class="reg-input" placeholder="Số điện thoại *" required />
+              <input type="tel" id="page-reg-phone" name="tel" class="reg-input" placeholder="Số điện thoại *" required />
             </div>
 
             <!-- E-mail -->
             <div class="reg-input-group">
-              <input type="email" id="page-reg-email" class="reg-input" placeholder="E-mail" />
+              <input type="email" id="page-reg-email" name="email" class="reg-input" placeholder="E-mail" />
             </div>
 
             <!-- Mật khẩu & Độ bảo mật (ảnh 2) -->
             <div class="reg-input-group">
-              <input type="password" id="page-reg-password" class="reg-input" placeholder="Mật khẩu *" required />
+              <input type="password" id="page-reg-password" name="password" class="reg-input" placeholder="Mật khẩu *" required />
               
             </div>
 
@@ -142,7 +142,7 @@
 
             <!-- Nút ĐĂNG KÝ và link Đăng nhập -->
             <div class="reg-action-row">
-              <button type="submit" class="reg-submit-btn">ĐĂNG KÝ</button>
+              <button type="submit" class="reg-submit-btn">ĐĂNG KÝ</button> <!-- submit-->
               <span class="reg-login-prompt">
                 Bạn đã có tài khoản? <a href="login.html" class="login">Đăng nhập</a>
               </span>
